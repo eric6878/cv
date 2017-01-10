@@ -1,0 +1,198 @@
+@charset "UTF-8";
+
+/***************************************/
+/***************************************/
+/************** RESET CSS **************/
+/***************************************/
+/***************************************/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers 
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}*/
+
+
+/***************************************/
+/***************************************/
+/*********** STYLE BODY CSS ************/
+/***************************************/
+/***************************************/
+
+body{
+	background-color: pink;
+}
+
+/***************************************/
+/************** CLEARFIX ***************/
+/***************************************/
+
+.phantom{
+	clear: both;
+}
+
+/***************************************/
+/***************************************/
+/********** STYLE INDEX.PHP ************/
+/***************************************/
+/***************************************/
+
+#headerIndex{
+	width: 80%;
+	background-color: red;
+}
+
+#sectionIndex{
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	border: 1px solid #FFF;
+	background-color: lightblue;
+}
+
+/***************************************/
+/***************************************/
+/******** STYLE COMPETENCES.PHP ********/
+/***************************************/
+/***************************************/
+
+#headerCompetences{
+	width: 80%;
+	height: 50px;
+	margin: 20px auto;
+	background-color: yellow;
+	border: 1px solid #000;
+}
+
+#headerCompetences h1{
+	font-size: 1.2em;
+	text-align: center;
+	line-height: 50px;
+}
+
+#sectionCompetences{
+	width: 80%;
+	margin: 0 auto;
+	border: 1px solid #000;
+	background-color: #888;
+}
+
+#sectionCompetences p{
+	margin: 10px auto;
+	text-align: center;
+	color: #FFF;
+}
+
+#formCompetences{
+	margin: 10px auto;
+	text-align: center;
+}
+
+#tabCompetences{
+	margin: 10px auto;
+}
+
+#tabCompetences th{
+	padding: 0px 5px;
+	border: 1px solid #FFF;
+}
+
+#tabCompetences td{
+	padding: 0px 5px;
+	text-align: center;
+	border: 1px solid #FFF;
+}
+
+/***************************************/
+/***************************************/
+/******** STYLE EXPERIENCES.PHP ********/
+/***************************************/
+/***************************************/
+
+#headerXp{
+	width: 80%;
+	height: 50px;
+	margin: 20px auto;
+	background-color: yellow;
+	border: 1px solid #000;
+}
+
+#headerXp h1{
+	font-size: 1.2em;
+	text-align: center;
+	line-height: 50px;
+}
+
+#sectionXp{
+	width: 80%;
+	margin: 0 auto;
+	border: 1px solid #000;
+	background-color: #888;
+}
+
+#sectionXp p{
+	margin: 10px auto;
+	text-align: center;
+	color: #FFF;
+}
+
+#formXp{
+	margin: 10px auto;
+	text-align: center;
+}
+
+#tabXp{
+	margin: 10px auto;
+}
+
+#tabXp th{
+	padding: 0px 5px;
+	border: 1px solid #FFF;
+}
+
+#tabXp td{
+	padding: 0px 5px;
+	text-align: center;
+	border: 1px solid #FFF;
+}
+
+
+
