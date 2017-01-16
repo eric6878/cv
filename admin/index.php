@@ -22,7 +22,9 @@
 
 		</header>
 		
-		<section id="sectionIndex"></section>
+		<section id="sectionIndex">
+			<?php  ?>
+		</section>
 		
 		<footer id="footerIndex"></footer>
 	
