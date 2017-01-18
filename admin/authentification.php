@@ -2,6 +2,32 @@
 
 <?php
 
+session_start();
+
+if(isset($_POST['connexion'])){
+
+	$email = addslashes($_POST['email']);
+	$mdp = addslashes($_POST['mdp']);
+
+	$sql = $pdoCV -> prepare(" SELECT * FROM utilisateurs WHERE email = '$email' AND mdp = '$mdp' ");
+	$sql -> execute();
+	$utilisateur = $sql -> rowcount();
+
+	if($utilisateur == 0){
+		$msg_connexion_err = "Erreur d'authentification !";
+	}
+	else{
+		$ligne = $sql -> fetch();
+		$_SESSION['connexion'] = 'Vous êtes connecté !';
+		$_SESSION['id_utilisateur'] = $ligne['id_utilisateur'];
+		$_SESSION['prenom'] = $ligne['prenom'];
+		$_SESSION['nom'] = $ligne['nom'];
+
+		header('location: index.php');
+
+	}
+}
+
 ?>
 
 <html lang="fr">
@@ -12,44 +38,45 @@
     </head>
 
     <body>
-        <header id="headerXp">
+        <header>
 	    	<!-- include admin_menu.php -->
-	    	<h1>Page de connexion</h1>
+	    	<h1>Page de connexion Admin</h1>
         </header>
 
         <section>
-        	<form method="POST" action="" name="">
+        	<form method="POST" action="authentification.php">
         		<table>
         			<thead>
-        				<th>Formulaire de connexion</th>
+        				<th colspan="3">Formulaire de connexion</th>
         			</thead>
     				
     				<tr>
     					<td>
-    						<label>Nom d'utilisateur :</label>
+    						<label for="email">Email :</label>
     					</td>
 
     					<td>
-							<input type="text" name="nom" value="" />
+							<input type="email" name="email" required />
     					</td>
     				</tr>
 
     				<tr>
     					<td>
-    						<label>Mot de passe :</label>
+    						<label for="mdp">Mot de passe :</label>
     					</td>
 
     					<td>
-							<input type="password" name="mdp" />
+							<input type="password" name="mdp" required />
+    					</td>
+    					<td>
+    						<input name="connexion" type="submit" value="connexion" />
     					</td>
     				</tr>
-
     				<tr>
-    					<td>
-    						<input type="submit" value="login" />
-    					</td>
+						
     				</tr>
 				</table>
         	</form>
+        	<p><a href="#">Mot de passe oublié</a></p>
         </section>
         <!-- include footer.php -->

@@ -6,7 +6,7 @@
 /***************************************/
 /***************************************/
 
-html, body, div, span, applet, object, iframe,
+/*html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -25,9 +25,9 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers 
-article, aside, details, figcaption, figure, 
+}*/
+/* HTML5 display-role reset for older browsers */
+/*article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -48,7 +48,10 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-}*/
+}
+
+*/
+
 
 
 /***************************************/
@@ -57,164 +60,66 @@ table {
 /***************************************/
 /***************************************/
 
+
+
 body{
-	background-color: pink;
+	background-color: 
 }
 
+
+
 /***************************************/
-/************** CLEARFIX ***************/
+/*********   STYLE CLEARFIX   **********/
 /***************************************/
 
 .phantom{
 	clear: both;
 }
 
-/***************************************/
-/***************************************/
-/********** STYLE INDEX.PHP ************/
-/***************************************/
-/***************************************/
+/***************************************************************/
+/***************************************************************/
+/***************                                ****************/
+/***************        STYLE CSS ADMIN         ****************/
+/***************                                ****************/
+/***************************************************************/
+/***************************************************************/
 
-#headerIndex{
-	width: 80%;
-	background-color: red;
-}
 
-#sectionIndex{
-	width: 80%;
-	margin: 0 auto;
+h1{
 	text-align: center;
-	border: 1px solid #FFF;
-	background-color: lightblue;
+	background-color: grey;
 }
 
-/***************************************/
-/***************************************/
-/******** STYLE COMPETENCES.PHP ********/
-/***************************************/
-/***************************************/
-
-#headerCompetences{
-	width: 80%;
-	height: 50px;
-	margin: 20px auto;
-	background-color: yellow;
-	border: 1px solid #000;
-}
-
-#headerCompetences h1{
-	font-size: 1.2em;
-	text-align: center;
-	line-height: 50px;
-}
-
-#sectionCompetences{
-	width: 80%;
+nav{
+	width: 90%;
 	margin: 0 auto;
-	border: 1px solid #000;
-	background-color: #888;
+	background-color: #000;
 }
 
-#sectionCompetences p{
-	margin: 10px auto;
+nav li{
+	margin-left: 10px,
+	list-style-type: none;
+	display: inline;
+}
+
+nav li a{
+	text-decoration: none;
 	text-align: center;
 	color: #FFF;
 }
 
-#formCompetences{
-	margin: 10px auto;
+p{
 	text-align: center;
 }
 
-#tabCompetences{
-	margin: 10px auto;
-}
-
-#tabCompetences th{
-	padding: 0px 5px;
-	border: 1px solid #FFF;
-}
-
-#tabCompetences td{
-	padding: 0px 5px;
-	text-align: center;
-	border: 1px solid #FFF;
-}
-
-/***************************************/
-/***************************************/
-/******** STYLE EXPERIENCE.PHP *********/
-/***************************************/
-/***************************************/
-
-#headerXp{
-	width: 80%;
-	height: 50px;
-	margin: 20px auto;
-	background-color: yellow;
-	border: 1px solid #000;
-}
-
-#headerXp h1{
-	font-size: 1.2em;
-	text-align: center;
-	line-height: 50px;
-}
-
-#sectionXp{
-	width: 80%;
+table{
 	margin: 0 auto;
+	background-color: pink;
 	border: 1px solid #000;
-	background-color: #888;
+	border-radius: 4px;
 }
 
-#sectionXp p{
-	margin: 10px auto;
-	text-align: center;
-	color: #FFF;
-}
 
-#formXp{
-	margin: 10px auto;
-	text-align: center;
-}
-
-#tabXp{
-	margin: 10px auto;
-}
-
-#tabXp th{
-	padding: 0px 5px;
-	border: 1px solid #FFF;
-}
-
-#tabXp td{
-	padding: 0px 5px;
-	text-align: center;
-	border: 1px solid #FFF;
-}
-
-#tabExperiences{
-	border: 1px solid #000;
-}
-
-/***************************************/
-/********                      *********/
-/******** STYLE EXPERIENCE.PHP *********/
-/*********       FOOTER        *********/
-/*********                     *********/
-/***************************************/
-/***************************************/
-
-#footerDiv{
-	width: 80%;
-	height: 150px;
-	background-color: purple;
-}
-
-{
-	text-align: center;
-}
 
 
 

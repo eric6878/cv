@@ -1,5 +1,35 @@
 <?php require '../connexion/connexion.php'; ?>
 
+<?php
+
+// pour se connecter :
+session_start();
+
+if(isset($_SESSION['connexion']) && $_SESSION['connexion'] == 'Vous êtes connecté !'){
+  $id_utilisateur = $_SESSION['id_utilisateur'];
+  $prenom = $_SESSION['prenom'];
+  $nom = $_SESSION['nom'];
+}
+else{
+  header('location: authentification.php');
+}
+
+
+// pour se deconnecter : 
+
+if(isset($_GET['deconnexion'])){
+  $_SESSION['connexion'] = '';
+  $_SESSION['id_utilisateur'] = '';
+  $_SESSION['prenom'] = '';
+  $_SESSION['nom'] = '';
+
+  unset($_SESSION['connexion']);
+  session_destroy();
+  header('location: ../index.php');
+}
+
+?>
+
 <?php 
 //Insertion
 if(isset($_POST['competence'])){
@@ -30,11 +60,11 @@ if(isset($_GET['id_competence'])){
 	</head>
 	
 	<body>
-		<header id="headerCompetences">
-			<h1>Compétences numériques</h1>
+		<header>
+			<h1>Page : Compétences Numériques</h1>
 		</header>
 
-		<section id="sectionCompetences">
+		<section>
 			<?php 
 		
 			$sql = $pdoCV -> query("SELECT * FROM competences");
@@ -45,13 +75,13 @@ if(isset($_GET['id_competence'])){
 			
 			<p>Il y a <?php echo $nbr_competences; ?> compétences dans votre BDD.</p>
 			
-			<form action="competence.php" method="POST" id="formCompetences">
+			<form action="competence.php" method="POST">
 				<label>Ajouter une compétence numérique :</label><br />
 				<input type="text" name="competence" />
 				<input type="submit" value="valider" /></td>
 			</form>	
 			
-			<table id="tabCompetences">
+			<table>
 			 	<thead>
 			 		<th>Compétences</th>
 			 		<th>Modification</th>

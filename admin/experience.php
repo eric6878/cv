@@ -1,6 +1,36 @@
 <?php require '../connexion/connexion.php'; ?>
 
 <?php
+
+// pour se connecter :
+session_start();
+
+if(isset($_SESSION['connexion']) && $_SESSION['connexion'] == 'Vous êtes connecté !'){
+  $id_utilisateur = $_SESSION['id_utilisateur'];
+  $prenom = $_SESSION['prenom'];
+  $nom = $_SESSION['nom'];
+}
+else{
+  header('location: authentification.php');
+}
+
+
+// pour se deconnecter : 
+
+if(isset($_GET['deconnexion'])){
+  $_SESSION['connexion'] = '';
+  $_SESSION['id_utilisateur'] = '';
+  $_SESSION['prenom'] = '';
+  $_SESSION['nom'] = '';
+
+  unset($_SESSION['connexion']);
+  session_destroy();
+  header('location: ../index.php');
+}
+
+?>
+
+<?php
 if(isset($_POST['titre_xp'])){ // On vérife si on a creer une nouvelle compétence
     if($_POST['titre_xp']!= '' && $_POST['sous_titre_xp']!= ''  && $_POST['date']!= '' && $_POST['description']!= ''){//si compétence n'est pas vide
      $titre_xp = addslashes($_POST['titre_xp']);
@@ -31,6 +61,7 @@ if(isset($_GET['id_xp'])){
    	<meta charset="UTF-8" />
     <title>Expériences CV web <?php echo $resultat['prenom'] .' ' . $resultat['nom']; ?></title>
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <script src="../ckeditor/ckeditor.js"></script>
   </head>
 
   <body>
@@ -38,13 +69,11 @@ if(isset($_GET['id_xp'])){
       	
         <?php //include("admin_menu.php"); ?> <!-- FAUT CREER LA PAGE MENU -->
 
-        <h1>Expériences</h1>
+        <h1>Page : Expériences</h1>
      
       </header>
        
-      <section id="sectionXp">
-
-
+      <section>
 
       <?php 
       $sql = $pdoCV -> query("SELECT * FROM experiences");
@@ -53,26 +82,32 @@ if(isset($_GET['id_xp'])){
     
       <p>Il y a <?php echo $nbr_experiences; ?> expériences dans votre BDD.</p>
 
-      <form action="experience.php" method="POST" id="formXp">
-       		<table id="tabXp">
+      <form action="experience.php" method="POST">
+       		<table>
        			<tr>
               	<td>Titre XP :</td> 
-                <td><input type="text" name="titre_xp" id="titreXp" size="50" required /></td>
+                <td><input type="text" name="titre_xp" size="50" required /></td>
             </tr>
                 
             <tr>                        
               <td>Sous-Titre XP :</td> 
-              <td><input type="text" name="sous_titre_xp" id="sousTitreXp" size="50" required /></td>                        
+              <td><input type="text" name="sous_titre_xp" size="50" required /></td>                        
             </tr>
            
             <tr>
               <td>Date XP :</td> 
-              <td><input type="text" name="date" id="dateXp" size="50" required /></td>                          
+              <td><input type="text" name="date" size="50" required /></td>                          
             </tr>
 
             <tr>
               <td>Description XP :</td> 
-              <td><input type="text" name="description" id="descriptionXp" size="50" required /></td>
+              <td><textarea name="description" id="editor1" cols="50" rows="10" required /></textarea>
+                <script>
+                          /* Replace the textarea id="editor1" with a CKeditor instance, using default configuration. */
+                  CKEDITOR.replace( 'editor1' );
+
+                </script>
+              </td>
             </tr>
            
             <tr>
@@ -83,7 +118,7 @@ if(isset($_GET['id_xp'])){
         </form>
         
         <caption id="captionXp">Liste des expériences :</caption>
-        <table id="tabXp">
+        <table>
           <thead>
             <th>Titre xp</th>
             <th>Sous-titre xp</th>
@@ -109,7 +144,7 @@ if(isset($_GET['id_xp'])){
         </table>
       </section>
 
-     <footer id="footerXp">
+     <footer>
          <!-- faire le include du footer -->
      </footer>
 	</body>
