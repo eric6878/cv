@@ -1,4 +1,24 @@
 <!DOCTYPE html>
+<?php require 'connexion/connexion.php'; ?>
+
+<?php 
+    $sql = $pdoCV -> query(" SELECT * FROM competences ");
+    $competence = $sql -> fetchAll(); 
+    $sql = $pdoCV -> query(" SELECT * FROM experiences ");
+     $experience = $sql -> fetchAll();
+    $sql = $pdoCV -> query(" SELECT * FROM formations ");
+    $formation = $sql -> fetchAll(); 
+    $sql = $pdoCV -> query(" SELECT * FROM loisirs ");
+    $loisir = $sql -> fetchAll(); 
+     $sql = $pdoCV -> query(" SELECT * FROM portfolio ");
+    $portfolio = $sql -> fetchAll(); 
+    $sql = $pdoCV -> query(" SELECT * FROM titres ");
+    $titre = $sql -> fetchAll(); 
+    $sql = $pdoCV -> query(" SELECT * FROM utilisateurs ");
+    $utilisateur = $sql -> fetchAll(); 
+
+      ?>
+
 <html lang="en">
 
 <head>
@@ -9,7 +29,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Grayscale - Start Bootstrap Theme</title>
+    <title>Eric coudert site CV</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="front/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -21,6 +41,7 @@
 
     <!-- Theme CSS -->
     <link href="front/css/grayscale.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="cssfront/frontstyle.css" />
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -40,8 +61,9 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">
-                    <i class="fa fa-play-circle"></i> <span class="light">Start</span> Bootstrap
+                <a class="navbar-brand page-scroll" href="admin/authentification.php">
+                    <i class="fa fa-play-circle"></i>
+                    <span class="light">Connexion Admin</span> 
                 </a>
             </div>
 
@@ -53,14 +75,24 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll active" href="#">Home</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#download">Download</a>
+                        <a class="page-scroll" href="#">Inspirations</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">À propos</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#">Portfolio</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#downloadCv">CV à télécharger</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
+
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -70,13 +102,16 @@
 
     <!-- Intro Header -->
     <header class="intro">
+    <?php $sql = $pdoCV -> query("SELECT * FROM utilisateurs");
+          $resultat = $sql -> fetch(); ?>
         <div class="intro-body">
             <div class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2">
-                        <h1 class="brand-heading">Grayscale</h1>
-                        <p class="intro-text">A free, responsive, one page Bootstrap theme.
-                            <br>Created by Start Bootstrap.</p>
+                        <h1 class="brand-heading">ID web</h1>
+                        <p class="intro-text"><?php echo $resultat['prenom'] . ' ' . $resultat['nom']; ?>
+                        <br>Intégrateur développeur web
+                        <br>junior</p>
                         <a href="#about" class="btn btn-circle page-scroll">
                             <i class="fa fa-angle-double-down animated"></i>
                         </a>
@@ -90,22 +125,86 @@
     <section id="about" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>About Grayscale</h2>
-                <p>Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
-                <p>This theme features stock photos by <a href="http://gratisography.com/">Gratisography</a> along with a custom Google Maps skin courtesy of <a href="http://snazzymaps.com/">Snazzy Maps</a>.</p>
-                <p>Grayscale includes full HTML, CSS, and custom JavaScript files along with LESS files for easy customization.</p>
+                
+                <h2>À mon propos</h2>
+                
+                <p>Agé de 38 ans, autonome, polyvalent et curieux,<br />
+                j’ai démarré cette activité comme un hobby il y a 1 an,<br />
+                puis ai décidé d'en faire mon métier par passion.</p>
+                    <!--  <p>En effet, après plusieurs années passées dans les domaines de la restauration, de la livraison et du service, il m'a parut nécessaire de prendre un virage professionnel dans une ère numérique qui me semble incontournable aujourd'hui.
+                     </p> -->
+                <p>Concepteur de sites de A à Z ou bien de "frameworks",<br />
+                je fais en sorte que mon code soit propre et optimisé le plus souvent possible.</p>
+
+                <!-- <p>La rigueur, la concentration, le sens logique ainsi que ma capacité d'organisation font partis des fondements qui caractérisent mon travail.</p> -->
+
+                <p>Passionné du web,<br /> je mets à contribution mon sens créatif et artistique à votre service,<br /> dans un domaine qui m'enthousiasme au plus haut point,<br /> convaincu que <a href="#">l'avenir s'écrit en lignes de code..."</a></p>
+           
             </div>
         </div>
     </section>
 
     <!-- Download Section -->
-    <section id="download" class="content-section text-center">
+    <section id="downloadCv" class="content-section text-center">
         <div class="download-section">
             <div class="container">
                 <div class="col-lg-8 col-lg-offset-2">
-                    <h2>Download Grayscale</h2>
-                    <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+                    <h2>Curriculum Vitae</h2>
+                    <br /><br />
+        
+                    <h3>Formation</h3>
+
+                    <!-- <p>Certification d'intégrateur développeur web<br />
+                    - en cours d'acquisition -</p> -->
+
+                    <?php 
+                        $i = 0;
+                        while($i < count($formation)){
+                            if($i > 0){
+                                echo ' / ';
+                            }
+                            echo $formation[$i]['titre_formation'];
+                            $i++;
+                        }
+                    ?>
+
+                    <br /><br /><br />
+
+                    <h3>Compétences numériques</h3>
+
+                    <?php 
+                        $i = 0;
+                        while($i < count($competence)){
+                            if($i > 0){
+                                echo ' / ';
+                            }
+                            echo $competence[$i]['competence'];
+                            $i++;
+                        }
+                    ?>
+
+                    <br /><br /><br />
+
+                    <h3>Expériences</h3>
+
+                    <p>Intrégration d'un site CV dynamique<br />
+                    <a href="#">exemple site 1</a></p>
+                    <p>Intrégration d'un site web type Worpress<br />
+                    <a href="#">exemple site 2</a></p>
+
+                    <?php 
+                        /*$i = 0;
+                        while($i < count($experience)){
+                            if($i > 0){
+                                echo ' / ';
+                            }
+                            echo $experience[$i]['titre_xp'];
+                            $i++;
+                        }*/
+                    ?>
+                    <br />
+                    
+                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">CV à télécharger</a>
                 </div>
             </div>
         </div>
@@ -115,19 +214,28 @@
     <section id="contact" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contact Start Bootstrap</h2>
-                <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-                <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
-                </p>
+                <h2>Contactez-moi</h2>
+                <p><a href="mailto:feedback@startbootstrap.com"><?php echo $resultat['email'] ?></a></p>
+                <p><a href="mailto:feedback@startbootstrap.com"><?php echo $resultat['telephone'] ?></a></p>
+                <form  method="POST">
+                    <label>Votre email</label>
+                    <input class="form form-control" type="email" />
+                    <label>Votre message</label>
+                    <input class="form form-control" type="text" /><br />
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+                <br />
+                <br />
+                <br />
                 <ul class="list-inline banner-social-buttons">
                     <li>
-                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
                     </li>
                     <li>
                         <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
                     </li>
                     <li>
-                        <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                        <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-instagram fa-fw"></i> <span class="network-name">Instagram</span></a>
                     </li>
                 </ul>
             </div>
@@ -139,8 +247,8 @@
 
     <!-- Footer -->
     <footer>
-        <div class="container text-center">
-            <p>Copyright &copy; Your Website 2016</p>
+        <div class="container text-center">           
+            <p>Copyright&copy; Site CV éric coudert 2017</p>           
         </div>
     </footer>
 

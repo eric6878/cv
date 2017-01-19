@@ -30,7 +30,9 @@ if(isset($_GET['deconnexion'])){
 
 ?>
 
+
 <?php
+//Insertion
 if(isset($_POST['titre_loisir'])){ 
     if($_POST['titre_loisir']!= '' && $_POST['description_loisir']!= ''){
 	    
@@ -44,8 +46,11 @@ if(isset($_POST['titre_loisir'])){
     }
 }
 
+//Suppression
+
 if(isset($_GET['id_loisir'])){
-    $sql = 'DELETE FROM loisir WHERE id_loisir = "' . $_GET['id_loisir'] . '"';
+    $eraser = $_GET['id_loisir'];
+    $sql = "DELETE FROM loisirs WHERE id_loisir = '$eraser'";
     $resultat = $pdoCV -> query($sql);
     header('Location: loisir.php');
 }
@@ -64,11 +69,11 @@ if(isset($_GET['id_loisir'])){
   </head>
 
   <body>
-      <header id="headerXp">
+      <header>
       	
         <?php //include("admin_menu.php"); ?> <!-- FAUT CREER LA PAGE MENU -->
 
-        <h1>Page : Loisirs</h1>
+        <h1>Page Loisirs</h1>
      
       </header>
        
@@ -84,12 +89,12 @@ if(isset($_GET['id_loisir'])){
       <form action="loisir.php" method="POST">
      		<table>
      			<tr>
-            	<td>Titre loisir :</td> 
+            	<td>Titre</td> 
               <td><input type="text" name="titre_loisir" size="50" required /></td>
           </tr>
 
           <tr>
-            <td>Description loisir :</td> 
+            <td>Description</td> 
             <td>
               <textarea name="description_loisir" id="editor1" cols="50" rows="10" required /></textarea>  
                 <script>
@@ -106,7 +111,7 @@ if(isset($_GET['id_loisir'])){
 			    </table>
         </form>
         
-        <p>Liste des loisirs :</p>
+        <p>Liste des loisirs</p>
         <table>
           <thead>
             <th>Titre</th>
@@ -119,11 +124,9 @@ if(isset($_GET['id_loisir'])){
           
           <tr>
             <td><?php echo $resultat['titre_loisir']; ?></td>                                 
-            <td><?php echo $resultat['description_loisir']; ?></td>
-            <td><?php echo $resultat['id_loisir']; ?></td>                
-                                           
-            <td><a href="modif_loisir.php?modifier_loisir=<?= $resultat['id_loisir']; ?>">Modifier</a></td> 
-            <td><a href="loisir.php?supprimer_loisir=<?= $resultat['id_loisir']; ?>">Supprimer</a></td>
+            <td><?php echo $resultat['description_loisir']; ?></td>                                      
+            <td><a href="modif_loisir.php?id_loisir=<?= $resultat['id_loisir']; ?>">Modifier</a></td> 
+            <td><a href="loisir.php?id_loisir=<?= $resultat['id_loisir']; ?>">Supprimer</a></td>
           </tr>
        			
             <?php }; ?>

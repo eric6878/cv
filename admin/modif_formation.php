@@ -6,11 +6,11 @@
 	if(isset($_POST['titre_formation'])){
 
 		$titre_formation = addslashes($_POST['titre_formation']);
-		$sous_titre_formation = addslashes($_POST['sous_titre_formation']);
 		$date_formation = addslashes($_POST['date_formation']);
-		$description_formation = addslashes($_POST['description_formation']);
+    $description_formation = addslashes($_POST['description_formation']);
+		$description_formation = addslashes($_POST['id_formation']);
 
-		$pdoCV -> exec(" UPDATE formations SET titre_formation = '$titre_formation', sous_titre_formation = '$sous_titre_formation', date_formation = '$date_formation', description_formation= '$description_formation' WHERE id_formation = '$id_formation' ");
+		$pdoCV -> exec(" UPDATE formations SET titre_formation = '$titre_formation', date_formation = '$date_formation', description_formation= '$description_formation' WHERE id_formation = '$id_formation' ");
 
 		header("location: formation.php");
 		exit();
@@ -40,9 +40,8 @@
 
         <form type="text" action="formation.php" method="POST">
         	<label>Expérience sélectionnée :</label>
-     			<input type="text" name="titre_formation" value="<?= $resultat['titre_xp']; ?>" />
-     			<input type="text" name="sous_titre_formation" value="<?= $resultat['sous_titre_xp']; ?>" />
-          <input type="text" name="date_formation" value="<?= $resultat['date']; ?>" />
+     			<input type="text" name="titre_formation" value="<?= $resultat['titre_formation']; ?>" />
+          <input type="text" name="date_formation" value="<?= $resultat['date_formation']; ?>" />
      			<textarea name="description_formation" id="editor1"><?= $resultat['description_formation']; ?></textarea>
      			
           <script>

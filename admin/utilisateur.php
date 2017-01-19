@@ -15,11 +15,12 @@
 			<nav>
 				<ul>
 					<li><a href="#">Accueil</a></li>
-					<li><a href="a_propos.php">Utilisateurs</a></li>
+					<li><a href="utilisateur.php">Utilisateurs</a></li>
 					<li><a href="competence.php">Compétences</a></li>
 					<li><a href="experience.php">Expériences</a></li>
 					<li><a href="formation.php">Formations</a></li>
-					<li><a href="formation.php">Formations</a></li>
+					<li><a href="titre.php">Titres</a></li>
+					<li><a href="portfolio.php">Portfolio</a></li>
 					<li><a href="loisir.php">Loisirs</a></li>
 					<li><a href="connexion.php">Déconnexion</a></li>
 				</ul>
@@ -34,13 +35,12 @@
 			$resultat = $sql -> fetch();
 			echo '<div class="identite">';
 			echo $resultat['prenom'] . ' ' . $resultat['nom'] . '<br />';
-			echo $resultat['adresse'] . '<br />';
-			echo $resultat['ville'] . '<br />';
-			echo $resultat['code_postal'] . '<br />';
 			echo $resultat['email'] . '<br />';
 			echo $resultat['telephone'] . '<br />';
-			echo $resultat['age'] . ' ans<br />';
-			/*echo $resultat['mdp'] . '<br />';*/
+			echo $resultat['ville'] . '<br />';
+			echo $resultat['code_postal'] . '<br />';
+			/*echo $resultat['mdp'] . '<br />';*/			
+			echo $resultat['age'] . ' ans<br />';			
 			echo $resultat['sexe'] . '<br />';
 			echo $resultat['etat_civil'] . '<br />';
 			/*echo $resultat['pseudo'] . '<br />';

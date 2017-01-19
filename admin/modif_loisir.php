@@ -37,11 +37,11 @@ if(isset($_GET['deconnexion'])){
 
 <?php 
 
-  if(isset($_POST['loisir'])){
-    $loisir = addslashes($_POST['loisir']);
+  if(isset($_POST['titre_loisir'])){
+    $titre_loisir = addslashes($_POST['titre_loisir']);
   	$description_loisir = addslashes($_POST['description_loisir']);
-  	$id_loisir = addslashes($_POST['id_loisir']);
-  	$pdoCV -> exec(" UPDATE loisirs SET loisir = '$loisir' WHERE di_loisir = '$id_loisir' ");
+  	$id_loisir = $_POST['id_loisir'];
+  	$pdoCV -> exec(" UPDATE loisirs SET titre_loisir = '$titre_loisir', description_loisir = '$description_loisir' WHERE id_loisir = '$id_loisir' ");
 
   	header("location: loisir.php");
   		exit();
@@ -52,27 +52,26 @@ if(isset($_GET['deconnexion'])){
 	$id_loisir = $_GET['id_loisir'];
 	$sql = $pdoCV -> query("SELECT * FROM loisirs WHERE id_loisir = '$id_loisir' ");
 	$resultat = $sql -> fetch(); 
-
- 	$sql = $pdoCV->query("SELECT * FROM loisirs");
-	$resultat = $sql->fetch();
 ?>
    
 <html lang="fr">
     <head>  
    	<meta charset="UTF-8" />
     <title>Modifier loisir CV web <?php /*echo $resultat['prenom'] . ' ' . $resultat['nom'];*/ ?></title>
+    <script src="../ckeditor/ckeditor.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
     </head>
 
     <body>
         <header>
-        	<h1>Loisirs : page de modification</h1>
+        	<h1> page de modification Loisirs</h1>
         </header>
             <!-- include "admin_menu.php"; -->
         <section>
-          <form type="submit" action="modif_loisir.php" method="POST">
-          	<label>Compétence sélectionnée :</label>
-     			  <input type="text" name="loisir" value="<?= $resultat['id_loisir']; ?>" />
+          <form action="modif_loisir.php" method="POST">
+          	<label>Loisir sélectionné :</label>
+     			  <input type="text" name="titre_loisir" value="<?= $resultat['titre_loisir']; ?>" />
+            <textarea name="description_loisir"><?= $resultat['description_loisir']; ?></textarea>
      			  <input hidden name="id_loisir" value="<?= $resultat['id_loisir']; ?>" /> 			
      			  <input type="submit" value="Mettre à jour" />
           </form>    

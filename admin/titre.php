@@ -30,13 +30,12 @@ if(isset($_GET['deconnexion'])){
 ?>
 
 
-
 <?php 
 
 //Insertion
 
-if(isset($_POST['portfolio'])){
-	if($_POST['portfolio']!='' && $_POST['titre_portfolio']!='' && $_POST['img_portfolio']!='' && $_POST['description_loisir']){	
+if(isset($_POST['titre'])){
+	if($_POST['titre']!='' && $_POST['logo_titre']!=''){	
 		$titre_portfolio = addslashes($_POST['titre_portfolio']);
 		$img_portfolio = addslashes($_POST['img_portfolio']);
 		$description_portfolio = addslashes($_POST['description_portfolio']);
@@ -67,48 +66,41 @@ if(isset($_GET['id_portfolio'])){
 	
 	<body>
 		<header>
-			<h1>Page Portfolio</h1>
+			<h1>Page Loisirs</h1>
 		</header>
 
 		<section>
 			<?php 
 		
-			$sql = $pdoCV -> query("SELECT * FROM portfolio");
+			$sql = $pdoCV -> query("SELECT * FROM loisirs");
 			$sql -> execute();
-			$nbr_portfolio = $sql -> rowCount();
+			$nbr_titre = $sql -> rowCount();
 		
 		 	?>
 			
-			<p>Il y a <?php echo $nbr_portfolio; ?> compétences dans votre BDD.</p>
+			<p>Il y a <?php echo $nbr_titre; ?> titre(s) dans votre BDD.</p>
 			
-			<form action="portfolio.php" method="POST" name="portfolio">
-				<label>Ajouter un projet au portfolio</label>
-				<input type="text" name="titre_portfolio" required />
-				<!-- <input type="file" name="img_portfolio" /> -->
-				<textarea name="description_portfolio" required></textarea>
-				<script>
-
-              	/* Replace the textarea id="editor1" with a CKeditor instance, using default configuration. */
-          	    CKEDITOR.replace( 'editor1' );
-                </script>
-				<input type="submit" value="valider" /></td>
+			<form action="titre.php" method="POST">
+				<label>Ajouter un titre :</label><br />
+				<input type="text" name="titre_titre" />
+				<input type="files" name="logo_titre" />
+				<input type="submit" value="valider" />
 			</form>	
 			
 			<table>
 			 	<thead>
-			 		<th>projet</th>
-			 		<th>description</th>
-			 		<th>image</th>
+			 		<th>Titre</th>
+			 		<th>logo</th>
 			 		<th>Modification</th>
 			 		<th>Suppression</th>
 			 	</thead>
 			 	<tr>
 			 		<?php while($ligne = $sql -> fetch()){ ?>
 			 		<td>
-			 		<?php echo $ligne['titre_portfolio']; ?>
+			 		<?php echo $ligne['titre_titre']; ?>
 			 		</td>
-			 		<td><a href="modif_portfolio.php?modifier_portfolio=<?= $ligne['id_portfolio']; ?>">Modifier</a></td>
-		 			<td><a href="portfolio.php?supprimer_portfolio=<?= $ligne['id_portfolio']; ?>">Supprimer</a></td>
+			 		<td><a href="modifier_titre.php?modifier_titre=<?= $ligne['id_titre']; ?>">Modifier</a></td>
+		 			<td><a href="titre.php?supprimer_titre=<?= $ligne['id_titre']; ?>">Supprimer</a></td>
 			 	</tr>
 			 		<?php } ?>
 			 </table>

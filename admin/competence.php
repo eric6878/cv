@@ -41,7 +41,7 @@ if(isset($_POST['competence'])){
 		exit();
 	}
 }
-//Suppresion
+//Suppression
 if(isset($_GET['id_competence'])){
 	$eraser = $_GET['id_competence'];
 	$sql = "DELETE FROM competences WHERE id_competence = '$eraser'";
@@ -61,7 +61,7 @@ if(isset($_GET['id_competence'])){
 	
 	<body>
 		<header>
-			<h1>Page : Compétences Numériques</h1>
+			<h1>Page Compétences Numériques</h1>
 		</header>
 
 		<section>

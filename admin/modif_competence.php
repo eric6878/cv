@@ -39,7 +39,7 @@ if(isset($_GET['deconnexion'])){
 
 if(isset($_POST['competence'])){
 	$competence = addslashes($_POST['competence']);
-	$id_competence = addslashes($_POST['id_competence']);
+	$id_competence = $_POST['id_competence'];
 	$pdoCV -> exec(" UPDATE competences SET competence = '$competence' WHERE id_competence = '$id_competence' ");
 
 	header("location: competence.php");
@@ -49,9 +49,6 @@ if(isset($_POST['competence'])){
 	$id_competence = $_GET['id_competence'];
 	$sql = $pdoCV -> query("SELECT * FROM competences WHERE id_competence = '$id_competence' ");
 	$ligne_competence = $sql -> fetch(); 
-
-/* 	$sql = $pdoCV->query("SELECT * FROM utilisateurs");
-	$resultat = $sql->fetch();*/
 ?>
    
 <html lang="fr"><!--  -->
@@ -68,14 +65,14 @@ if(isset($_POST['competence'])){
          
         <section>
 
-        <form type="submit" action="modif_competence.php" method="POST">
+        <form action="modif_competence.php" method="POST">
         	<label>Compétence sélectionnée :</label>
    			<input type="text" name="competence" value="<?= $ligne_competence['competence']; ?>" />
    			<input hidden name="id_competence" value="<?= $ligne_competence['id_competence']; ?>" /> 			
    			<input type="submit" value="Mise à jour" />
         </form>
           
-        <!-- include("admin_menu.php"); --> 
+
 
         </section>
 

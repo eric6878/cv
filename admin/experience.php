@@ -32,18 +32,17 @@ if(isset($_GET['deconnexion'])){
 
 <?php
 if(isset($_POST['titre_xp'])){ // On vérife si on a creer une nouvelle compétence
-    if($_POST['titre_xp']!= '' && $_POST['sous_titre_xp']!= ''  && $_POST['date']!= '' && $_POST['description']!= ''){//si compétence n'est pas vide
+    if($_POST['titre_xp']!= '' && $_POST['date_xp']!= '' && $_POST['description_xp']!= ''){//si compétence n'est pas vide
      $titre_xp = addslashes($_POST['titre_xp']);
-     $sous_titre_xp = addslashes($_POST['sous_titre_xp']);
-     $date = addslashes($_POST['date']);
-     $description = addslashes($_POST['description']);
-     $id_experience = addslashes($_POST['id_experience']);
+     $date_xp = addslashes($_POST['date_xp']);
+     $description_xp = addslashes($_POST['description_xp']);
+     $id_xp = addslashes($_POST['id_xp']);
     
-    $pdoCV->exec(" INSERT INTO experiences VALUES (NULL,'$titre_xp', '$sous_titre_xp' , '$date', '$description') ");
-        header("location:../admin/experience.php");
+    $pdoCV->exec(" INSERT INTO experiences VALUES (NULL,'$titre_xp', '$date_xp', '$description_xp') ");
+        header("location: experience.php");
         exit();
-    }// on ferle le if
-}//on ferme le isset
+    }
+}
 
 if(isset($_GET['id_xp'])){
     $sql = 'DELETE FROM experiences WHERE id_xp = "' . $_GET['id_xp'] . '"';
@@ -65,7 +64,7 @@ if(isset($_GET['id_xp'])){
   </head>
 
   <body>
-      <header id="headerXp">
+      <header>
       	
         <?php //include("admin_menu.php"); ?> <!-- FAUT CREER LA PAGE MENU -->
 
@@ -85,23 +84,18 @@ if(isset($_GET['id_xp'])){
       <form action="experience.php" method="POST">
        		<table>
        			<tr>
-              	<td>Titre XP :</td> 
+              	<td>Titre</td> 
                 <td><input type="text" name="titre_xp" size="50" required /></td>
             </tr>
                 
-            <tr>                        
-              <td>Sous-Titre XP :</td> 
-              <td><input type="text" name="sous_titre_xp" size="50" required /></td>                        
-            </tr>
-           
             <tr>
-              <td>Date XP :</td> 
-              <td><input type="text" name="date" size="50" required /></td>                          
+              <td>Date</td> 
+              <td><input type="text" name="date_xp" size="50" required /></td>                          
             </tr>
 
             <tr>
-              <td>Description XP :</td> 
-              <td><textarea name="description" id="editor1" cols="50" rows="10" required /></textarea>
+              <td>Description</td> 
+              <td><textarea name="description_xp" id="editor1" cols="50" rows="10" required /></textarea>
                 <script>
                           /* Replace the textarea id="editor1" with a CKeditor instance, using default configuration. */
                   CKEDITOR.replace( 'editor1' );
@@ -117,23 +111,21 @@ if(isset($_GET['id_xp'])){
    			  </table>
         </form>
         
-        <caption id="captionXp">Liste des expériences :</caption>
+        <p>Liste des expériences</p>
         <table>
           <thead>
-            <th>Titre xp</th>
-            <th>Sous-titre xp</th>
-            <th>Date xp</th>
-            <th>Description xp</th>
+            <th>Titre</th>
+            <th>Date</th>
+            <th>Description</th>
             <th>Modification</th>
             <th>Suppression</th>
           </thead>                                 
             
             <?php while($resultat = $sql->fetch(PDO::FETCH_ASSOC)){ ?>
           <tr>
-            <td><?php echo $resultat['titre_xp']; ?></td>                 
-            <td><?php echo $resultat['sous_titre_xp']; ?></td>                
-            <td><?php echo $resultat['date']; ?></td>                
-            <td><?php echo $resultat['description']; ?></td>                               
+            <td><?php echo $resultat['titre_xp']; ?></td>                                
+            <td><?php echo $resultat['date_xp']; ?></td>                
+            <td><?php echo $resultat['description_xp']; ?></td>                               
             <td><a href="modif_experience.php?id_xp=<?= $resultat['id_xp']; ?>">Modifier</a></td> 
             <td><a href="experience.php?id_xp=<?= $resultat['id_xp']; ?>">Supprimer</a></td>
           </tr>
