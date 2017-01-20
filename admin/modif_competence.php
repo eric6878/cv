@@ -55,12 +55,14 @@ if(isset($_POST['competence'])){
     <head>  
    	<meta charset="UTF-8" />
     <title>Modifier compétence CV web <?php /*echo $resultat['prenom'] . ' ' . $resultat['nom'];*/ ?></title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../cssAdmin/myfrontstyle.css" />
     </head>
 
     <body>
         <header id="headerXp">
-        	<h1>Compétences : page de modification</h1>
+        	<h1>Page de modification des Compétences</h1>
+
+          <?php include 'navAdmin.php'; ?>
         </header>
          
         <section>

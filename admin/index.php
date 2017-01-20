@@ -36,26 +36,18 @@ if(isset($_GET['deconnexion'])){
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" type="text/css" href="../css/style.css" />
 		<title>Site CV <?php echo $_SESSION['prenom'] . $_SESSION['nom']; ?>- Admin : Accueil</title>
-		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../cssfront/frontstyle.css" />
 	</head>
 	
 	<body>
 		<header>
-				<h1>Espace administrateur du site CV</h1>
-				<nav>
-					<ul>
-						<li><a href="utilisateur.php">Utilisateurs</a></li>
-						<li><a href="experience.php">Expériences</a></li>
-						<li><a href="competence.php">Compétences</a></li>
-						<li><a href="formation.php">Formations</a></li>
-						<li><a href="titre.php">Titres</a></li>
-						<li><a href="loisir.php">Loisirs</a></li>
-						<li><a href="../index.php?deconnexion=oui">Déconnexion</a></li>
-					</ul>
-				</nav>
+				<h1>Accueil Administration du Site CV Éric Coudert</h1>
+
+				<?php include 'navAdmin.php'; ?>
+
 		</header>
 		
-		 <p>Bonjour <b>admin</b> <?php echo $_SESSION['prenom'] . ' ' . $_SESSION['nom']; ?> </p>
+		 <p>Bonjour <b>Admin</b> <?php echo $_SESSION['prenom'] . ' ' . $_SESSION['nom']; ?> </p>
 		
 		<section></section>
 		

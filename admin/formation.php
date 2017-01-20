@@ -58,14 +58,15 @@ if(isset($_GET['id_formation'])){
    	?>
    	<meta charset="UTF-8" />
     <title>Formations CV web <?php echo $resultat['prenom'] .' ' . $resultat['nom']; ?></title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../cssAdmin/myfrontstyle.css" />
     <script src="../ckeditor/ckeditor.js"></script>
   	</head>
 
  	<body> 
     	<header>
-      	<h1>Page : Formations</h1>
-        <?php //include("admin_menu.php"); ?> <!-- FAUT CREER LA PAGE MENU -->
+      	<h1>Page Formations</h1>
+        
+        <?php include 'navAdmin.php'; ?>
       	</header>
        
       	<section>   

@@ -34,7 +34,7 @@ if(isset($_POST['connexion'])){
     <head>  
    	<meta charset="UTF-8" />
     <title>Connexion au site CV <?php echo $resultat['prenom'] . ' ' . $resultat['nom']; ?></title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../cssAdmin/myfrontstyle.css" />
     </head>
 
     <body>

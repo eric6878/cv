@@ -62,12 +62,16 @@ if(isset($_GET['id_portfolio'])){
 	<head>
 		<meta charset="UTF-8" />
 		<title>Portfolio CV web <?= $_POST['prenom'] . $_POST['nom']; ?></title>
-		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../cssAdmin/myfrontstyle.css" />
 	</head>
 	
 	<body>
 		<header>
-			<h1>Page Portfolio</h1>
+			
+			<h1>Page Portfolios</h1>
+
+			<?php include 'navAdmin.php'; ?>
+
 		</header>
 
 		<section>
@@ -79,7 +83,7 @@ if(isset($_GET['id_portfolio'])){
 		
 		 	?>
 			
-			<p>Il y a <?php echo $nbr_portfolio; ?> compétences dans votre BDD.</p>
+			<p>Il y a <?php echo $nbr_portfolio; ?> portfolio(s) dans votre BDD.</p>
 			
 			<form action="portfolio.php" method="POST" name="portfolio">
 				<label>Ajouter un projet au portfolio</label>

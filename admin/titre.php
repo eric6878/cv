@@ -61,7 +61,7 @@ if(isset($_GET['id_portfolio'])){
 	<head>
 		<meta charset="UTF-8" />
 		<title>Portfolio CV web <?= $_POST['prenom'] . $_POST['nom']; ?></title>
-		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../cssAdmin/myfrontstyle.css" />
 	</head>
 	
 	<body>

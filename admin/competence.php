@@ -56,12 +56,14 @@ if(isset($_GET['id_competence'])){
 	<head>
 		<meta charset="UTF-8" />
 		<title>Compétences numériques CV web <?= $_POST['prenom'] . $_POST['nom']; ?></title>
-		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../cssAdmin/myfrontstyle.css" />
 	</head>
 	
 	<body>
 		<header>
 			<h1>Page Compétences Numériques</h1>
+
+			<?php include 'navAdmin.php'; ?>
 		</header>
 
 		<section>

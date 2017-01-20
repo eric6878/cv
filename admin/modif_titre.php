@@ -37,13 +37,13 @@ if(isset($_GET['deconnexion'])){
 
 <?php 
 
-  if(isset($_POST['loisir'])){
-    $titre_loisir = addslashes($_POST['titre_loisir']);
-  	$description_loisir = addslashes($_POST['description_loisir']);
-  	$id_loisir = $_POST['id_loisir'];
-  	$pdoCV -> exec(" UPDATE loisirs SET titre_loisir = '$titre_loisir', description_loisir = '$description_loisir' WHERE id_loisir = '$id_loisir' ");
+  if(isset($_POST['titre'])){
+    $titre_titre = addslashes($_POST['titre_titre']);
+  	$logo_titre = addslashes($_POST['logo_titre']);
+  	$id_titre = $_POST['id_titre'];
+  	$pdoCV -> exec(" UPDATE loisirs SET titre_titre = '$titre_loisir', logo_titre = '$logo_titre' WHERE id_titre = '$id_titre' ");
 
-  	header("location: loisir.php");
+  	header("location: titre.php");
   		exit();
 }
 
@@ -72,13 +72,13 @@ if(isset($_GET['deconnexion'])){
         </header>
 
         <section>
-          <form action="loisir.php" method="POST">
-          	<label>Loisir sélectionné :</label>
-     			  <input type="text" name="titre_loisir" value="<?= $resultat['titre_loisir']; ?>" />
-            <textarea name="description_loisir"><?= $resultat['description_loisir']; ?></textarea>
-     			  <input hidden name="id_loisir" value="<?= $resultat['id_loisir']; ?>" /> 			
-     			  <input type="submit" value="Mettre à jour" />
-          </form>    
+           <form action="modif_loisir.php" method="POST">
+	           <label>Loisir sélectionné :</label>
+			   <input type="text" name="titre_titre" value="<?= $resultat['id_titre']; ?>" />
+			   <input type="files" name="logo_titre" value="<?= $resultat['id_titre']; ?>" />           	  
+			   <input hidden name="id_titre" value="<?= $resultat['id_loisir']; ?>" /> 			
+			   <input type="submit" value="Mettre à jour" />
+	          </form>    
          
         </section>
 

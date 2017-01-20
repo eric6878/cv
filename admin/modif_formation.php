@@ -27,13 +27,15 @@
     <head>  
    	<meta charset="UTF-8" />
     <title>Modifier formation CV web <?php echo $resultat['prenom'] . ' ' . $resultat['nom']; ?></title>
-    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../cssAdmin/myfrontstyle.css" />
     <script src="../ckeditor/ckeditor.js"></script>
     </head>
 
     <body>
         <header>
-        	<h1>Page de modification des Expériences</h1>
+        	<h1>Page de modification des formations</h1>
+
+          <?php include 'navAdmin.php'; ?>
         </header>
          
         <section>
