@@ -69,9 +69,9 @@ if(isset($_POST['competence'])){
 
         <form action="modif_competence.php" method="POST">
         	<label>Compétence sélectionnée :</label>
-   			<input type="text" name="competence" value="<?= $ligne_competence['competence']; ?>" />
-   			<input hidden name="id_competence" value="<?= $ligne_competence['id_competence']; ?>" /> 			
-   			<input type="submit" value="Mise à jour" />
+     			<input type="text" name="competence" value="<?= $ligne_competence['competence']; ?>" />
+     			<input hidden name="id_competence" value="<?= $ligne_competence['id_competence']; ?>" /> 			
+     			<input type="submit" value="Mise à jour" />
         </form>
           
 
