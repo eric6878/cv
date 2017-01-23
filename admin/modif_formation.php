@@ -1,5 +1,35 @@
 <?php require '../connexion/connexion.php'; ?>
 
+<?php
+
+// pour se connecter :
+session_start();
+
+if(isset($_SESSION['connexion']) && $_SESSION['connexion'] == 'Vous êtes connecté !'){
+  $id_utilisateur = $_SESSION['id_utilisateur'];
+  $prenom = $_SESSION['prenom'];
+  $nom = $_SESSION['nom'];
+}
+else{
+  header('location: authentification.php');
+}
+
+
+// pour se deconnecter : 
+
+if(isset($_GET['deconnexion'])){
+  $_SESSION['connexion'] = '';
+  $_SESSION['id_utilisateur'] = '';
+  $_SESSION['prenom'] = '';
+  $_SESSION['nom'] = '';
+
+  unset($_SESSION['connexion']);
+  session_destroy();
+  header('location: ../index.php');
+}
+
+?>
+
 
 <?php 
 //mise à jour
@@ -8,7 +38,7 @@
 		$titre_formation = addslashes($_POST['titre_formation']);
 		$date_formation = addslashes($_POST['date_formation']);
     $description_formation = addslashes($_POST['description_formation']);
-		$description_formation = addslashes($_POST['id_formation']);
+		$id_formation = addslashes($_POST['id_formation']);
 
 		$pdoCV -> exec(" UPDATE formations SET titre_formation = '$titre_formation', date_formation = '$date_formation', description_formation= '$description_formation' WHERE id_formation = '$id_formation' ");
 

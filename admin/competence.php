@@ -77,11 +77,13 @@ if(isset($_GET['id_competence'])){
 			
 			<p>Il y a <?php echo $nbr_competences; ?> compétences dans votre BDD.</p>
 			
-			<form action="competence.php" method="POST">
-				<label>Ajouter une compétence numérique :</label><br />
-				<input type="text" name="competence" />
-				<input type="submit" value="valider" /></td>
-			</form>	
+			<div id="form">
+				<form method="POST">
+					<label>Ajouter une compétence numérique :</label><br />
+					<input type="text" name="competence" />
+					<input type="submit" value="valider" /></td>
+				</form>
+			</div>	
 			
 			<table>
 			 	<thead>
@@ -91,14 +93,17 @@ if(isset($_GET['id_competence'])){
 			 	</thead>
 			 	<tr>
 			 		<?php while($ligne = $sql -> fetch()){ ?>
-			 		<td>
-			 		<?php echo $ligne['competence']; ?>
-			 		</td>
+			 		<td><?php echo $ligne['competence']; ?></td>
 			 		<td><a href="modif_competence.php?id_competence=<?= $ligne['id_competence']; ?>">Modifier</a></td>
 		 			<td><a href="competence.php?id_competence=<?= $ligne['id_competence']; ?>">Supprimer</a></td>
 			 	</tr>
 			 		<?php } ?>
 			 </table>
 		</section>
+
+		<footer>
+			<!-- faire le include du footer -- >
+		</footer>
 	</body>
 </html>
+

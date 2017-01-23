@@ -63,7 +63,11 @@ table {
 
 
 body{
-	background-color: 
+	background-color: #777;
+}
+
+section{
+	text-align: center;
 }
 
 
@@ -91,13 +95,12 @@ h1{
 }
 
 nav{
-	width: 90%;
 	margin: 0 auto;
 	background-color: #000;
 }
 
 nav li{
-	margin-left: 10px,
+	margin-left: 10px;
 	list-style-type: none;
 	display: inline;
 }
@@ -114,10 +117,15 @@ p{
 
 table{
 	margin: 0 auto;
-	background-color: pink;
-	border: 1px solid #000;
+	background-color: #777;
+	border: 1px solid #FFF;
 	border-radius: 4px;
 }
+#form{
+	width: 400px;
+	margin: 0 auto;
+}
+
 
 
 

@@ -38,6 +38,7 @@
     <link href="cssfrontbootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Play" rel="stylesheet">
 
     <!-- Theme CSS -->
     <link href="cssfrontbootstrap/css/grayscale.min.css" rel="stylesheet">
@@ -59,11 +60,14 @@
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    Menu <i class="fa fa-bars"></i>
+                <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="admin/authentification.php">
+                <a class="navbar-brand page-scroll" data-toggle="collapse" href="#btnConnexionAdmin">
                     <i class="fa fa-play-circle"></i>
-                    <span class="light">Connexion Admin</span> 
+                    <span class="light">Admin</span>
+                    <div >
+                        <a href="admin/authentification.php" >Connexion</a>
+                    </div>
                 </a>
             </div>
 

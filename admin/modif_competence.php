@@ -31,7 +31,7 @@ if(isset($_GET['deconnexion'])){
 
 ?>
 
-<!-- MISE A JOUR D'UNE COMPETENCE -->
+
 
 <?php 
 
@@ -45,13 +45,14 @@ if(isset($_POST['competence'])){
 	header("location: competence.php");
 		exit();
 }
+
 //récupération
 	$id_competence = $_GET['id_competence'];
 	$sql = $pdoCV -> query("SELECT * FROM competences WHERE id_competence = '$id_competence' ");
 	$ligne_competence = $sql -> fetch(); 
 ?>
    
-<html lang="fr"><!--  -->
+<html lang="fr">
     <head>  
    	<meta charset="UTF-8" />
     <title>Modifier compétence CV web <?php /*echo $resultat['prenom'] . ' ' . $resultat['nom'];*/ ?></title>
@@ -59,7 +60,7 @@ if(isset($_POST['competence'])){
     </head>
 
     <body>
-        <header id="headerXp">
+        <header>
         	<h1>Page de modification des Compétences</h1>
 
           <?php include 'navAdmin.php'; ?>

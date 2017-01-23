@@ -34,19 +34,16 @@ if(isset($_GET['deconnexion'])){
 <?php 
 
 //mise à jour
+  if(isset($_POST['titre_xp'])){
 
-	if(isset($_POST['titre_xp'])){
-
-		$titre_xp = addslashes($_POST['titre_xp']);
-		$sous_titre_xp = addslashes($_POST['sous_titre_xp']);
-		$date_xp = addslashes($_POST['date_xp']);
+    $titre_xp = addslashes($_POST['titre_xp']);
+    $date_xp = addslashes($_POST['date_xp']);
     $description_xp = addslashes($_POST['description_xp']);
-
-		$pdoCV -> exec("UPDATE experiences SET titre_xp = '$titre_xp', sous_titre_xp = '$sous_titre_xp', date_xp = '$date_xp', description_xp= '$description_xp' WHERE id_xp = '$id_xp' ");
-
-		header("location: experience.php");
-		exit();
-	}
+    $id_xpp = $_POST['id_xp'];
+    $pdoCV -> exec("UPDATE experiences SET titre_xp = '$titre_xp', date_xp = '$date_xp', description_xp = '$description_xp' WHERE id_xp = '$id_xpp' ");
+    header("location: experience.php");
+    exit();
+  }
 
 //récupération
 
@@ -73,12 +70,11 @@ if(isset($_GET['deconnexion'])){
          
         <section>
 
-        <form type="text" action="experience.php" method="POST">
+        <form  action="" method="POST">
         	<label>Expérience sélectionnée :</label>
    			<input type="text" name="titre_xp" value="<?= $resultat['titre_xp']; ?>" />
-   			<input type="text" name="sous_titre_xp" value="<?= $resultat['sous_titre_xp']; ?>" />
    			<input type="text" name="date_xp" value="<?= $resultat['date_xp']; ?>" />
-   			<textarea name="description_xp" id="editor1">
+   			<textarea name="description_xp" id="editor1"> 
           <?= $resultat['description_xp']; ?>
         </textarea>
    			<script>
