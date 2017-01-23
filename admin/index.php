@@ -11,7 +11,7 @@ if(isset($_SESSION['connexion']) && $_SESSION['connexion'] == 'Vous êtes connec
 	$nom = $_SESSION['nom'];
 }
 else{
-	header('location: authentification.php');
+	header('location: ../index.php');
 }
 
 
