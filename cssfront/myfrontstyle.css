@@ -80,9 +80,15 @@ table {
 /***************************************/
 
 
+
+
+
 body{
 	font-family: 'Play', sans-serif;
 }
+
+
+
 
 
 
@@ -90,10 +96,29 @@ body{
 /*****       DEBUT STYLE NAV      ******/
 /***************************************/
 
+#linkConnexionAdmin a:hover{
+	color: #D738E2;
+}
+
 li{
 	list-style-type: none;
 	display: inline;
 }
+
+#navCenter li a:hover{
+	color: #D738E2;
+}
+
+#btnAdmin{
+	background-color: transparent;
+	border: 1px solid #FFF;
+}
+
+#btnAdmin:hover{
+	background-color: transparent;
+	border: 1px solid #D738E2;
+}
+
 
 /***************************************/
 /******        FIN STYLE NAV      ******/
@@ -106,28 +131,178 @@ li{
 
 
 /***************************************/
+/***************************************/
+/***************************************/
 /*****      DEBUT STYLE HEADER    ******/
 /***************************************/
+/***************************************/
+/***************************************/
 
-header .intro-body{
-		padding-bottom: 450px;
+
+/*header .intro-body{
 		background-image: url('../img/imgPetronasTowers.jpg');
 		background-size: cover;
-		background-position: center;
-}
-
-address{
-	font-size: 1.7em;
-}
+		background-position: top;
+}*/
 
 h1{
-	padding-top: 150px;
+	color: #42DCA3;
+	font-weight: bolder;
+	margin-bottom: 30px;
+}
+
+#linkHome{
+	color: #D738E2;
+	font-weight: bold;
+}
+
+.page-scroll a:hover{
+	color: #D738E2;
+}
+
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+
+/***************************************/
+/***************************************/
+/***************************************/
+/*****     DEBUT STYLE HEADER    *******/
+/*****           DU TITRE        *******/
+/*********    INTEGRATEUR     **********/
+/*********     DEVELOPPEUR   ***********/
+/*************             *************/
+/***************************************/
+/***************************************/
+
+#title{
+	width: 700px;
+	height: 200px;
+	margin: 0 auto;
+}
+
+#titleContainer{
+	font-size: 1.3em;
+}
+
+.titleContent1{
+	width: 555px;
+	height: 60px;
+	margin-left: 80px;
+	margin-bottom: 10px;
+}
+
+.titleContent2{
+	width: 555px;
+	height: 60px;
+	margin-left: 80px;
+	margin-bottom: 10px;
+}
+
+.titleContent3{
+	width: 555px;
+	height: 60px;
+	margin-left: 80px;
 }
 
 
+.black{
+	width: 48px;
+	height: 48px;
+	/*border: 1px solid #000;*/
+	transition: 0.2s linear;
+	float: left;
+	text-align: center;
+	line-height: 48px;
+	color: #FFF;
+}
+
+.black:hover{
+	width: 50px;
+	height: 50px;
+	background-color: #D738E2;
+	border-radius: 25px;
+}
+
+.blackOut{
+	width: 48px;
+	height: 48px;
+	/*border: 1px solid #000;*/
+	/*background-color: #000;*/
+	transition: 0.2s linear;
+	float: left;
+	text-align: center;
+	line-height: 48px;
+	color: #FFF;
+}
+
+#black{
+	width: 48px;
+	height: 48px;
+	/*border: 1px solid #000;*/
+	/*background-color: #000;*/
+	transition: 0.2s linear;
+	float: left;
+	text-align: center;
+	line-height: 48px;
+	color: #FFF;
+}
+
+#black:hover{
+	width: 50px;
+	height: 50px;
+	background-color: #D738E2;
+	border-radius: 25px;
+}
+
+#white{
+	width: 48px;
+	height: 48px;
+	/*border: 1px solid #000;*/
+	/*background-color: #000;*/
+	float: left;
+	text-align: center;
+	line-height: 48px;
+	color: #FFF;
+}
+
+.junior{
+	color: #FFF;
+	margin-bottom: 40px;
+	text-align: center;
+	
+}
+
+#btnFleche{
+	color: #D738E2;
+}
+
+
+/***************************************/
+/***************************************/
+/***************************************/
+/*****      FIN STYLE HEADER     *******/
+/*****          DU TITRE         *******/
+/********     INTEGRATEUR      *********/
+/*********    DEVELOPPEUR    ***********/
+/***********               *************/
+/***************************************/
+/***************************************/
+
+
+/***************************************/
+/***************************************/
 /***************************************/
 /******      FIN STYLE HEADER     ******/
 /***************************************/
+/***************************************/
+/***************************************/
+
+
+
+
+
 
 
 
@@ -136,17 +311,65 @@ h1{
 
 
 /***************************************/
-/*****     DEBUT STYLE SECTION    ******/
+/***************************************/
+/***************************************/
+/******      DEBUT STYLE CSS      ******/
+/******      SECTION ABOUT       *******/
+/***************************************/
+/***************************************/
 /***************************************/
 
 
-#cv{
-	padding: 0;
+h2{
+	color: #FFF;
+	font-size: 1.5em;
+	margin-bottom: 50px;
+}
+
+h3{
+	color: #D738E2;
+	font-size: 1.3em;
+	font-weight: bold;
+	margin-bottom: 25px;
+}
+
+
+.download-section p{
+	color: #FFF;
+	font-size: 1.2em;
+	margin: 20px auto;
+}
+
+.parallax-window{
+    min-height: 400px;
+    background: transparent;
 }
 
 
 /***************************************/
-/******     FIN STYLE SECTION     ******/
 /***************************************/
+/***************************************/
+/******       FIN STYLE CSS       ******/
+/******       SECTION ABOUT       ******/
+/***************************************/
+/***************************************/
+/***************************************/
+
+
+#contact p{
+	margin: 10px auto;
+}
+
+#contact label{
+	margin: 5px auto;
+}
+
+#contact input{
+	margin: 5px auto;
+}
+
+p{
+	margin-bottom: 20px;
+}
 
 
