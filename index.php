@@ -232,7 +232,7 @@
                 <p>puis ai décidé d'en faire mon métier par passion.</p>
 
                 <p>Actuellement en formation au métier d'intégrateur développeur,</p>
-                <p>je conçois des sites web from "scratch" ou bien de type "frameworks / CMS"</p>
+                <p>je conçois des sites web from "scratch" ou bien de type "framework / <acronym title="Système de Gestion des Contenus">CMS</acronym>"</p>
                 <p>et fais en sorte que mon code soit propre et optimisé le plus souvent possible.</p>
 
                 <p>Passionné du web,</p>
@@ -249,8 +249,12 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Contactez-moi</h2>
+                <p><?php echo $resultat['prenom'] . ' ' . $resultat['nom']; ?></a></p>
+                <p><i class="fa fa-map-maker fa2"></i> <?php echo $resultat['adresse']; ?></p>
+                <p><?php echo $resultat['ville'] . ' ' . $resultat['code_postal']; ?></p>
+                <p>FRANCE</p>
                 <p><a href="mailto:feedback@startbootstrap.com"><?php echo $resultat['email'] ?></a></p>
-                <p><a href="mailto:feedback@startbootstrap.com"><?php echo $resultat['telephone'] ?></a></p>
+                <p><i class="fa fa-phone fa2"></i> <?php echo $resultat['telephone'] ?></a></p>
                 <form  method="POST">
                     <label>Votre email</label>
                     <input class="form form-control" type="email" />

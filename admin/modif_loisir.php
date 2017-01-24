@@ -1,4 +1,3 @@
-
 <?php require '../connexion/connexion.php'; ?>
 
 <?php
@@ -14,6 +13,7 @@ if(isset($_SESSION['connexion']) && $_SESSION['connexion'] == 'Vous êtes connec
 else{
   header('location: authentification.php');
 }
+
 
 
 // pour se deconnecter : 
@@ -33,11 +33,10 @@ if(isset($_GET['deconnexion'])){
 
 
 
-<!-- MISE A JOUR D'UN LOISIR -->
-
 <?php 
-
-  if(isset($_POST['loisir'])){
+ //MISE A JOUR D'UN LOISIR 
+  if(isset($_POST['titre_loisir'])){
+    
     $titre_loisir = addslashes($_POST['titre_loisir']);
   	$description_loisir = addslashes($_POST['description_loisir']);
   	$id_loisir = $_POST['id_loisir'];
@@ -47,8 +46,7 @@ if(isset($_GET['deconnexion'])){
   		exit();
 }
 
-//récupération
-
+//récupération d'un loisir
 	$id_loisir = $_GET['id_loisir'];
 	$sql = $pdoCV -> query("SELECT * FROM loisirs WHERE id_loisir = '$id_loisir' ");
 	$resultat = $sql -> fetch(); 
@@ -72,7 +70,7 @@ if(isset($_GET['deconnexion'])){
         </header>
 
         <section>
-          <form action="loisir.php" method="POST">
+          <form action="modif_loisir.php" method="POST">
           	<label>Loisir sélectionné :</label>
      			  <input type="text" name="titre_loisir" value="<?= $resultat['titre_loisir']; ?>" />
             <textarea name="description_loisir"><?= $resultat['description_loisir']; ?></textarea>

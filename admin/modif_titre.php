@@ -37,9 +37,9 @@ if(isset($_GET['deconnexion'])){
 
 <?php 
 
-  if(isset($_POST['titre'])){
-    $titre_titre = addslashes($_POST['titre_titre']);
-  	$logo_titre = addslashes($_POST['logo_titre']);
+  if(isset($_POST['titre_titre'])){
+    $titre_titre = $_POST['titre_titre'];
+    $logo_titre = $_POST['logo_titre'];
   	$id_titre = $_POST['id_titre'];
   	$pdoCV -> exec(" UPDATE loisirs SET titre_titre = '$titre_loisir', logo_titre = '$logo_titre' WHERE id_titre = '$id_titre' ");
 
@@ -49,7 +49,7 @@ if(isset($_GET['deconnexion'])){
 
 //récupération
 
-	$id_loisir = $_GET['id_loisir'];
+	$id_loisir = $_GET['id_titre'];
 	$sql = $pdoCV -> query("SELECT * FROM loisirs WHERE id_loisir = '$id_loisir' ");
 	$resultat = $sql -> fetch(); 
 ?>
@@ -76,7 +76,7 @@ if(isset($_GET['deconnexion'])){
 	           <label>Loisir sélectionné :</label>
 			   <input type="text" name="titre_titre" value="<?= $resultat['id_titre']; ?>" />
 			   <input type="files" name="logo_titre" value="<?= $resultat['id_titre']; ?>" />           	  
-			   <input hidden name="id_titre" value="<?= $resultat['id_loisir']; ?>" /> 			
+			   <input hidden name="id_titre" value="<?= $resultat['id_titre']; ?>" /> 			
 			   <input type="submit" value="Mettre à jour" />
 	          </form>    
          

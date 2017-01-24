@@ -66,7 +66,7 @@ if(isset($_GET['id_portfolio'])){
 	
 	<body>
 		<header>
-			<h1>Page Loisirs</h1>
+			<h1>Page Titres</h1>
 		</header>
 
 		<section>
@@ -95,12 +95,11 @@ if(isset($_GET['id_portfolio'])){
 			 		<th>Suppression</th>
 			 	</thead>
 			 	<tr>
-			 		<?php while($ligne = $sql -> fetch()){ ?>
-			 		<td>
-			 		<?php echo $ligne['titre_titre']; ?>
-			 		</td>
-			 		<td><a href="modifier_titre.php?modifier_titre=<?= $ligne['id_titre']; ?>">Modifier</a></td>
-		 			<td><a href="titre.php?supprimer_titre=<?= $ligne['id_titre']; ?>">Supprimer</a></td>
+			 		<?php while($resultat = $sql -> fetch()){ ?>
+			 		<td><?php echo $resultat['titre_titre']; ?></td>
+			 		<td><?php echo $resultat['logo_titre']; ?></td>
+			 		<td><a href="modifier_titre.php?modifier_titre=<?= $resultat['id_titre']; ?>">Modifier</a></td>
+		 			<td><a href="titre.php?supprimer_titre=<?= $resultat['id_titre']; ?>">Supprimer</a></td>
 			 	</tr>
 			 		<?php } ?>
 			 </table>

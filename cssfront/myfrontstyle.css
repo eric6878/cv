@@ -319,7 +319,6 @@ h1{
 /***************************************/
 /***************************************/
 
-
 h2{
 	color: #FFF;
 	font-size: 1.5em;
@@ -330,6 +329,7 @@ h3{
 	color: #D738E2;
 	font-size: 1.3em;
 	font-weight: bold;
+	margin-top: 10px;
 	margin-bottom: 25px;
 }
 
@@ -357,11 +357,11 @@ h3{
 
 
 #contact p{
-	margin: 10px auto;
+	margin: 20px auto;
 }
 
 #contact label{
-	margin: 5px auto;
+	margin: 10px auto;
 }
 
 #contact input{
@@ -370,6 +370,10 @@ h3{
 
 p{
 	margin-bottom: 20px;
+}
+
+.fa fa-map-maker fa2{
+	color: #FFF;
 }
 
 

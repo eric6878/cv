@@ -47,7 +47,7 @@ if(isset($_GET['deconnexion'])){
 	}
 
 //récupération
-		$id_formation = $_GET['id_formation'];
+		$id_formation = $_GET['modifier_formation'];
 		$sql = $pdoCV -> query(" SELECT * FROM formations WHERE id_formation = '$id_formation' ");
 		$resultat = $sql -> fetch(); 
 
