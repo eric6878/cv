@@ -41,7 +41,7 @@ if(isset($_GET['deconnexion'])){
 	
 	<body>
 		<header>
-				<h1>Accueil Administration du Site CV Éric Coudert</h1>
+				<h1>Accueil Administratif du Site CV Éric Coudert</h1>
 
 				<?php include 'navAdmin.php'; ?>
 

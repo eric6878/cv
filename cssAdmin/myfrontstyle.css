@@ -96,12 +96,16 @@ h1{
 
 nav{
 	margin: 0 auto;
+	height: 50px;
+	text-align: center;
 	background-color: #000;
+
 }
 
 nav li{
 	margin-left: 10px;
 	list-style-type: none;
+	line-height: 50px;
 	display: inline;
 }
 

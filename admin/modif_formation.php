@@ -47,7 +47,7 @@ if(isset($_GET['deconnexion'])){
 	}
 
 //récupération
-		$id_formation = $_GET['modifier_formation'];
+		$id_formation = $_GET['id_formation'];
 		$sql = $pdoCV -> query(" SELECT * FROM formations WHERE id_formation = '$id_formation' ");
 		$resultat = $sql -> fetch(); 
 
@@ -70,16 +70,17 @@ if(isset($_GET['deconnexion'])){
          
         <section>
 
-        <form type="text" action="formation.php" method="POST">
+        <form type="text" method="POST">
         	<label>Expérience sélectionnée :</label>
      			<input type="text" name="titre_formation" value="<?= $resultat['titre_formation']; ?>" />
           <input type="text" name="date_formation" value="<?= $resultat['date_formation']; ?>" />
-     			<textarea name="description_formation" id="editor1"><?= $resultat['description_formation']; ?></textarea>
+     			<textarea name="description_formation" id="editor1">
+            <?= $resultat['description_formation']; ?>
+          </textarea>
      			
           <script>
           /* Replace the textarea id="editor1" with a CKeditor instance, using default configuration. */
             CKEDITOR.replace( 'editor1' );
-
           </script>
      			
           <input hidden name="id_formation" value="<?= $resultat['id_formation']; ?>" /> 			

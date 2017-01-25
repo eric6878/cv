@@ -67,7 +67,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-offset-2 col-lg-8">
+            <div class="col-lg-offset-6 col-lg-5">
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div id="navCenter" class="collapse navbar-collapse navbar-main-collapse">
                     <ul class="nav navbar-nav">
@@ -79,19 +79,16 @@
                             <a id="linkHome" class="page-scroll" href="#">Home</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#">Inspirations</a>
+                            <a id="linkCv" class="page-scroll linkNav" href="#cv">À propos</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#about">À propos</a>
+                            <a id="linkPortfolio" class="page-scroll linkNav" href="#about">Portfolio</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#">Portfolio</a>
+                            <a id="linkDownloadCv" class="page-scroll linkNav" href="#downloadCv">CV à télécharger</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#downloadCv">CV à télécharger</a>
-                        </li>
-                        <li>
-                            <a class="page-scroll" href="#contact">Contact</a>
+                            <a id="linkContact" class="page-scroll linkNav" href="#contact">Contact</a>
                         </li>
                     </ul> 
                 </div>
@@ -112,10 +109,10 @@
     <?php $sql = $pdoCV -> query("SELECT * FROM utilisateurs");
           $resultat = $sql -> fetch(); ?>
         <div class="intro-body">
-            <div class="container">
+            <div id="titleContainer" class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2"> 
-                        <div id="titleContainer" class="row">
+                        <div class="row">
                             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                 <h1>
                                     <?= $resultat['prenom'] . ' ' . $resultat['nom']; ?>
@@ -165,7 +162,7 @@
                                 <div class="junior">Junior</div>
                                  
                                 <div>
-                                    <a href="#cv" class="btn btn-circle page-scroll">
+                                    <a href="#cv" id="pictoCircle" class="btn btn-circle page-scroll">
                                         <i id="btnFleche" class="fa fa-angle-double-down animated"></i>
                                     </a>
                                 </div>
@@ -179,66 +176,241 @@
 
     <!-- Download Section -->
     <section id="cv" class="content-section text-center parallax-window" data-parallax="scroll" data-image-src="img/imgPetronasTowers.jpg">
-        <div class="download-section"> 
-        <h2>Compétences numériques</h2>
-            <div class="container">
-                <div class="col-lg-8 col-lg-offset-2">
-                
-                    <h3>Formation</h3>
-
-                    <p>2016- 2017<p>
-
-                    <p>
-                        <?php 
-                            $i = 0;
-                            while($i < count($formation)){
-                                if($i > 0){
-                                    echo ' / ';
-                                }
-                                echo $formation[$i]['titre_formation'];
-                                $i++;
-                            }
-                        ?>
-                    </p>
-
-                    <h3>Intégration &amp; développement</h3>
-
-                    <p>HTML5 / CSS3</p>
-                    <p>JavaScript / JQuery</p>
-                    <p>MySQL / PHP5</p>
-                    <p>Ligne de commande Git / Linux</p>
-
-                    <h3>Projets</h3>
-
-                    <p>Intrégration d'un site CV dynamique</p>
-                    <p><a href="#">exemple site 1</a></p>
-                    <p>Intrégration d'un site web type Worpress</p>
-                    <p><a href="#">exemple site 2</a></p>
+        <div id="imgParallax" class="download-section container">
+            
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <h2>Compétences numériques</h2>
+                    <hr class="small">
                     
-                    <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">CV à télécharger</a>
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-connectdevelop fa-stack-1x text-primary pictoCv"></i>
+                                </span>
+                                
+                                <h3>Intégration &amp; développement</h3>
+                                
+                                <p>HTML5 <i class="fa fa-star fa2 pictoStar"></i>
+                                         <i class="fa fa-star fa2 pictoStar"></i>
+                                         <i class="fa fa-star fa2 pictoStar"></i>
+                                         <i class="fa fa-star-half-empty fa2 pictoStar"></i>
+                                         <i class="fa fa-star-o fa2 pictostar"></i>
+                                </p>
+                                
+                                <p>CSS3 <i class="fa fa-star fa2 pictoStar"></i>
+                                        <i class="fa fa-star fa2 pictoStar"></i>
+                                        <i class="fa fa-star-half-empty fa2 pictoStar"></i>
+                                        <i class="fa fa-star-o fa2"></i>
+                                        <i class="fa fa-star-o fa2"></i>
+                                </p>
+
+                                <p>JavaScript <i class="fa fa-star fa2 pictoStar"></i>
+                                              <i class="fa fa-star-o fa2 "></i>
+                                              <i class="fa fa-star-o fa2"></i>
+                                              <i class="fa fa-star-o fa2"></i>
+                                              <i class="fa fa-star-o fa2"></i>
+                                </p>
+
+                                <p>MySQL <i class="fa fa-star fa2 pictoStar"></i>
+                                         <i class="fa fa-star fa2 pictoStar"></i>
+                                         <i class="fa fa-star fa2 pictoStar"></i>
+                                         <i class="fa fa-star-o fa2"></i>
+                                         <i class="fa fa-star-o fa2"></i>
+                            
+
+                                <p>PHP5 <i class="fa fa-star fa2 pictoStar"></i>
+                                        <i class="fa fa-star fa2 pictoStar"></i>
+                                        <i class="fa fa-star-half-empty fa2 pictoStar"></i>
+                                        <i class="fa fa-star-o fa2"></i>
+                                        <i class="fa fa-star-o fa2"></i>
+                                </p>
+                                
+                                <p>Commande Git / Linux <i class="fa fa-star fa2 pictoStar"></i>
+                                                        <i class="fa fa-star-o fa2"></i>
+                                                        <i class="fa fa-star-o fa2"></i>
+                                                        <i class="fa fa-star-o fa2"></i>
+                                                        <i class="fa fa-star-o fa2"></i>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-laptop fa-stack-1x text-primary pictoCv"></i>
+                                </span>
+                                
+                                <h3>Frameworks &amp; <acronym title="Système de gestion de contenu">CMS</acronym></h3>
+                                
+                                <p>Bootstrap 3 <i class="fa fa-star fa2 pictoStar"></i>
+                                               <i class="fa fa-star fa2 pictoStar"></i>
+                                               <i class="fa fa-star fa2 pictoStar"></i>
+                                               <i class="fa fa-star-o fa2"></i>
+                                               <i class="fa fa-star-o fa2"></i>
+                                </p>
+                                
+                                <p>Wordpress <i class="fa fa-star fa2 pictoStar"></i>
+                                        <i class="fa fa-star-half-empty fa2 pictoStar"></i>
+                                        <i class="fa fa-star-o fa2"></i>
+                                        <i class="fa fa-star-o fa2"></i>
+                                        <i class="fa fa-star-o fa2"></i>
+                                </p>
+                                
+                                <p>Framework W <i class="fa fa-star fa2 pictoStar"></i>
+                                        <i class="fa fa-star-o fa2"></i>
+                                        <i class="fa fa-star-o fa2"></i>
+                                        <i class="fa fa-star-o fa2"></i>
+                                        <i class="fa fa-star-o fa2"></i>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-envira fa-stack-1x text-primary pictoCv"></i>
+                                </span>
+                                
+                                <h3>Web Design</h3>
+                                
+                                <p>InDesign <i class="fa fa-star fa2 pictoStar"></i>
+                                            <i class="fa fa-star fa2 pictoStar"></i>
+                                            <i class="fa fa-star-o fa2"></i>
+                                            <i class="fa fa-star-o fa2"></i>
+                                            <i class="fa fa-star-o fa2"></i>
+                                </p>
+                                
+                                <p>Photoshop CC <i class="fa fa-star fa2 pictoStar"></i>
+                                                <i class="fa fa-star-half-empty fa2 pictoStar"></i>
+                                                <i class="fa fa-star-o fa2"></i>
+                                                <i class="fa fa-star-o fa2"></i>
+                                                <i class="fa fa-star-o fa2"></i>
+                                </p>
+
+                                
+                                <p>Gimp <i class="fa fa-star fa2 pictoStar"></i>
+                                        <i class="fa fa-star fa2 pictoStar"></i>
+                                        <i class="fa fa-star-o fa2"></i>
+                                        <i class="fa fa-star-o fa2"></i>
+                                        <i class="fa fa-star-o fa2"></i>
+                                </p>
+
+                                <p>Krita <i class="fa fa-star fa2 pictoStar"></i>
+                                         <i class="fa fa-star fa2 pictoStar"></i>
+                                         <i class="fa fa-star-o fa2"></i>
+                                         <i class="fa fa-star-o fa2"></i>
+                                         <i class="fa fa-star-o fa2"></i>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-3 col-sm-6">
+                            <div class="service-item">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-eye fa-stack-1x text-primary pictoCv"></i>
+                                </span>
+                               
+                                <h3>Veille technologique</h3>
+                                
+                                <p>Symfony</p>
+                                <p>Bootstrap 4</p>
+                                <p>PHP7</p>
+                            </div>
+                        </div>
+                    </div>         
                 </div>
             </div>
-        </div>
+            
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                <hr class="small">
+                    <div id="blockFormation" class="container">   
+                        <div class="row">          
+                            <div class="col-lg-6 formation">
+                                <div class="service-item">
+                                    <span class="fa-stack fa-4x">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-info-circle fa-stack-1x text-primary pictoCv"></i>
+                                    </span>
+                                    
+                                    <h3>Formation</h3>
+                                    
+                                    <p>2016- 2017<p>
+                                    
+                                    <p>
+                                        <span id="titreFormation">
+                                            <?php 
+                                                $i = 0;
+                                                while($i < count($formation)){
+                                                    if($i > 0){
+                                                        echo ' / ';
+                                                    }
+                                                    echo $formation[$i]['titre_formation'];
+                                                    $i++;
+                                                }
+                                            ?>
+                                        </span>
+                                    </p>
+                                    
+                                    <p>Le PoleS, Grande École du Numérique</p>
+                                    <p>Formation de 10 mois</p>
+                                    <p>Villeneuve-la-Garenne</p>
+                                </div>
+                            </div>
+                                   
+                            <div class="col-lg-6 formation">
+                                <div class="service-item">
+                                    <span class="fa-stack fa-4x">
+                                        <i class="fa fa-circle fa-stack-2x"></i>
+                                        <i class="fa fa-briefcase fa-stack-1x text-primary pictoCv"></i>
+                                    </span>
+                                
+                                    <h3>Projets</h3>
+                                    
+                                    <p>Intrégration d'un site CV dynamique</p>
+                                    <p><a href="#">exemple site 1</a></p>
+                                    <p>Intrégration d'un site type Worpress</p>
+                                    <p><a href="#">exemple site 2</a></p>
+                                </div>
+                            </div> 
+                        
+                        </div> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
+                    <hr class="small">
+                </div>
+            </div> 
     </section>
 
      <!-- About Section -->
     <section id="about" class="container content-section text-center">
         <div class="row">
-            <div id="about" class="col-lg-8 col-lg-offset-2">
+            <div id="aboutRow" class="col-lg-8 col-lg-offset-2">
                 
                 <h2>À propos de moi...</h2>
             
-                <p>Agé de 38 ans, autonome, polyvalent et curieux, j’ai démarré cette activité comme un hobby en 2015,</p>
+                <p>Agé de 38 ans, autonome, polyvalent et curieux,</p>
+                <p>j’ai démarré cette activité comme un hobby en 2016,</p>
                 <p>puis ai décidé d'en faire mon métier par passion.</p>
 
                 <p>Actuellement en formation au métier d'intégrateur développeur,</p>
-                <p>je conçois des sites web from "scratch" ou bien de type "framework / <acronym title="Système de Gestion des Contenus">CMS</acronym>"</p>
+                <p>je conçois des sites web de A à Z ou bien de type "framework / <acronym title="Système de Gestion des Contenus">CMS</acronym>",</p>
                 <p>et fais en sorte que mon code soit propre et optimisé le plus souvent possible.</p>
 
                 <p>Passionné du web,</p>
-                <P>je mets à contribution mon sens créatif et artistique à votre service,</p>
-                <p>dans un domaine qui m'enthousiasme au plus haut point,</p>
-                <p>convaincu que <a href="#">l' avenir s'écrit en lignes de code</a>..."</p>
+                <P>je mets à contribution mon sens créatif et artistique<p>
+                <p>au service de vos futurs projets numériques,</p>
+                <p>convaincu que <a href="#">l' avenir s'écrit en lignes de code</a>...</p>
            
             </div>
         </div>
@@ -248,13 +420,13 @@
     <section id="contact" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>Contactez-moi</h2>
+                <h2>Contact</h2>
                 <p><?php echo $resultat['prenom'] . ' ' . $resultat['nom']; ?></a></p>
-                <p><i class="fa fa-map-maker fa2"></i> <?php echo $resultat['adresse']; ?></p>
+                <p><i class="fa fa-map-marker fa2 pictoContact"></i> <?php echo $resultat['adresse']; ?></p>
                 <p><?php echo $resultat['ville'] . ' ' . $resultat['code_postal']; ?></p>
-                <p>FRANCE</p>
-                <p><a href="mailto:feedback@startbootstrap.com"><?php echo $resultat['email'] ?></a></p>
-                <p><i class="fa fa-phone fa2"></i> <?php echo $resultat['telephone'] ?></a></p>
+                <p><i class="fa fa-globe fa2 pictoContact"></i> FRANCE</p>
+                <p><i class="fa fa-envelope-o fa2 pictoContact"></i> <a href="mailto:feedback@startbootstrap.com"><?php echo $resultat['email'] ?></a></p>
+                <p><i class="fa fa-phone fa2 pictoContact"></i> <?php echo $resultat['telephone'] ?></a></p>
                 <form  method="POST">
                     <label>Votre email</label>
                     <input class="form form-control" type="email" />

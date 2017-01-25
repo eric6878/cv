@@ -76,8 +76,12 @@ if(isset($_GET['id_formation'])){
 		    $nbr_formations = $sql -> rowCount(); ?>
     
       		<p>Il y a <?php echo $nbr_formations; ?> formation(s) dans votre BDD.</p>
-		        <form action="" method="POST">   
+		        <form method="POST">   
 		       		<table>
+			       		<thead>
+			       			<th></th>
+			       			<th>Insérer une nouvelle formation :</th>
+			       		</thead>
 		       			<tr>
 			              	<td>Titre :</td> 
 			                <td><input type="text" name="titre_formation" size="50" required /></td>
@@ -122,11 +126,11 @@ if(isset($_GET['id_formation'])){
 		            <td><?php echo $resultat['titre_formation']; ?></td>                                
 		            <td><?php echo $resultat['date_formation']; ?></td>                
 		            <td><?php echo $resultat['description_formation']; ?></td>                               
-		            <td><a href="modif_formation.php?modifier_formation=<?= $resultat['id_formation']; ?>">Modifier</a></td> 
-		            <td><a href="formation.php?supprimer_formation=<?= $resultat['id_formation']; ?>">Supprimer</a></td>
+		            <td><a href="modif_formation.php?id_formation=<?= $resultat['id_formation']; ?>">Modifier</a></td> 
+		            <td><a href="formation.php?id_formation=<?= $resultat['id_formation']; ?>">Supprimer</a></td>
 		          </tr>
 		       			
-		            <?php };?>
+		            <?php }; ?>
 		        </table>
       </section>
 

@@ -10,11 +10,13 @@
 	
 	<body>
 		<header>
-			<h1>Espace administratif du site CV</h1>
+			<h1>Profil Admin du site CV Éric Coudert</h1>
+
+			<?php include 'navAdmin.php'; ?>
 			
 			<p>Bienvenue admin Eric coudert</p>
 
-			<?php include 'navAdmin.php'; ?>
+			
 		</header>
 
 		<div>
