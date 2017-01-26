@@ -86,15 +86,17 @@ if(isset($_GET['id_portfolio'])){
 			<p>Il y a <?php echo $nbr_portfolio; ?> portfolio(s) dans votre BDD.</p>
 			
 			<form action="portfolio.php" method="POST" name="portfolio">
-				<label>Ajouter un projet au portfolio</label>
+				<label>Ajouter un projet au portfolio</label><br />
 				<input type="text" name="titre_portfolio" required />
 				<!-- <input type="file" name="img_portfolio" /> -->
-				<textarea name="description_portfolio" required></textarea>
+				<label>Description</label><br :>
+				<textarea name="description_portfolio" id="editor1" cols="50" rows="5" required></textarea>
+				
 				<script>
-
               	/* Replace the textarea id="editor1" with a CKeditor instance, using default configuration. */
           	    CKEDITOR.replace( 'editor1' );
                 </script>
+				
 				<input type="submit" value="valider" /></td>
 			</form>	
 			

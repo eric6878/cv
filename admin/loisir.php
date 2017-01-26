@@ -77,17 +77,18 @@ if(isset($_GET['id_loisir'])){
      
       </header>
        
-      <section>
-
-        <?php $sql = $pdoCV -> query("SELECT * FROM loisirs");
-  		    $sql -> execute();
-  		    $nbr_loisirs = $sql -> rowCount(); ?>
+      <?php $sql = $pdoCV -> query("SELECT * FROM loisirs");
+		    $sql -> execute();
+		    $nbr_loisirs = $sql -> rowCount(); ?>
       
     
       <p>Il y a <?php echo $nbr_loisirs; ?> loisir(s) dans votre BDD.</p>
 
       <form action="loisir.php" method="POST">
      		<table>
+        <thead>
+          Insérer un nouveau loisir :
+        </thead>
      			<tr>
             	<td>Titre</td> 
               <td><input type="text" name="titre_loisir" size="50" required /></td>
@@ -96,11 +97,7 @@ if(isset($_GET['id_loisir'])){
           <tr>
             <td>Description</td> 
             <td>
-              <textarea name="description_loisir" id="editor1" cols="50" rows="10" required /></textarea>  
-                <script>
-                  /* Replace the textarea id="editor1" with a CKeditor instance, using default configuration. */
-                  CKEDITOR.replace( 'editor1' );
-                </script>          
+              <textarea name="description_loisir" cols="50" rows="10" required /></textarea>            
             </td>
           </tr>
          
@@ -133,7 +130,6 @@ if(isset($_GET['id_loisir'])){
      
           </tr> 
         </table>
-      </section>
 
      <footer>
          <!-- faire le include du footer -->

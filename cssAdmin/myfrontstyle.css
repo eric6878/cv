@@ -63,11 +63,7 @@ table {
 
 
 body{
-	background-color: #777;
-}
-
-section{
-	text-align: center;
+	background-color: lightblue;
 }
 
 
@@ -88,15 +84,18 @@ section{
 /***************************************************************/
 /***************************************************************/
 
+header{
+	background-color: #777;
+}
 
 h1{
 	text-align: center;
-	background-color: grey;
+	margin: 0 auto;
 }
 
 nav{
 	margin: 0 auto;
-	height: 50px;
+	height: 100px;
 	text-align: center;
 	background-color: #000;
 
@@ -105,29 +104,65 @@ nav{
 nav li{
 	margin-left: 10px;
 	list-style-type: none;
-	line-height: 50px;
+	line-height: 100px;
 	display: inline;
 }
 
 nav li a{
 	text-decoration: none;
 	text-align: center;
+	font-size: 1.2em;
 	color: #FFF;
+	transition: 0.5s;
+}
+
+nav li a:hover{
+	text-decoration: none;
+	text-align: center;
+	font-size: 1.2em;
+	color: #D738E2;
 }
 
 p{
 	text-align: center;
+	font-size: 1.2em;
+	font-weight: bolder;
+}
+
+form{
+	width: 600px;
+	margin: 10px auto;
+	text-align: center;
 }
 
 table{
+	width: 600px;
 	margin: 0 auto;
+	text-align: center;
 	background-color: #777;
 	border: 1px solid #FFF;
 	border-radius: 4px;
 }
-#form{
-	width: 400px;
-	margin: 0 auto;
+
+thead{
+	background-color: #D738E2;
+}
+
+td{
+	border: 1px solid #FFF;
+}
+
+label{
+	margin-top: 10px;
+}
+
+input{
+	margin-top: 10px;
+}
+
+
+input{
+	margin-bottom: 20px;
 }
 
 

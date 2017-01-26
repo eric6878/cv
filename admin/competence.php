@@ -77,13 +77,12 @@ if(isset($_GET['id_competence'])){
 			
 			<p>Il y a <?php echo $nbr_competences; ?> compétences dans votre BDD.</p>
 			
-			<div id="form">
+
 				<form method="POST">
 					<label>Ajouter une compétence numérique :</label><br />
 					<input type="text" name="competence" />
 					<input type="submit" value="valider" /></td>
 				</form>
-			</div>	
 			
 			<table>
 			 	<thead>

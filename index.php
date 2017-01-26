@@ -67,7 +67,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-offset-6 col-lg-5">
+            <div class="col-lg-offset-5 col-lg-6">
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div id="navCenter" class="collapse navbar-collapse navbar-main-collapse">
                     <ul class="nav navbar-nav">
@@ -79,13 +79,16 @@
                             <a id="linkHome" class="page-scroll" href="#">Home</a>
                         </li>
                         <li>
-                            <a id="linkCv" class="page-scroll linkNav" href="#cv">À propos</a>
+                            <a id="linkXpNum" class="page-scroll linkNav" href="#xpNum">XP numérique</a>
                         </li>
                         <li>
-                            <a id="linkPortfolio" class="page-scroll linkNav" href="#about">Portfolio</a>
+                            <a id="linkPortfolio" class="page-scroll linkNav" href="#">Portfolio</a>
                         </li>
                         <li>
                             <a id="linkDownloadCv" class="page-scroll linkNav" href="#downloadCv">CV à télécharger</a>
+                        </li>
+                        <li>
+                            <a id="linkCv" class="page-scroll linkNav" href="#about">À propos</a>
                         </li>
                         <li>
                             <a id="linkContact" class="page-scroll linkNav" href="#contact">Contact</a>
@@ -175,7 +178,7 @@
     </header>
 
     <!-- Download Section -->
-    <section id="cv" class="content-section text-center parallax-window" data-parallax="scroll" data-image-src="img/imgPetronasTowers.jpg">
+    <section id="xpNum" class="content-section text-center">
         <div id="imgParallax" class="download-section container">
             
             <div class="row">
@@ -216,7 +219,7 @@
 
                                 <p>MySQL <i class="fa fa-star fa2 pictoStar"></i>
                                          <i class="fa fa-star fa2 pictoStar"></i>
-                                         <i class="fa fa-star fa2 pictoStar"></i>
+                                         <i class="fa fa-star-half-empty fa2 pictoStar"></i>
                                          <i class="fa fa-star-o fa2"></i>
                                          <i class="fa fa-star-o fa2"></i>
                             
@@ -329,7 +332,6 @@
             
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
-                <hr class="small">
                     <div id="blockFormation" class="container">   
                         <div class="row">          
                             <div class="col-lg-6 formation">
@@ -393,7 +395,7 @@
     </section>
 
      <!-- About Section -->
-    <section id="about" class="container content-section text-center">
+    <section id="about" class="container content-section text-center parallax-window" data-parallax="scroll" data-image-src="img/imgPetronasTowers.jpg">
         <div class="row">
             <div id="aboutRow" class="col-lg-8 col-lg-offset-2">
                 

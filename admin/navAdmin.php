@@ -9,7 +9,7 @@
 		<li><a href="formation.php">Formations</a></li>
 		<li><a href="portfolio.php">Portfolio</a></li>
 		<li><a href="loisir.php">Loisirs</a></li>
-		<li><a href="formation.php">titres</a></li>
+		<li><a href="formation.php">Titres</a></li>
 		<li><a href="../index.php?action=deconnexion">Déconnexion...</a></li>
 	</ul>
 </nav>

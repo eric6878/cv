@@ -61,12 +61,10 @@ if(isset($_POST['competence'])){
 
     <body>
         <header>
-        	<h1>Page de modification des Compétences</h1>
+        	<h1>Page de Modification des Compétences</h1>
 
           <?php include 'navAdmin.php'; ?>
         </header>
-         
-        <section>
 
         <form action="modif_competence.php" method="POST">
         	<label>Compétence sélectionnée :</label>
@@ -74,14 +72,10 @@ if(isset($_POST['competence'])){
      			<input hidden name="id_competence" value="<?= $ligne_competence['id_competence']; ?>" /> 			
      			<input type="submit" value="Mise à jour" />
         </form>
-          
 
-
-        </section>
-
-       <footer id="footerXp">
-           <!-- faire le include du footer -->
-       </footer>
+        <footer>
+             <!-- faire le include du footer -->
+        </footer>
 	</body>
 </html>
 
