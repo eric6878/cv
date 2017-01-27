@@ -27,11 +27,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Site web CV d'intégrateur développeur  éric coudert">
-    <meta name="author" content="">
+    <meta name="author" content="Curriculum Vitae éric coudert intégrateur développeur">
 
     <title>Eric Coudert site CV</title>
 
     <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" type="text/css" href="cssfront/printstyle.css" media="print" />
     <link href="cssfrontbootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
@@ -55,68 +56,65 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
+
+    <!-- Intro Header -->
+   
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container-fluid">
-            <div class="col-lg-1">
-                <a id="btnAdmin" class="btn btn-primary" data-toggle="collapse" href="#linkConnexionAdmin" aria-expanded="false" aria-controls="collapseExample">
-                Admin
-                </a>
-                <div class="collapse" id="linkConnexionAdmin">
-                    <a href="admin/authentification.php">Connexion</a>
-                </div>
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+
+                <a href="#btnConnexionAdmin"><i class="fa fa-play-circle btnAdmin" data-toggle="collapse" href="#btnConnexionAdmin" aria-expanded="false" aria-controls="linkConnexionAdmin"></i></a> <span class="light"></span>Admin
+                <div class="collapse" id="btnConnexionAdmin">
+                    <div class="card card-block">
+                      <a id="linkConnexionAdmin" href="admin/authentification.php">Connexion</a>  
+                    </div>
+                </div>            
             </div>
 
-            <div class="col-lg-offset-5 col-lg-6">
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div id="navCenter" class="collapse navbar-collapse navbar-main-collapse">
-                    <ul class="nav navbar-nav">
-                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                        <li class="hidden">
-                            <a href="#page-top"></a>
-                        </li>
-                        <li>
-                            <a id="linkHome" class="page-scroll" href="#">Home</a>
-                        </li>
-                        <li>
-                            <a id="linkXpNum" class="page-scroll linkNav" href="#xpNum">XP numérique</a>
-                        </li>
-                        <li>
-                            <a id="linkPortfolio" class="page-scroll linkNav" href="#">Portfolio</a>
-                        </li>
-                        <li>
-                            <a id="linkDownloadCv" class="page-scroll linkNav" href="#downloadCv">CV à télécharger</a>
-                        </li>
-                        <li>
-                            <a id="linkCv" class="page-scroll linkNav" href="#about">À propos</a>
-                        </li>
-                        <li>
-                            <a id="linkContact" class="page-scroll linkNav" href="#contact">Contact</a>
-                        </li>
-                    </ul> 
-                </div>
-            </div><!-- /.navbar-collapse -->
-
-            <!-- <div class="input-group col-lg-2">
-              <input type="text" class="form-control" placeholder="Search for...">
-              <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button">Go!</button>
-              </span>
-            </div> -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul id="navCenter" class="nav navbar-nav navbar-text-right">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll active" href="#">Home</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#xpNum">Numérique</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">À propos</a>
+                    </li>
+                    <!-- <li>
+                        <a class="page-scroll" href="#">CV à télécharger</a>
+                    </li> -->
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
         <!-- /.container -->
     </nav>
-
-    <!-- Intro Header -->
-    <header class="intro" class="parallax-window" data-parallax="scroll" data-image-src="img/imgPetronasTowers.jpg">
+    <header id="headerBackground" class="intro">
     <?php $sql = $pdoCV -> query("SELECT * FROM utilisateurs");
           $resultat = $sql -> fetch(); ?>
-        <div class="intro-body">
+        <div id="titleBlock" class="intro-body">
             <div id="titleContainer" class="container">
                 <div class="row">
                     <div class="col-md-8 col-md-offset-2"> 
                         <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div id="titleCenter" class="col-lg-12 col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-12">
                                 <h1>
                                     <?= $resultat['prenom'] . ' ' . $resultat['nom']; ?>
                                 </h1>
@@ -161,18 +159,19 @@
                                         <div class="blackOut"></div>
                                     </div>
                                 </div>
+
+                                <div id="titleXs">Intégrateur développeur web</div>
                                 
                                 <div class="junior">Junior</div>
-                                 
-                                <div>
-                                    <a href="#cv" id="pictoCircle" class="btn btn-circle page-scroll">
-                                        <i id="btnFleche" class="fa fa-angle-double-down animated"></i>
-                                    </a>
-                                </div>
+                                <a href="#xpNum" id="pictoCircle" class="btn btn-circle page-scroll">
+                                    <i id="btnFleche" class="fa fa-angle-double-down animated"></i>
+                                </a>
+                                </div>       
                             </div>
                         </div>
                     </div>
                 </div>
+                <img src="img/pictoGitHub.ico" alt="Icone GitHub" />
             </div>
         </div>
     </header>
@@ -181,16 +180,15 @@
     <section id="xpNum" class="content-section text-center">
         <div id="imgParallax" class="download-section container">
             
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1">
+            <div class="row parallax">
+                <div class="col-lg-10 col-lg-offset-1 parallax-window" data-parallax="scroll" data-image-src="img/imgSpaceEarth.jpg">
                     <h2>Compétences numériques</h2>
-                    <hr class="small">
                     
                     <div class="row">
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-circle-thin fa-stack-2x"></i>
                                     <i class="fa fa-connectdevelop fa-stack-1x text-primary pictoCv"></i>
                                 </span>
                                 
@@ -231,7 +229,7 @@
                                         <i class="fa fa-star-o fa2"></i>
                                 </p>
                                 
-                                <p>Commande Git / Linux <i class="fa fa-star fa2 pictoStar"></i>
+                                <p>Git / Linux <i class="fa fa-star fa2 pictoStar"></i>
                                                         <i class="fa fa-star-o fa2"></i>
                                                         <i class="fa fa-star-o fa2"></i>
                                                         <i class="fa fa-star-o fa2"></i>
@@ -251,7 +249,7 @@
                                 
                                 <p>Bootstrap 3 <i class="fa fa-star fa2 pictoStar"></i>
                                                <i class="fa fa-star fa2 pictoStar"></i>
-                                               <i class="fa fa-star fa2 pictoStar"></i>
+                                               <i class="fa fa-star-half-empty fa2 pictoStar"></i>
                                                <i class="fa fa-star-o fa2"></i>
                                                <i class="fa fa-star-o fa2"></i>
                                 </p>
@@ -377,7 +375,7 @@
                                     
                                     <p>Intrégration d'un site CV dynamique</p>
                                     <p><a href="#">exemple site 1</a></p>
-                                    <p>Intrégration d'un site type Worpress</p>
+                                    <p>Intrégration d'un site Worpress</p>
                                     <p><a href="#">exemple site 2</a></p>
                                 </div>
                             </div> 
@@ -385,17 +383,68 @@
                         </div> 
                     </div>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1">
-                    <hr class="small">
-                </div>
             </div> 
     </section>
 
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+            <div class="row">
+                <div class=" col-lg-4 col-lg-offset-4 col-xs-12"> 
+                    <div class="containerImage">
+                        <div id="imgPortfolio1" class="imgPortfolio"></div>
+                        <div id="imgPortfolio2" class="imgPortfolio"></div>
+                        <div id="imgPortfolio3" class="imgPortfolio"></div>
+                        <div class="phantom"></div>
+                        <div id="imgPortfolio4" class="imgPortfolio"></div> 
+                        <div id="imgPortfolio5" class="imgPortfolio"></div>
+                        <div id="imgPortfolio6" class="imgPortfolio"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+                    <!-- carousel -->
+
+                    <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="carousel-item active">
+                                <img class="d-block img-fluid" src="img/imgPetronasTowers.jpg" alt="First slide">
+                            </div>
+                           
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid" src="..." alt="Second slide">
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <img class="d-block img-fluid" src="..." alt="Third slide">
+                            </div>    
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div> -->
+                </div>
+            </div>
+     
+            </div>
+        </div>
+    </section>
+
      <!-- About Section -->
-    <section id="about" class="container content-section text-center parallax-window" data-parallax="scroll" data-image-src="img/imgPetronasTowers.jpg">
+    <section id="about" class="container content-section text-center parallax-window" data-parallax="scroll" data-image-src="img/imgMoon4.jpg">
         <div class="row">
             <div id="aboutRow" class="col-lg-8 col-lg-offset-2">
                 
@@ -412,7 +461,7 @@
                 <p>Passionné du web,</p>
                 <P>je mets à contribution mon sens créatif et artistique<p>
                 <p>au service de vos futurs projets numériques,</p>
-                <p>convaincu que <a href="#">l' avenir s'écrit en lignes de code</a>...</p>
+                <p>convaincu que <a href="#">"l'avenir s'écrit en lignes de code..."</a></p>
            
             </div>
         </div>
@@ -460,7 +509,7 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">           
-            <p>Copyright&copy; Site CV éric coudert 2017</p>           
+            <p>Copyright&copy;2017 Site CV éric coudert</p>           
         </div>
     </footer>
 
@@ -468,11 +517,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="parallax/parallax.js"></script>
 
-    <!-- jQuery -->
-    <script src="cssfrontbootstrap/vendor/jquery/jquery.js"></script>
+  
+
+
+<script src="vendor/jquery/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="cssfrontbootstrap/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
@@ -486,3 +538,60 @@
 </body>
 
 </html>
+    <!-- <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div id="xxx" class="row container-fluid">
+            <div class="col-lg-1 col-xs-2">
+                <a id="btnAdmin" class="btn btn-primary" data-toggle="collapse" href="#linkConnexionAdmin" aria-expanded="false" aria-controls="collapseExample">
+                Admin
+                </a>
+                <div class="collapse" id="linkConnexionAdmin">
+                    <a href="admin/authentification.php">Connexion</a>
+                </div>
+            </div>
+
+            <div class="col-lg-offset-5 col-lg-6 col-xs-offset-10 col-xs-1"> -->
+               
+                <!-- Collect the nav links, forms, and other content for toggling -->
+               
+                <!-- <div id="navCenter" class="collapse navbar-collapse navbar-main-collapse">
+                    <ul class="nav navbar-nav"> -->
+                        
+                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                        
+                        <!-- <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li>
+                            <a id="linkHome" class="page-scroll" href="#">Home</a>
+                        </li>
+                        <li>
+                            <a id="linkXpNum" class="page-scroll linkNav" href="#xpNum">XP numérique</a>
+                        </li>
+                        <li>
+                            <a id="linkPortfolio" class="page-scroll linkNav" href="#">Portfolio</a>
+                        </li>
+                        <li>
+                            <a id="linkDownloadCv" class="page-scroll linkNav" href="#downloadCv">CV à télécharger</a>
+                        </li>
+                        <li>
+                            <a id="linkAbout" class="page-scroll linkNav" href="#about">À propos</a>
+                        </li>
+                        <li>
+                            <a id="linkContact" class="page-scroll linkNav" href="#contact">Contact</a>
+                        </li>
+                    </ul> 
+                </div>
+            </div> --> <!-- /.navbar-collapse -->
+
+            <!-- <div class="input-group col-lg-2">
+              <input type="text" class="form-control" placeholder="Search for...">
+              <span class="input-group-btn">
+                <button class="btn btn-secondary" type="button">Go!</button>
+              </span>
+            </div> -->
+        
+        <!-- </div> -->
+
+        <!-- /.container -->
+
+   <!--  </nav> -->

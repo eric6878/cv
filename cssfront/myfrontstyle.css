@@ -94,18 +94,16 @@ body{
 /*****                            ******/
 /***************************************/
 
+#linkConnexionAdmin a{
+	transition: 0.7s;
+}
+
 #linkConnexionAdmin a:hover{
 	color: #D738E2;
 }
 
-#btnAdmin{
-	background-color: transparent;
-	border: 1px solid #FFF;
-}
-
-#btnAdmin:hover{
-	background-color: transparent;
-	border: 1px solid #D738E2;
+.btnAdmin{
+	color: #D738E2;
 }
 
 /***************************************/
@@ -126,55 +124,26 @@ body{
 /*****                            ******/
 /***************************************/
 
+#linkConnexionAdmin:hover{
+	color: #D738E2;
+}
+
 li{
 	list-style-type: none;
 	display: inline;
 }
 
+#navCenter .active{
+	color: #D738E2;
+}
+
+#navCenter li a{
+	font-weight: bold;
+	transition: 0.7s;
+}
+
 #navCenter li a:hover{
 	color: #D738E2;
-}
-
-#linkHome{
-	color: #D738E2;
-	font-weight: bold;
-}
-
-#linkXpNum{
-	transition: 0.7s;
-}
-
-#linkXpNum:hover{
-	color: #D738E2;
-}
-
-#linkPortfolio{
-	transition: 0.7s;
-}
-
-#linkPortfolio:hover{
-	color: #D738E2;
-}
-
-#linkDownloadCv{
-	transition: 0.7s;
-}
-
-#linkDownloadCv:hover{
-	color: #D738E2;
-}
-
-#linkContact{
-	transition: 0.7s;
-}
-
-#linkContact:hover{
-	color: #D738E2;
-}
-
-.parallax-window{
-    min-height: 400px;
-    background: transparent;
 }
 
 /***************************************/
@@ -198,14 +167,23 @@ li{
 /*****                            ******/
 /***************************************/
 
-/*header .intro-body{
-		background-image: url('../img/imgPetronasTowers.jpg');
-		background-size: cover;
-		background-position: top;
+
+#titleBlock{
+	padding-bottom: 100px;
 }
-*/
+
+#titleCenter{
+	margin-left: 0px;
+}
+
+#titleXs{
+	width: 200px;
+	height: 50px;
+	margin: 0 auto;
+}
+
 h1{
-	/*font-size: 0.9em;*/
+	font-size: 0.96em;
 	/*font-weight: bold;*/
 	margin-bottom: 25px;
 }
@@ -250,7 +228,6 @@ h1{
 	float: left;
 	text-align: center;
 	line-height: 48px;
-	color: #FFF;
 }
 
 .black:hover{
@@ -303,9 +280,9 @@ h1{
 }
 
 .junior{
-	color: lightblue;
+	color: #42DCA3;
 	text-align: center;
-	margin-bottom: 50px;
+	margin-bottom: 155px;
 	opacity: 0.7;
 }
 
@@ -333,6 +310,9 @@ h1{
 /*****                            ******/
 /***************************************/
 
+#headerBackground{
+	background-image: url('../img/imgMoon4.jpg');
+}
 
 /**********************************************************************/
 /**********************************************************************/
@@ -364,7 +344,7 @@ h1{
 	padding: 0;
 }
 
-h2{
+#xpNum h2{
 	color: #FFF;
 	font-size: 1.5em;
 	margin-bottom: 50px;
@@ -388,21 +368,15 @@ h3{
 
 .download-section p{
 	color: #FFF;
-	font-size: 1.1em;
+	font-size: 1.2em;
 	margin: 20px auto;
 }
 
-.parallax-window{
-    min-height: 400px;
-    background: transparent;
-}
-
 #imgParallax{
-	/*background-image: url('../img/imgPetronasTowers.jpg');
-	background-size: cover;
-	background-position: top;*/
+	color: #FFF;
 	background-image: none;
 	background-color: #000;
+/*	background-color: -webkit-linear-gradient(to bottom, #777, #999, #AAA, #CCC, #EEE);*/
 }
 
 .formation{
@@ -410,11 +384,16 @@ h3{
 }
 
 .pictoCv{
-	border: 1px solid #D738E2;
+	color: #FFF;
+	background-color: #000;
 }
 
 .pictoStar{
-	color: lightyellow;
+	color: #FFF;
+}
+
+#circle{
+	background-color: #000;
 }
 
 /**********************************************************************/
@@ -444,6 +423,52 @@ h3{
 /**********************************************************************/
 /**********************************************************************/
 
+.containerImage{
+	margin: 0 auto;
+}
+
+.imgPortfolio{
+	width: 200px;
+	height: 200px;
+	float: left;
+}
+
+#imgPortfolio1{
+	background-image: url('../img/1eye.JPG');
+	background-size: cover;
+	background-position: center;
+}
+
+#imgPortfolio2{
+	background-image: url('../img/1portrait.JPG');
+	background-size: cover;
+	background-position: center;
+}
+
+#imgPortfolio3{
+	background-image: url('../img/1lips.JPG');
+	background-size: cover;
+	background-position: center;
+}
+
+#imgPortfolio4{
+	background-image: url('../img/1tiger.JPG');
+	background-size: cover;
+	background-position: center;
+}
+
+#imgPortfolio5{
+	background-image: url('../img/1drink.JPG');
+	background-size: cover;
+	background-position: center;
+}
+
+#imgPortfolio6{
+	background-image: url('../img/1skull.JPG');
+	background-size: cover;
+	background-position: center;
+}
+
 
 
 /**********************************************************************/
@@ -471,14 +496,40 @@ h3{
 /******                                                          ******/
 /**********************************************************************/
 /**********************************************************************/
+
+
 #about{
 	padding: 0;
+	margin: 100px auto;
+	font-size: 1.3em;
+	font-weight: bolder;
 	border: 1px solid #D738E2;
 }
 
 #aboutRow{
 	padding: 20px 0px 20px 0px;
 	/*border: 1px solid #D738E2;*/
+}
+
+#aboutRow h2{
+	color: #FFF;
+	padding-bottom: 50px;
+	padding-top: 50px;
+}
+
+#aboutRow p{
+	color: #FFF;
+	padding-bottom: 5px;
+}
+
+#aboutRow p a{
+	color: #D738E2;
+	padding-bottom: 10px;
+}
+
+.parallax-window{
+    min-height: 400px;
+    background: transparent;
 }
 
 /**********************************************************************/
@@ -508,7 +559,8 @@ h3{
 /**********************************************************************/
 
 #contact h2{
-	margin: 50px auto;
+	font-size: 1.2em;
+	margin-bottom: 50px;
 }
 
 p{
@@ -619,3 +671,43 @@ footer p{
 /*****************************************************************************************************************/
 /*****************************************************************************************************************/
 
+
+
+
+
+
+
+
+
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/******                                                                                                     ******/
+/******                               DEBUT STYLE CSS RESPONSIVE du Site CV éric coudert                    ******/
+/******                                                                                                     ******/
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+
+@media (max-width: 480px){
+	#title{
+		display: none;
+	}
+
+	.junior{
+		margin-bottom: 50px;
+	}
+
+}
+
+
+@media screen and (min-width: 481px){
+	#titleXs{
+		display: none;
+	}
+}
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
+/******                                                                                                     ******/
+/******                                 FIN STYLE CSS RESPONSIVE du Site CV éric coudert                    ******/
+/******                                                                                                     ******/
+/*****************************************************************************************************************/
+/*****************************************************************************************************************/
