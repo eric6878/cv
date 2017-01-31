@@ -64,8 +64,12 @@ if(isset($_GET['id_loisir'])){
    	?>
    	<meta charset="UTF-8" />
     <title>Loisirs CV web <?php echo $resultat['prenom'] .' ' . $resultat['nom']; ?></title>
+    <!-- Custom Fonts -->
+    <link href="../cssfrontbootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+      <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <!-- Mon Style CSS -->
     <link rel="stylesheet" type="text/css" href="../cssAdmin/myfrontstyle.css" />
-    <script src="../ckeditor/ckeditor.js"></script>
   </head>
 
   <body>
@@ -86,27 +90,28 @@ if(isset($_GET['id_loisir'])){
 
       <form action="loisir.php" method="POST">
      		<table>
-        <thead>
-          Insérer un nouveau loisir :
-        </thead>
-     			<tr>
-            	<td>Titre</td> 
-              <td><input type="text" name="titre_loisir" size="50" required /></td>
-          </tr>
+          <thead>
+            <th colspan="2">Insérer un nouveau loisir :</th>
+          </thead>
+          <tbody>
+       			<tr>
+              	<td>Titre</td> 
+                <td><input type="text" name="titre_loisir" size="50" required /></td>
+            </tr>
 
-          <tr>
-            <td>Description</td> 
-            <td>
-              <textarea name="description_loisir" cols="50" rows="10" required /></textarea>            
-            </td>
-          </tr>
-         
-          <tr>
-            <td></td>
- 				    <td><input type="submit" value="Insertion en BDD" /></td>
-		      </tr>
-			    </table>
-        </form>
+            <tr>
+              <td>Description</td> 
+              <td>
+                <textarea name="description_loisir" cols="50" rows="10" required /></textarea>            
+              </td>
+            </tr>
+           
+            <tr>
+   				    <td colspan="2"><input type="submit" value="Valider" /></td>
+  		      </tr>
+          </tbody>
+		    </table>
+      </form>
         
         <p>Liste des loisirs</p>
         <table>
@@ -122,8 +127,8 @@ if(isset($_GET['id_loisir'])){
           <tr>
             <td><?php echo $resultat['titre_loisir']; ?></td>                                 
             <td><?php echo $resultat['description_loisir']; ?></td>                                      
-            <td><a href="modif_loisir.php?id_loisir=<?= $resultat['id_loisir']; ?>">Modifier</a></td> 
-            <td><a href="loisir.php?id_loisir=<?= $resultat['id_loisir']; ?>">Supprimer</a></td>
+            <td><a href="modif_loisir.php?id_loisir=<?= $resultat['id_loisir']; ?>"><i class="fa fa-pencil-square-o fa2"></i></a></td> 
+            <td><a href="loisir.php?id_loisir=<?= $resultat['id_loisir']; ?>"><i class="fa fa-trash-o"></i></a></td>
           </tr>
        			
             <?php }; ?>

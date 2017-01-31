@@ -33,15 +33,15 @@ if(isset($_GET['deconnexion'])){
 
 
 
-<!-- MISE A JOUR D'UN LOISIR -->
+<!-- MISE A JOUR D'UN TITRE -->
 
 <?php 
 
   if(isset($_POST['titre_titre'])){
     $titre_titre = $_POST['titre_titre'];
-    $logo_titre = $_POST['logo_titre'];
+    $categorie_titre = $_POST['categorie_titre'];
   	$id_titre = $_POST['id_titre'];
-  	$pdoCV -> exec(" UPDATE loisirs SET titre_titre = '$titre_loisir', logo_titre = '$logo_titre' WHERE id_titre = '$id_titre' ");
+  	$pdoCV -> exec(" UPDATE titres SET titre_titre = '$titre_titre', categorie_titre = '$categorie_titre' WHERE id_titre = '$id_titre' ");
 
   	header("location: titre.php");
   		exit();
@@ -49,15 +49,15 @@ if(isset($_GET['deconnexion'])){
 
 //récupération
 
-	$id_loisir = $_GET['id_titre'];
-	$sql = $pdoCV -> query("SELECT * FROM loisirs WHERE id_loisir = '$id_loisir' ");
+	$id_titre = $_GET['id_titre'];
+	$sql = $pdoCV -> query("SELECT * FROM titres WHERE id_titre = '$id_titre' ");
 	$resultat = $sql -> fetch(); 
 ?>
    
 <html lang="fr">
     <head>  
    	<meta charset="UTF-8" />
-    <title>Modifier loisir CV web <?php /*echo $resultat['prenom'] . ' ' . $resultat['nom'];*/ ?></title>
+    <title>Modifier titres CV web <?php echo $resultat['prenom'] . ' ' . $resultat['nom']; ?></title>
     <script src="../ckeditor/ckeditor.js"></script>
     <link rel="stylesheet" type="text/css" href="../cssAdmin/myfrontstyle.css" />
     </head>
@@ -65,19 +65,39 @@ if(isset($_GET['deconnexion'])){
     <body>
         <header>
         	
-          <h1> Page de modification Loisirs</h1>
+          <h1> Page de Modification des Titres</h1>
 
           <?php include 'navAdmin.php'; ?>
 
         </header>
 
         <section>
-           <form action="modif_loisir.php" method="POST">
-	           <label>Loisir sélectionné :</label>
-			   <input type="text" name="titre_titre" value="<?= $resultat['id_titre']; ?>" />
-			   <input type="files" name="logo_titre" value="<?= $resultat['id_titre']; ?>" />           	  
-			   <input hidden name="id_titre" value="<?= $resultat['id_titre']; ?>" /> 			
-			   <input type="submit" value="Mettre à jour" />
+            <form method="POST">
+            <table>
+            
+              <thead>
+                <th colspan="2">Titre sélectionné :</th>
+              </thead>
+              
+              <tbody>
+                <tr>
+                  <td>Titre</td>
+                  <td><input type="text" name="titre_titre" value="<?= $resultat['titre_titre']; ?>" /></td>
+                </tr>
+
+                <tr>
+                  <td>Catégorie</td>
+                  <td><input type="text" name="categorie_titre" value="<?= $resultat['categorie_titre']; ?>" /></td>
+                </tr>
+            	  
+          		  <input hidden name="id_titre" value="<?= $resultat['id_titre']; ?>" /> 
+                
+                <tr>
+                  <td colspan="2"><input type="submit" value="Mise à jour" /></td>
+                </tr>			
+              </tbody>
+            
+            </table>
 	          </form>    
          
         </section>

@@ -63,7 +63,7 @@ if(isset($_GET['deconnexion'])){
     <body>
         <header>
         	
-          <h1> Page de modification Loisirs</h1>
+          <h1> Page de Modification Loisirs</h1>
 
           <?php include 'navAdmin.php'; ?>
 
@@ -71,11 +71,33 @@ if(isset($_GET['deconnexion'])){
 
         <section>
           <form action="modif_loisir.php" method="POST">
-          	<label>Loisir sélectionné :</label>
-     			  <input type="text" name="titre_loisir" value="<?= $resultat['titre_loisir']; ?>" />
-            <textarea name="description_loisir"><?= $resultat['description_loisir']; ?></textarea>
-     			  <input hidden name="id_loisir" value="<?= $resultat['id_loisir']; ?>" /> 			
-     			  <input type="submit" value="Mettre à jour" />
+            <table>
+              
+              <thead>
+                <th colspan="2">Loisir sélectionné :</th>
+              </thead>
+             
+              <tbody>
+                <tr>
+                  <td>Titre</td>
+                  <td><input type="text" name="titre_loisir" value="<?= $resultat['titre_loisir']; ?>" /></td>
+                </tr>
+
+                <tr>
+                  <td>Description</td>
+                  <td><textarea name="description_loisir" cols="50" rows="15"><?= $resultat['description_loisir']; ?></textarea></td>
+                </tr>
+           			  
+         			  <tr>
+                  <input hidden name="id_loisir" value="<?= $resultat['id_loisir']; ?>" />
+                </tr>
+                
+                <tr>
+                  <td colspan="2"><input type="submit" value="Mise à jour" /></td>
+                </tr> 			  
+              </tbody>
+           
+            </table>
           </form>    
          
         </section>

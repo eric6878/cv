@@ -58,12 +58,11 @@ if(isset($_GET['deconnexion'])){
    	<meta charset="UTF-8" />
     <title>Modifier une expérience CV web <?php echo $resultat['prenom'] . ' ' . $resultat['nom']; ?></title>
     <link rel="stylesheet" type="text/css" href="../cssAdmin/myfrontstyle.css" />
-    <script src="../ckeditor/ckeditor.js"></script>
     </head>
 
     <body>
         <header>
-        	<h1>Page de modification des Expériences</h1>
+        	<h1>Page de Modification des Expériences</h1>
 
           <?php include 'navAdmin.php'; ?>
         </header>
@@ -71,18 +70,38 @@ if(isset($_GET['deconnexion'])){
         <section>
 
         <form  action="" method="POST">
-        	<label>Expérience sélectionnée :</label>
-   			<input type="text" name="titre_xp" value="<?= $resultat['titre_xp']; ?>" />
-   			<input type="text" name="date_xp" value="<?= $resultat['date_xp']; ?>" />
-   			<textarea name="description_xp" id="editor1"> 
-          <?= $resultat['description_xp']; ?>
-        </textarea>
-   			<script>
-              /* Replace the textarea id="editor1" with a CKeditor instance, using default configuration. */
-              CKEDITOR.replace( 'editor1' );
-        </script>
-   			<input hidden name="id_xp" value="<?= $resultat['id_xp']; ?>" /> 			
-   			<input type="submit" value="Mise à jour" />
+          <table>
+            
+            <thead>
+              <th colspan="2">Expérience sélectionnée :</th>
+            </thead>
+            
+            <tbody>
+              <tr>
+                <td>Expérience</td>
+                <td><input type="text" name="titre_xp" value="<?= $resultat['titre_xp']; ?>" /></td>
+              </tr>
+
+              <tr>
+                <td>Date</td>
+                <td><input type="text" name="date_xp" value="<?= $resultat['date_xp']; ?>" /></td>
+              </tr>
+
+              <tr>
+                <td>Description</td>
+                <td><textarea name="description_xp" cols="50" rows="10"><?= $resultat['description_xp']; ?></textarea></td>
+              </tr>
+
+              <tr>
+                <input hidden name="id_xp" value="<?= $resultat['id_xp']; ?>" />
+              </tr>	
+
+              <tr>
+                <td colspan="2"><input type="submit" value="Mise à jour" /></td> 				
+              </tr>
+            </tbody>
+          
+          </table>
         </form>
           
         <?php 

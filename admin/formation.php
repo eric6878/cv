@@ -52,19 +52,23 @@ if(isset($_GET['id_formation'])){
 
 <html lang="fr">
 	<head> 
-    <?php 
-      $sql = $pdoCV->query("SELECT * FROM formations");
-      $resultat = $sql->fetch();
-   	?>
-   	<meta charset="UTF-8" />
-    <title>Formations CV web <?php echo $resultat['prenom'] .' ' . $resultat['nom']; ?></title>
-    <link rel="stylesheet" type="text/css" href="../cssAdmin/myfrontstyle.css" />
-    <script src="../ckeditor/ckeditor.js"></script>
+	    <?php 
+	      $sql = $pdoCV->query("SELECT * FROM formations");
+	      $resultat = $sql->fetch();
+	   	?>
+	   	<meta charset="UTF-8" />
+	    <title>Formations CV web <?php echo $resultat['prenom'] .' ' . $resultat['nom']; ?></title>
+	    <!-- Custom Fonts -->
+		<link href="../cssfrontbootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+   		<link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+		<!-- Mon Style CSS -->
+	    <link rel="stylesheet" type="text/css" href="../cssAdmin/myfrontstyle.css" />
   	</head>
 
  	<body> 
     	<header>
-      	<h1>Page Formations</h1>
+      	<h1>Page des Formations</h1>
         
         <?php include 'navAdmin.php'; ?>
       	</header>
@@ -79,35 +83,30 @@ if(isset($_GET['id_formation'])){
 		        <form method="POST">   
 		       		<table>
 			       		<thead>
-			       			<th></th>
-			       			<th>Insérer une nouvelle formation :</th>
+			       			<th colspan="2">Insérer une nouvelle formation :</th>
 			       		</thead>
-		       			<tr>
-			              	<td>Titre :</td> 
-			                <td><input type="text" name="titre_formation" size="50" required /></td>
-		            	</tr>
- 
-			            <tr>
-			                <td>Date :</td> 
-			                <td><input type="text" name="date_formation" size="50" required /></td>                          
-			            </tr>
+			       		<tbody>
+			       			<tr>
+				              	<td>Titre</td> 
+				                <td><input type="text" name="titre_formation" size="50" required /></td>
+			            	</tr>
+	 
+				            <tr>
+				                <td>Date</td> 
+				                <td><input type="text" name="date_formation" size="50" required /></td>                          
+				            </tr>
 
-			            <tr>
-			                <td>Description :</td> 
-			                <td>
-				              	<textarea name="description_formation" id="editor1" cols="50" rows="10" required /></textarea>
-				                <script>
-				                /* Replace the textarea id="editor1" with a CKeditor instance, using default configuration. */
-				                  CKEDITOR.replace( 'editor1' );
-
-				                </script>
-			              	</td>
-			            </tr>
-		           
-			            <tr>
-			            	<td></td>
-		   				    <td><input type="submit" value="Insérer en BDD" /></td>
-				        </tr>
+				            <tr>
+				                <td>Description</td> 
+				                <td>
+					              	<textarea name="description_formation" cols="50" rows="10" required />Votre description...</textarea>
+				              	</td>
+				            </tr>
+			           
+				            <tr>
+			   				    <td colspan="2"><input type="submit" value="Valider" /></td>
+					        </tr>
+				        </tbody>
 	   			    </table>
 	        	</form>
 
@@ -126,8 +125,8 @@ if(isset($_GET['id_formation'])){
 		            <td><?php echo $resultat['titre_formation']; ?></td>                                
 		            <td><?php echo $resultat['date_formation']; ?></td>                
 		            <td><?php echo $resultat['description_formation']; ?></td>                               
-		            <td><a href="modif_formation.php?id_formation=<?= $resultat['id_formation']; ?>">Modifier</a></td> 
-		            <td><a href="formation.php?id_formation=<?= $resultat['id_formation']; ?>">Supprimer</a></td>
+		            <td><a href="modif_formation.php?id_formation=<?= $resultat['id_formation']; ?>"><i class="fa fa-pencil-square-o fa2"></i></a></td> 
+		            <td><a href="formation.php?id_formation=<?= $resultat['id_formation']; ?>"><i class="fa fa-trash-o"></i></a></td>
 		          </tr>
 		       			
 		            <?php }; ?>

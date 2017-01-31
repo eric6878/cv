@@ -58,44 +58,55 @@ if(isset($_GET['deconnexion'])){
    	<meta charset="UTF-8" />
     <title>Modifier formation CV web <?php echo $resultat['prenom'] . ' ' . $resultat['nom']; ?></title>
     <link rel="stylesheet" type="text/css" href="../cssAdmin/myfrontstyle.css" />
-    <script src="../ckeditor/ckeditor.js"></script>
     </head>
 
     <body>
-        <header>
-        	<h1>Page de modification des formations</h1>
+      <header>
+      	<h1>Page de Modification des Formations</h1>
 
-          <?php include 'navAdmin.php'; ?>
-        </header>
-         
-        <section>
+        <?php include 'navAdmin.php'; ?>
+      </header>
+       
+      <section>
 
         <form type="text" method="POST">
-        	<label>Expérience sélectionnée :</label>
-     			<input type="text" name="titre_formation" value="<?= $resultat['titre_formation']; ?>" />
-          <input type="text" name="date_formation" value="<?= $resultat['date_formation']; ?>" />
-     			<textarea name="description_formation" id="editor1">
-            <?= $resultat['description_formation']; ?>
-          </textarea>
-     			
-          <script>
-          /* Replace the textarea id="editor1" with a CKeditor instance, using default configuration. */
-            CKEDITOR.replace( 'editor1' );
-          </script>
-     			
-          <input hidden name="id_formation" value="<?= $resultat['id_formation']; ?>" /> 			
-     			<input type="submit" value="Mettre à jour" />
-        </form>
-          
-        <?php 
-        	//include("admin_menu.php"); <!-- FAUT CREER LA PAGE MENU -->
-        ?>   
-        
-        </section>
+          <table>
+            
+            <thead>
+              <th colspan="2">Formation sélectionnée :</th>
+            </thead>
+            
+            <tbody>
+              <tr>
+                <td><label>Formation</label></td>
+                <td><input type="text" name="titre_formation" value="<?= $resultat['titre_formation']; ?>" /></td>
+              </tr>
 
-       <footer>
-           <!-- faire le include du footer -->
-       </footer>
+              <tr>
+                <td><label>Date</label></td>
+                <td><input type="text" name="titre_formation" value="<?= $resultat['date_formation']; ?>" /></td>
+              </tr>
+
+              <tr>
+                <td><label>Description</label></td>
+                <td><textarea name="description_formation" cols="50" rows="10"><?= $resultat['description_formation']; ?></textarea></td>  
+              </tr>
+            	
+              <input hidden name="id_formation" value="<?= $resultat['id_formation']; ?>" />
+
+              <tr>
+                <td colspan="2"><input type="submit" value="Mise à jour" /></td>
+              </tr> 			
+            </tbody>
+         
+          </table>
+        </form> 
+      
+      </section>
+
+      <footer>
+        <!-- faire le include du footer -->
+      </footer>
 	</body>
 </html>
 

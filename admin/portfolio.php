@@ -36,7 +36,7 @@ if(isset($_GET['deconnexion'])){
 //Insertion
 
 if(isset($_POST['portfolio'])){
-	if($_POST['portfolio']!='' && $_POST['titre_portfolio']!='' && $_POST['img_portfolio']!='' && $_POST['description_loisir']){	
+	if($_POST['portfolio']!='' && $_POST['titre_portfolio']!='' && $_POST['img_portfolio']!='' && $_POST['description_portfolio']){	
 		$titre_portfolio = addslashes($_POST['titre_portfolio']);
 		$img_portfolio = addslashes($_POST['img_portfolio']);
 		$description_portfolio = addslashes($_POST['description_portfolio']);
@@ -62,13 +62,18 @@ if(isset($_GET['id_portfolio'])){
 	<head>
 		<meta charset="UTF-8" />
 		<title>Portfolio CV web <?= $_POST['prenom'] . $_POST['nom']; ?></title>
+		<!-- Custom Fonts -->
+		<link href="../cssfrontbootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+   		<link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+		<!-- Mon Style CSS -->
 		<link rel="stylesheet" type="text/css" href="../cssAdmin/myfrontstyle.css" />
 	</head>
 	
 	<body>
 		<header>
 			
-			<h1>Page Portfolios</h1>
+			<h1>Page du Portfolio</h1>
 
 			<?php include 'navAdmin.php'; ?>
 
@@ -86,18 +91,50 @@ if(isset($_GET['id_portfolio'])){
 			<p>Il y a <?php echo $nbr_portfolio; ?> portfolio(s) dans votre BDD.</p>
 			
 			<form action="portfolio.php" method="POST" name="portfolio">
-				<label>Ajouter un projet au portfolio</label><br />
-				<input type="text" name="titre_portfolio" required />
-				<!-- <input type="file" name="img_portfolio" /> -->
-				<label>Description</label><br :>
-				<textarea name="description_portfolio" id="editor1" cols="50" rows="5" required></textarea>
-				
-				<script>
-              	/* Replace the textarea id="editor1" with a CKeditor instance, using default configuration. */
-          	    CKEDITOR.replace( 'editor1' );
-                </script>
-				
-				<input type="submit" value="valider" /></td>
+				<table>
+					<thead>
+						<th colspan="2">Ajouter un projet au portfolio :</th>
+					</thead>
+					<tbody>
+					<tr>
+						<td>
+							<label>Titre</label>
+						</td>
+						<td>
+							<input type="text" name="titre_portfolio" required />
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<label>Image</label><br />
+						</td>
+						<td>
+							<input type="file" name="img_portfolio" />
+						</td>
+					</tr>
+
+					<tr>
+						<td>
+							<label>Description</label>
+						</td>
+						<td>
+							<textarea name="description_portfolio" cols="50" rows="5" required></textarea>	
+						</td>
+					</tr>
+
+					<tr>
+						<td colspan="2"><input type="submit" value="valider" /></td>
+					</tr>
+						
+						
+						
+						
+						
+									
+						
+					</tbody>
+				</table>
 			</form>	
 			
 			<table>
@@ -113,8 +150,8 @@ if(isset($_GET['id_portfolio'])){
 			 		<td>
 			 		<?php echo $ligne['titre_portfolio']; ?>
 			 		</td>
-			 		<td><a href="modif_portfolio.php?modifier_portfolio=<?= $ligne['id_portfolio']; ?>">Modifier</a></td>
-		 			<td><a href="portfolio.php?supprimer_portfolio=<?= $ligne['id_portfolio']; ?>">Supprimer</a></td>
+			 		<td><a href="modif_portfolio.php?modifier_portfolio=<?= $ligne['id_portfolio']; ?>"><i class="fa fa-pencil-square-o fa2"></i></a></td>
+		 			<td><a href="portfolio.php?supprimer_portfolio=<?= $ligne['id_portfolio']; ?>"><i class="fa fa-trash-o"></i></a></td>
 			 	</tr>
 			 		<?php } ?>
 			 </table>

@@ -71,13 +71,41 @@ if($_POST){
         <section>
 
         <form action="contact.php" method="POST">
-        	<label>Compétence sélectionnée :</label>
-        <input type="text" name="modif_contact_nom" value="<?= $ligne_contact['nom_contact']; ?>" />
-        <input type="text" name="modif_contact_prenom" value="<?= $ligne_contact['prenom_contact']; ?>" />
-   			<input type="text" name="modif_contact_email" value="<?= $ligne_contact['email_contact']; ?>" />
-        <input type="text" name="modif_contact_telephone" value="<?= $ligne_contact['telephone_contact']; ?>" />     
-   			<input hidden name="modif_contact_id" value="<?= $ligne_contact['id_contact']; ?>" />			
-   			<input type="submit" value="Mise à jour" />
+          <table>
+            <thead>
+              <th colspan="2">Contact sélectionnée :</th>
+            </thead>
+            
+            <tbody>
+              <tr>
+                <td>Nom</td>
+                <td><input type="text" name="modif_contact_nom" value="<?= $ligne_contact['nom_contact']; ?>" /></td>
+              </tr>
+
+              <tr>
+                <td>Prénom</td>
+                <td><input type="text" name="modif_contact_prenom" value="<?= $ligne_contact['prenom_contact']; ?>" /></td>
+              </tr>
+
+              <tr>
+                <td>Email</td>
+                <td><input type="text" name="modif_contact_email" value="<?= $ligne_contact['email_contact']; ?>" /></td>
+              </tr>
+
+              <tr>
+                <td>Téléphone</td>
+                <td><input type="text" name="modif_contact_telephone" value="<?= $ligne_contact['telephone_contact']; ?>" /></td>
+              </tr>
+
+              <tr>
+                <input hidden name="modif_contact_id" value="<?= $ligne_contact['id_contact']; ?>" /> 
+              </tr>
+
+              <tr>
+                <td colspan="2"><input type="submit" value="Mise à jour" /></td>
+              </tr>
+            </tbody>
+          </table>
         </form>
           
 

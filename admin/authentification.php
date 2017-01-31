@@ -40,7 +40,7 @@ if(isset($_POST['connexion'])){
     <body>
         <header>
 	    	<!-- include admin_menu.php -->
-	    	<h1>Page de connexion Admin</h1>
+	    	<h1>Page de Connexion Admin</h1>
         </header>
 
         <section>
@@ -68,15 +68,11 @@ if(isset($_POST['connexion'])){
     					<td>
 							<input type="password" name="mdp" required />
     					</td>
-    					<td>
-    						<input name="connexion" type="submit" value="connexion" />
-    					</td>
-    				</tr>
-    				<tr>
-						
+                    <tr>
+                        <td colspan="2"><input name="connexion" type="submit" value="connexion" /></tr>			
     				</tr>
 				</table>
         	</form>
-        	<p><a href="#">Mot de passe oublié</a></p>
+        	<p><a href="#">Mot de passe oublié</a> ?</p>
         </section>
         <!-- include footer.php -->

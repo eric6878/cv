@@ -67,12 +67,12 @@
                     Menu <i class="fa fa-bars"></i>
                 </button>
 
-                <a href="#btnConnexionAdmin"><i class="fa fa-play-circle btnAdmin" data-toggle="collapse" href="#btnConnexionAdmin" aria-expanded="false" aria-controls="linkConnexionAdmin"></i></a> <span class="light"></span>Admin
+                <a href="#btnConnexionAdmin"><i class="fa fa-play-circle btnAdmin" data-toggle="collapse" href="#btnConnexionAdmin" aria-expanded="false" aria-controls="linkConnexionAdmin"></i></a> <span class="light">Admin</span>
                 <div class="collapse" id="btnConnexionAdmin">
                     <div class="card card-block">
                       <a id="linkConnexionAdmin" href="admin/authentification.php">Connexion</a>  
                     </div>
-                </div>            
+                </div>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -106,6 +106,7 @@
         </div>
         <!-- /.container -->
     </nav>
+    
     <header id="headerBackground" class="intro">
     <?php $sql = $pdoCV -> query("SELECT * FROM utilisateurs");
           $resultat = $sql -> fetch(); ?>
@@ -171,19 +172,84 @@
                         </div>
                     </div>
                 </div>
-                <img src="img/pictoGitHub.ico" alt="Icone GitHub" />
+                
+                <div id="blockIcone" class="row">
+                    <div class="col-lg-2 col-lg-offset-5">
+                        <a href="#"><img src="img/pictoGitHub.ico" alt="Icone GitHub" /></a>     
+
+                        <a href="#"><img src="img/pictoFacebook.png" alt="Icone Facebook" /></a>
+       
+                        <a href="#"><img src="img/pictoInstagram.png" alt="Icone Instagram" /></a>
+                    </div>
+                </div>
+                <div id="blockDate" class="row">
+                    <div class="col-lg-1 col-lg-offset-11 col-xs-12">
+                        <?php 
+                        $date = date("d-m-Y"); 
+                        echo 'le ' . $date; 
+                        ?>
+                    </div>
+                </div>
+
+                <div id="blockHeure" class="row">
+                    <div class="col-lg-1 col-lg-offset-11 col-xs-12">
+                        <?php  
+                        $heure = date("H:i A");
+                        echo $heure; 
+                        ?>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Download Section -->
+    <!-- Compétences numériques Section -->
     <section id="xpNum" class="content-section text-center">
-        <div id="imgParallax" class="download-section container">
-            
-            <div class="row parallax">
-                <div class="col-lg-10 col-lg-offset-1 parallax-window" data-parallax="scroll" data-image-src="img/imgSpaceEarth.jpg">
-                    <h2>Compétences numériques</h2>
-                    
+        <div id="imgParallax" class="download-section container parallax-window" data-parallax="scroll" data-image-src="img/imgParallax7.jpg">
+
+            <div class="row">
+            <h2>Numérique</h2>
+                <div class="col-lg-12">
+                    <div id="blockFormation" class="container">   
+                        <div class="row">          
+                            <div class="col-lg-4 col-lg-offset-4 formation">
+                                <div class="service-item">
+                                    <span class="fa-stack fa-4x">
+                                        <i class="fa fa-circle-thin fa-stack-2x"></i>
+                                        <i class="fa fa-info-circle fa-stack-1x text-primary pictoCv"></i>
+                                    </span>
+                                    
+                                    <h3>Formation</h3>
+                                    
+                                    <p>2016- 2017<p>
+                                    
+                                    <p>
+                                        <span id="titreFormation">
+                                            <?php 
+                                                $i = 0;
+                                                while($i < count($formation)){
+                                                    if($i > 0){
+                                                        echo ' / ';
+                                                    }
+                                                    echo $formation[$i]['titre_formation'];
+                                                    $i++;
+                                                }
+                                            ?>
+                                        </span>
+                                    </p>
+                                    
+                                    <p>Le PoleS, Grande École du Numérique</p>
+                                    <p>Formation de 10 mois</p>
+                                    <p>Villeneuve-la-Garenne</p>
+                                </div>
+                            </div>                                                
+                        </div> 
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-10 col-lg-offset-1">
                     <div class="row">
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
@@ -241,7 +307,7 @@
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-circle-thin fa-stack-2x"></i>
                                     <i class="fa fa-laptop fa-stack-1x text-primary pictoCv"></i>
                                 </span>
                                 
@@ -273,7 +339,7 @@
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-circle-thin fa-stack-2x"></i>
                                     <i class="fa fa-envira fa-stack-1x text-primary pictoCv"></i>
                                 </span>
                                 
@@ -313,7 +379,7 @@
                         <div class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-circle-thin fa-stack-2x"></i>
                                     <i class="fa fa-eye fa-stack-1x text-primary pictoCv"></i>
                                 </span>
                                
@@ -326,143 +392,117 @@
                         </div>
                     </div>         
                 </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-lg-10 col-lg-offset-1">
-                    <div id="blockFormation" class="container">   
-                        <div class="row">          
-                            <div class="col-lg-6 formation">
-                                <div class="service-item">
-                                    <span class="fa-stack fa-4x">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-info-circle fa-stack-1x text-primary pictoCv"></i>
-                                    </span>
-                                    
-                                    <h3>Formation</h3>
-                                    
-                                    <p>2016- 2017<p>
-                                    
-                                    <p>
-                                        <span id="titreFormation">
-                                            <?php 
-                                                $i = 0;
-                                                while($i < count($formation)){
-                                                    if($i > 0){
-                                                        echo ' / ';
-                                                    }
-                                                    echo $formation[$i]['titre_formation'];
-                                                    $i++;
-                                                }
-                                            ?>
-                                        </span>
-                                    </p>
-                                    
-                                    <p>Le PoleS, Grande École du Numérique</p>
-                                    <p>Formation de 10 mois</p>
-                                    <p>Villeneuve-la-Garenne</p>
-                                </div>
-                            </div>
-                                   
-                            <div class="col-lg-6 formation">
-                                <div class="service-item">
-                                    <span class="fa-stack fa-4x">
-                                        <i class="fa fa-circle fa-stack-2x"></i>
-                                        <i class="fa fa-briefcase fa-stack-1x text-primary pictoCv"></i>
-                                    </span>
-                                
-                                    <h3>Projets</h3>
-                                    
-                                    <p>Intrégration d'un site CV dynamique</p>
-                                    <p><a href="#">exemple site 1</a></p>
-                                    <p>Intrégration d'un site Worpress</p>
-                                    <p><a href="#">exemple site 2</a></p>
-                                </div>
-                            </div> 
-                        
-                        </div> 
-                    </div>
-                </div>
             </div> 
     </section>
 
     <!-- Portfolio Section -->
     <section id="portfolio">
-            <div class="row">
-                <div class=" col-lg-4 col-lg-offset-4 col-xs-12"> 
-                    <div class="containerImage">
-                        <div id="imgPortfolio1" class="imgPortfolio"></div>
-                        <div id="imgPortfolio2" class="imgPortfolio"></div>
-                        <div id="imgPortfolio3" class="imgPortfolio"></div>
-                        <div class="phantom"></div>
-                        <div id="imgPortfolio4" class="imgPortfolio"></div> 
-                        <div id="imgPortfolio5" class="imgPortfolio"></div>
-                        <div id="imgPortfolio6" class="imgPortfolio"></div>
-                    </div>
+
+        <!-- <div class="col-lg-6 formation">
+            <div class="service-item">
+                <span class="fa-stack fa-4x">
+                    <i class="fa fa-circle-thin fa-stack-2x"></i>
+                    <i class="fa fa-briefcase fa-stack-1x text-primary pictoCv"></i>
+                </span>
+            
+                <h3>Projets</h3>
+                
+                <p>Intrégration d'un site CV dynamique</p>
+                <p><a href="#">exemple site 1</a></p>
+                <p>Intrégration d'un site Worpress</p>
+                <p><a href="#">exemple site 2</a></p>
+            </div>
+        </div> -->
+
+
+        <!-- carousel -->
+
+        <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <img class="d-block img-fluid" src="img/imgPetronasTowers.jpg" alt="First slide">
                 </div>
-            </div>
-        </div>
-
-
-
-
-                    <!-- carousel -->
-
-                    <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active">
-                                <img class="d-block img-fluid" src="img/imgPetronasTowers.jpg" alt="First slide">
-                            </div>
-                           
-                            <div class="carousel-item">
-                                <img class="d-block img-fluid" src="..." alt="Second slide">
-                            </div>
-                            
-                            <div class="carousel-item">
-                                <img class="d-block img-fluid" src="..." alt="Third slide">
-                            </div>    
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div> -->
+               
+                <div class="carousel-item">
+                    <img class="d-block img-fluid" src="..." alt="Second slide">
                 </div>
+                
+                <div class="carousel-item">
+                    <img class="d-block img-fluid" src="..." alt="Third slide">
+                </div>    
             </div>
-     
-            </div>
-        </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div> -->
+
     </section>
 
      <!-- About Section -->
-    <section id="about" class="container content-section text-center parallax-window" data-parallax="scroll" data-image-src="img/imgMoon4.jpg">
-        <div class="row">
-            <div id="aboutRow" class="col-lg-8 col-lg-offset-2">
+    <section id="about" class="container content-section text-center">
+        <div id="blockAbout" class="row">
+            <div id="aboutRow" class="col-lg-12">
                 
                 <h2>À propos de moi...</h2>
             
-                <p>Agé de 38 ans, autonome, polyvalent et curieux,</p>
-                <p>j’ai démarré cette activité comme un hobby en 2016,</p>
+                <p>Agé de 38 ans, autonome, polyvalent et curieux, j’ai démarré cette activité comme un hobby en 2016,</p>
                 <p>puis ai décidé d'en faire mon métier par passion.</p>
 
-                <p>Actuellement en formation au métier d'intégrateur développeur,</p>
-                <p>je conçois des sites web de A à Z ou bien de type "framework / <acronym title="Système de Gestion des Contenus">CMS</acronym>",</p>
-                <p>et fais en sorte que mon code soit propre et optimisé le plus souvent possible.</p>
+                <p>Actuellement en formation au métier d'intégrateur développeur, j'apprends à concevoir des sites de type "frameworks / <acronym title="Système de Gestion des Contenus">CMS</acronym>",</p>
+                <p>et fais en sorte que mon code soit optimisé le plus souvent possible.</p>
 
                 <p>Passionné du web,</p>
-                <P>je mets à contribution mon sens créatif et artistique<p>
-                <p>au service de vos futurs projets numériques,</p>
+                <P>je mets à disposition mon sens créatif et artistique au service de vos futurs projets numériques,</p>
                 <p>convaincu que <a href="#">"l'avenir s'écrit en lignes de code..."</a></p>
            
+            </div>
+        </div>
+
+        <div id="blockPassions" class="row">
+            <h3>Passions &amp; inspirations</h3>
+            <div class="col-lg-12">
+                <div id="img1" class="blockImage"></div>
+                <div id="img2" class="blockImage"></div>
+                <div id="img3" class="blockImage"></div>
+                <div id="img4" class="blockImage"></div>
+                <div id="img5" class="blockImage"></div>
+                <div id="img6" class="blockImage"></div>
+                <div id="img7" class="blockImage"></div>
+                <div id="img8" class="blockImage"></div>
+                <div id="img9" class="blockImage"></div>
+                <div id="img10" class="blockImage"></div>
+                <div id="img11" class="blockImage"></div>
+                <div id="img12" class="blockImage"></div>
+                <div id="img13" class="blockImage"></div>
+                <div id="img14" class="blockImage"></div>
+                <div id="img15" class="blockImage"></div>
+                <div id="img16" class="blockImage"></div>
+                <div id="img17" class="blockImage"></div>
+                <div id="img18" class="blockImage"></div>
+                <div id="img19" class="blockImage"></div>
+                <div id="img20" class="blockImage"></div>
+                <div id="img21" class="blockImage"></div>
+                <div id="img22" class="blockImage"></div>
+                <div id="img23" class="blockImage"></div>
+                <div id="img24" class="blockImage"></div>
+                <div id="img25" class="blockImage"></div>
+                <div id="img26" class="blockImage"></div>
+                <div id="img27" class="blockImage"></div>
+                <div id="img28" class="blockImage"></div>
+                <div id="img29" class="blockImage"></div>
+                <div id="img30" class="blockImage"></div>
+                <div id="img31" class="blockImage"></div>
+                <div id="img32" class="blockImage"></div>      
             </div>
         </div>
     </section>

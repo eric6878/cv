@@ -41,7 +41,7 @@ if(isset($_GET['deconnexion'])){
   <body>
     <header>
       
-      <h1>Page Portfolios</h1>
+      <h1>Page de Modification du Portfolio</h1>
 
       <?php include 'navAdmin.php'; ?>
 

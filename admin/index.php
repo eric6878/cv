@@ -36,6 +36,7 @@ if(isset($_GET['deconnexion'])){
 		<meta charset="UTF-8" />
 		<link rel="stylesheet" type="text/css" href="../css/style.css" />
 		<title>Site CV <?php echo $_SESSION['prenom'] . $_SESSION['nom']; ?>- Admin : Accueil</title>
+		<link href="cssfrontbootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" type="text/css" href="../cssAdmin/myfrontstyle.css" />
 	</head>
 	

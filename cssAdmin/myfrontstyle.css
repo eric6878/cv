@@ -61,9 +61,10 @@ table {
 /***************************************/
 
 
-
 body{
-	background-color: lightblue;
+	background-color: #CCC;
+	background-image: url('../img/imgParallax3.jpg');
+	background-size: cover;
 }
 
 
@@ -84,13 +85,12 @@ body{
 /***************************************************************/
 /***************************************************************/
 
-header{
-	background-color: #777;
-}
 
 h1{
-	text-align: center;
 	margin: 0 auto;
+	color: #D738E2;
+	text-align: center;
+	
 }
 
 nav{
@@ -124,8 +124,9 @@ nav li a:hover{
 }
 
 p{
+	color: #FFF;
+	font-size: 1.3em;
 	text-align: center;
-	font-size: 1.2em;
 	font-weight: bolder;
 }
 
@@ -133,6 +134,7 @@ form{
 	width: 600px;
 	margin: 10px auto;
 	text-align: center;
+	opacity: 0.92;
 }
 
 table{
@@ -142,6 +144,7 @@ table{
 	background-color: #777;
 	border: 1px solid #FFF;
 	border-radius: 4px;
+	opacity: 0.92;
 }
 
 thead{
@@ -149,6 +152,7 @@ thead{
 }
 
 td{
+	font-weight: bold;
 	border: 1px solid #FFF;
 }
 
@@ -163,6 +167,21 @@ input{
 
 input{
 	margin-bottom: 20px;
+}
+
+textarea{
+	resize: none;
+}
+
+
+#profil{
+	width: 400px;
+	height: 160px;
+	margin: 0 auto;
+	text-align: center;
+	color: #FFF;
+	font-size: 1.2em;
+	border: 1px solid #FFF;
 }
 
 

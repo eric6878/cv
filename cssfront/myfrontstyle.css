@@ -184,8 +184,9 @@ li{
 
 h1{
 	font-size: 0.96em;
-	/*font-weight: bold;*/
-	margin-bottom: 25px;
+	font-weight: bold;
+	margin-top: 150px;
+	margin-bottom: 30px;
 }
 
 #title{
@@ -196,7 +197,7 @@ h1{
 }
 
 #titleContainer{
-	margin-bottom: 100px;
+	padding-bottom: 200px;
 }
 
 .titleContent1{
@@ -279,15 +280,19 @@ h1{
 	color: #FFF;
 }
 
+
+
 .junior{
 	color: #42DCA3;
 	text-align: center;
-	margin-bottom: 155px;
+	margin-bottom: 70px;
 	opacity: 0.7;
 }
 
-#btnFleche{
-	color: #D738E2;
+
+
+#btnFleche:hover{
+	color: #FFF;
 }
 
 #pictoCircle{
@@ -298,6 +303,13 @@ h1{
 	border-color: #D738E2;
 	color: #D738E2;
 }
+
+#blockIcone a{
+	margin: 0px 10px;
+}
+
+
+
 
 /***************************************/
 /*****                            ******/
@@ -312,6 +324,8 @@ h1{
 
 #headerBackground{
 	background-image: url('../img/imgMoon4.jpg');
+	background-size: cover;
+	background-position: center;
 }
 
 /**********************************************************************/
@@ -347,7 +361,7 @@ h1{
 #xpNum h2{
 	color: #FFF;
 	font-size: 1.5em;
-	margin-bottom: 50px;
+	margin-bottom: 20px;
 }
 
 h3{
@@ -369,14 +383,18 @@ h3{
 .download-section p{
 	color: #FFF;
 	font-size: 1.2em;
-	margin: 20px auto;
+	margin: 15px auto;
 }
 
 #imgParallax{
-	color: #FFF;
-	background-image: none;
-	background-color: #000;
-/*	background-color: -webkit-linear-gradient(to bottom, #777, #999, #AAA, #CCC, #EEE);*/
+	padding: 50px auto;
+	background: none;
+	/*background-color: #000;*/
+}
+
+.service-item{
+	color: transparent;
+	background-color: transparent;
 }
 
 .formation{
@@ -385,16 +403,19 @@ h3{
 
 .pictoCv{
 	color: #FFF;
-	background-color: #000;
+	background-color: transparent;
 }
 
 .pictoStar{
-	color: #FFF;
+	color: #42DCA3;
 }
 
-#circle{
-	background-color: #000;
-}
+/*#circle{
+	color: transparent;
+	background-color: transparent;
+}*/
+
+
 
 /**********************************************************************/
 /**********************************************************************/
@@ -414,6 +435,9 @@ h3{
 
 
 
+
+
+
 /**********************************************************************/
 /**********************************************************************/
 /******                                                          ******/
@@ -423,51 +447,6 @@ h3{
 /**********************************************************************/
 /**********************************************************************/
 
-.containerImage{
-	margin: 0 auto;
-}
-
-.imgPortfolio{
-	width: 200px;
-	height: 200px;
-	float: left;
-}
-
-#imgPortfolio1{
-	background-image: url('../img/1eye.JPG');
-	background-size: cover;
-	background-position: center;
-}
-
-#imgPortfolio2{
-	background-image: url('../img/1portrait.JPG');
-	background-size: cover;
-	background-position: center;
-}
-
-#imgPortfolio3{
-	background-image: url('../img/1lips.JPG');
-	background-size: cover;
-	background-position: center;
-}
-
-#imgPortfolio4{
-	background-image: url('../img/1tiger.JPG');
-	background-size: cover;
-	background-position: center;
-}
-
-#imgPortfolio5{
-	background-image: url('../img/1drink.JPG');
-	background-size: cover;
-	background-position: center;
-}
-
-#imgPortfolio6{
-	background-image: url('../img/1skull.JPG');
-	background-size: cover;
-	background-position: center;
-}
 
 
 
@@ -479,6 +458,9 @@ h3{
 /******                                                          ******/
 /**********************************************************************/
 /**********************************************************************/
+
+
+
 
 
 
@@ -500,36 +482,233 @@ h3{
 
 #about{
 	padding: 0;
-	margin: 100px auto;
-	font-size: 1.3em;
-	font-weight: bolder;
-	border: 1px solid #D738E2;
+	margin: 0 auto;
+	font-weight: bold;
 }
 
-#aboutRow{
-	padding: 20px 0px 20px 0px;
-	/*border: 1px solid #D738E2;*/
-}
+/*#aboutRow{
+	padding: 30px 0px 30px 0px;
+}*/
 
 #aboutRow h2{
-	color: #FFF;
+	color: #D738E2;
+	font-size: 1.5em;
 	padding-bottom: 50px;
 	padding-top: 50px;
 }
 
 #aboutRow p{
 	color: #FFF;
-	padding-bottom: 5px;
+	font-size: 1.1em;
+	padding-bottom: 20px;
 }
 
 #aboutRow p a{
-	color: #D738E2;
+	color: #42DCA3;
 	padding-bottom: 10px;
 }
 
-.parallax-window{
-    min-height: 400px;
+/*#blockAbout{
+	padding-bottom: 50px;
+}*/
+
+
+
+
+
+
+
+/*.parallax-window{
+    min-height: 800px;
     background: transparent;
+}*/
+
+
+
+
+
+
+
+
+/*#blockPassions{
+	padding-top: 50px;
+}*/
+
+#blockPassions h3{
+	color: #D738E2;
+	padding-top: 50px;
+	padding-bottom: 20px;
+}
+
+
+.blockImage{
+	width: 130px;
+	height: 130px;
+	float: left;
+}
+
+#img1{
+	background-image: url('../img/imgFooting.png');
+	background-size: cover;
+	background-position: center;
+}
+
+#img2{
+	background-image: url('../img/1drink.JPG');
+	background-size: cover;
+	background-position: center;
+}
+
+#img3{
+	background-image: url('../img/1pudong.JPG');
+	background-size: cover;
+	background-position: center-right;
+}
+
+#img4{
+	background-image: url('../img/imgChess.jpeg');
+	background-size: cover;
+	background-position: center;
+}
+
+#img5{
+	background-image: url('../img/imgEinsteinC215.jpeg');
+	background-size: cover;
+	background-position: center;
+}
+
+#img6{
+	background-image: url('../img/1tiger.JPG');
+	background-size: cover;
+	background-position: center;
+}
+
+#img7{
+	background-image: url('../img/imgLouvre.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+#img8{
+	background-image: url('../img/imgBouddha.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+#img9{
+	background-image: url('../img/imgTennis.jpeg');
+	background-size: cover;
+	background-position: center;
+}
+
+#img10{
+	background-image: url('../img/imgSushis.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+#img11{
+	background-image: url('../img/1eye.JPG');
+	background-size: cover;
+	background-position: center;
+}
+
+#img12{
+	background-image: url('../img/imgMagritte2.jpg');
+	background-size: cover;
+	background-position: center-bottom;
+}
+
+#img13{
+	background-image: url('../img/imgPudongCity.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+#img14{
+	background-image: url('../img/1skull.JPG');
+	background-size: cover;
+	background-position: center;
+}
+
+#img15{
+	background-image: url('../img/imgTigerC215.jpeg');
+	background-size: cover;
+	background-position: center;
+}
+
+#img16{
+	background-image: url('../img/imgMandala.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+#img17{
+	background-image: url('../img/imgDelacroix.jpeg');
+	background-size: cover;
+	background-position: center;
+}
+
+#img18{
+	background-image: url('../img/imgPuzzle.jpeg');
+	background-size: cover;
+	background-position: center;
+}
+
+#img19{
+	background-image: url('../img/imgPetronasTowers.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+#img20{
+	background-image: url('../img/imgBasket.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+#img21{
+	background-image: url('../img/imgPoker.jpeg');
+	background-size: cover;
+	background-position: center;
+}
+
+#img22{
+	background-image: url('../img/imgMagritte.jpeg');
+	background-size: cover;
+	background-position: center;
+}
+
+#img23{
+	background-image: url('../img/imgPompidou.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+#img24{
+	background-image: url('../img/imgPicasso.jpg');
+	background-size: cover;
+	background-position: center;
+
+}
+
+#img25{
+	background-image: url('../img/imgNido.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+#img26{
+	background-image: url('../img/imgRubiks1.jpg');
+	background-size: cover;
+	background-position: bottom;
+}
+
+#img27{
+	background-image: url('../img/1dragoon.JPG');
+	background-size: cover;
+	background-position: left;
+}
 }
 
 /**********************************************************************/
@@ -559,24 +738,16 @@ h3{
 /**********************************************************************/
 
 #contact h2{
+	color: #D738E2;
+	font-size: 1.5em;
+}
+
+#contact p{
 	font-size: 1.2em;
-	margin-bottom: 50px;
 }
-
-p{
-	margin-bottom: 20px;
-}
-
-#contact{
-	padding: 0;
-}
-
-/*#contact p{
-	margin: 20px auto;
-}*/
 
 #contact label{
-	margin: 10px auto;
+	margin: 20px auto;
 }
 
 #contact input{
@@ -692,17 +863,114 @@ footer p{
 		display: none;
 	}
 
+	#titleCenter h1{
+		font-size: 1.1em;
+	}
+
+	#titleXs{
+		font-size: 1.6em;
+	}
+
 	.junior{
 		margin-bottom: 50px;
 	}
+
+	#blockDate{
+		margin: 20px auto;
+	}
+
+
+
+	#about{
+	padding: 0;
+	margin: 0 auto;
+	}
+
+	#aboutRow h2{
+		color: #42DCA3;
+		font-size: 1.5em;
+		padding-bottom: 50px;
+		padding-top: 50px;
+	}
+
+	#aboutRow p{
+		color: #FFF;
+		padding-bottom: 20px;
+	}
+
+	#aboutRow p a{
+		color: #42DCA3;
+		padding-bottom: 10px;
+	}
+
+	/*#blockAbout{
+		padding-bottom: 50px;
+	}*/
+
+
+
+
+	.blockImage{
+	width: 108px;
+	height: 108px;
+	float: left;
+	}
+
+
+
+
+	#contact h2{
+		padding-bottom: 30px;
+		font-size: 1.5em;
+	}
+
+	#contact p{
+		padding-bottom: 20px;
+		font-size: 1.2em;
+	}
+
+	#contact label{
+		margin: 20px auto;
+	}
+
+	#contact input{
+		margin: 5px auto;
+	}
+
+	.pictoContact{
+		color: #D738E2;
+	}
+
 
 }
 
 
 @media screen and (min-width: 481px){
+	
 	#titleXs{
 		display: none;
 	}
+
+	#contact{
+		padding: 0;
+	}
+
+	.content-section{
+		padding: 0;
+	}
+
+	#contact h2{
+		color: #D738E2;
+		font-size: 1.5em;
+		padding-top: 0px;
+		padding-bottom: 30px;
+	}
+
+	#contact p{
+		margin: 20px auto;
+	}
+
+
 }
 /*****************************************************************************************************************/
 /*****************************************************************************************************************/

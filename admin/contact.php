@@ -59,6 +59,11 @@ if(isset($_GET['id_contact'])){
    	?>
    	<meta charset="UTF-8" />
     <title>Contact CV web <?php echo $resultat['prenom'] .' ' . $resultat['nom']; ?></title>
+    <!-- Custom Fonts -->
+	<link href="../cssfrontbootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	<!-- Mon Style CSS -->
     <link rel="stylesheet" type="text/css" href="../cssAdmin/myfrontstyle.css" />
   	</head>
 
@@ -123,8 +128,8 @@ if(isset($_GET['id_contact'])){
 		            <td><?php echo $resultat['prenom_contact']; ?></td>                
 		            <td><?php echo $resultat['email_contact']; ?></td>                               
 		            <td><?php echo $resultat['telephone_contact']; ?></td>                               
-		            <td><a href="modif_contact.php?modifier_contact=<?= $resultat['id_contact']; ?>">Modifier</a></td> 
-		            <td><a href="contact.php?supprimer_contact=<?= $resultat['id_contact']; ?>">Supprimer</a></td>
+		            <td><a href="modif_contact.php?modifier_contact=<?= $resultat['id_contact']; ?>"><i class="fa fa-pencil-square-o fa2"></i></a></td> 
+		            <td><a href="contact.php?supprimer_contact=<?= $resultat['id_contact']; ?>"><i class="fa fa-trash-o"></i></a></td>
 		          </tr>
 		       			
 		            <?php };?>

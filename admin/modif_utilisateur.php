@@ -61,7 +61,7 @@ if(isset($_POST['utilisateur'])){
 
     <body>
         <header>
-        	<h1>Page de modification des Compétences</h1>
+        	<h1>Page de Modification Utilisateur</h1>
 
           <?php include 'navAdmin.php'; ?>
         </header>

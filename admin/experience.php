@@ -58,12 +58,18 @@ if(isset($_GET['id_xp'])){
   <head>
     <meta charset="UTF-8" />
     <title>Expériences CV web <?= $_POST['prenom'] . $_POST['nom']; ?></title>
+
+    <!-- Custom Fonts -->
+    <link href="../cssfrontbootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <!-- Mon style CSS -->
     <link rel="stylesheet" type="text/css" href="../cssAdmin/myfrontstyle.css" />
   </head>
   
   <body>
     <header>
-      <h1>Page Expériences Numériques</h1>
+      <h1>Page des Expériences Numériques</h1>
 
       <?php include 'navAdmin.php'; ?>
     </header>
@@ -77,38 +83,38 @@ if(isset($_GET['id_xp'])){
     
       ?>
       
-      <p>Il y a <?php echo $nbr_xp; ?> compétences dans votre BDD.</p>
+      <p>Il y a <?php echo $nbr_xp; ?> expérience(s) dans votre BDD.</p>
       
       <form method="POST">
           <table>
-            <tr>
-                <td>Titre</td> 
-                <td><input type="text" name="titre_xp" size="50" required /></td>
-            </tr>           
-            <tr>
-              <td>Date</td> 
-              <td><input type="text" name="date_xp" size="50" required /></td>                          
-            </tr>
-            <tr>
-              <td>Description</td> 
-              <td><textarea name="description_xp" id="editor1" cols="50" rows="10" required /></textarea>
-                <script>
-                    /* Replace the textarea id="editor1" with a CKeditor instance, using default configuration. */
-                  CKEDITOR.replace( 'editor1' );
-
-                </script>
-              </td>
-            </tr> 
-            <tr>
-              <td></td>
-              <td><input type="submit" value="Insérer en BDD" /></td>
+            <thead>
+              <th colspan="3">Insérer une nouvelle expérience :</th>
+            </thead>
+            <tbody>
+              <tr>
+                  <td>Titre</td> 
+                  <td><input type="text" name="titre_xp" size="50" required /></td>
+              </tr>           
+              <tr>
+                <td>Date</td> 
+                <td><input type="text" name="date_xp" size="50" required /></td>                          
               </tr>
+              <tr>
+                <td>Description</td> 
+                <td>
+                  <textarea name="description_xp" cols="50" rows="10" required />Votre description...</textarea>
+                </td>
+              </tr> 
+              <tr>
+                <td colspan="3"><input type="submit" value="Valider" /></td>
+              </tr>
+            </tbody>
           </table>
         </form>
       
       <table>
         <thead>
-          <th>Expériences</th>
+          <th>Expérience</th>
           <th>Date</th>
           <th>Description</th>
           <th>Modification</th>
@@ -119,8 +125,8 @@ if(isset($_GET['id_xp'])){
           <td><?php echo $ligne['titre_xp']; ?></td>
           <td><?php echo $ligne['date_xp']; ?></td>
           <td><?php echo $ligne['description_xp']; ?></td>
-          <td><a href="modif_experience.php?id_xp=<?= $ligne['id_xp']; ?>">Modifier</a></td>
-          <td><a href="experience.php?id_xp=<?= $ligne['id_xp']; ?>">Supprimer</a></td>
+          <td><a href="modif_experience.php?id_xp=<?= $ligne['id_xp']; ?>"><i class="fa fa-pencil-square-o fa2"></i></a></td>
+          <td><a href="experience.php?id_xp=<?= $ligne['id_xp']; ?>"><i class="fa fa-trash-o"></i></a></td>
         </tr>
           <?php } ?>
        </table>

@@ -56,12 +56,17 @@ if(isset($_GET['id_competence'])){
 	<head>
 		<meta charset="UTF-8" />
 		<title>Compétences numériques CV web <?= $_POST['prenom'] . $_POST['nom']; ?></title>
+		<!-- Custom Fonts -->
+		<link href="../cssfrontbootstrap/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+   		<link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+		<!-- Mon Style CSS -->
 		<link rel="stylesheet" type="text/css" href="../cssAdmin/myfrontstyle.css" />
 	</head>
 	
 	<body>
 		<header>
-			<h1>Page Compétences Numériques</h1>
+			<h1>Page des Compétences Numériques</h1>
 
 			<?php include 'navAdmin.php'; ?>
 		</header>
@@ -79,9 +84,19 @@ if(isset($_GET['id_competence'])){
 			
 
 				<form method="POST">
-					<label>Ajouter une compétence numérique :</label><br />
-					<input type="text" name="competence" />
-					<input type="submit" value="valider" /></td>
+					<table>
+						<thead>
+							<th colspan="2">Ajouter une nouvelle compétence numérique :</th>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="text" /></td>
+							</tr>
+							<tr>
+								<td><input type="submit" value="valider" /></td>
+							</tr>
+						</tbody>		
+					</table>
 				</form>
 			
 			<table>
@@ -93,8 +108,8 @@ if(isset($_GET['id_competence'])){
 			 	<tr>
 			 		<?php while($ligne = $sql -> fetch()){ ?>
 			 		<td><?php echo $ligne['competence']; ?></td>
-			 		<td><a href="modif_competence.php?id_competence=<?= $ligne['id_competence']; ?>">Modifier</a></td>
-		 			<td><a href="competence.php?id_competence=<?= $ligne['id_competence']; ?>">Supprimer</a></td>
+			 		<td><a href="modif_competence.php?id_competence=<?= $ligne['id_competence']; ?>"><i class="fa fa-pencil-square-o fa2"></i></a></td>
+		 			<td><a href="competence.php?id_competence=<?= $ligne['id_competence']; ?>"><i class="fa fa-trash-o fa2"></i></a></td>
 			 	</tr>
 			 		<?php } ?>
 			 </table>
