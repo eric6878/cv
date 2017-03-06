@@ -36,9 +36,9 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
-ol, ul {
+/*ol, ul {
 	list-style: none;
-}
+}*/
 blockquote, q {
 	quotes: none;
 }
@@ -138,12 +138,13 @@ li{
 }
 
 #navCenter li a{
+	color: #FFF;
 	font-weight: bold;
 	transition: 0.7s;
 }
 
 #navCenter li a:hover{
-	color: #D738E2;
+	color: #D738E2; 
 }
 
 /***************************************/
@@ -176,15 +177,15 @@ li{
 	margin-left: 0px;
 }
 
-#titleXs{
+.titleXs{
 	width: 200px;
 	height: 50px;
 	margin: 0 auto;
+	display: none;
 }
 
 h1{
-	font-size: 0.96em;
-	font-weight: bold;
+	font-size: 1.7em;
 	margin-top: 150px;
 	margin-bottom: 30px;
 }
@@ -192,12 +193,16 @@ h1{
 #title{
 	width: 700px;
 	height: 200px;
-	font-size: 1.1em;
+	font-size: 1.05em;
 	margin: 0 auto;
 }
 
 #titleContainer{
 	padding-bottom: 200px;
+}
+
+#blockDateTime{
+	padding-top: 10px;
 }
 
 .titleContent1{
@@ -280,16 +285,13 @@ h1{
 	color: #FFF;
 }
 
-
-
 .junior{
 	color: #42DCA3;
+	font-weight: bold;
 	text-align: center;
 	margin-bottom: 70px;
-	opacity: 0.7;
+	opacity: 0.8;
 }
-
-
 
 #btnFleche:hover{
 	color: #FFF;
@@ -337,13 +339,19 @@ h1{
 /**********************************************************************/
 
 
+.imgRoots{
+	height: 180px;
+	background-color: transparent;
+	background-image: url('../img/imgBackgroundUnderEarth.png');
+	background-repeat: repeat-x;
+}
 
-
-
-
-
-
-
+.imgRoots2{
+	height: 180px;
+	background-color: transparent;
+	background-image: url('../img/imgBackgroundUnderEarth.jpg');
+	background-repeat: repeat-x;
+}
 
 /**********************************************************************/
 /**********************************************************************/
@@ -356,17 +364,19 @@ h1{
 
 #xpNum{
 	padding: 0;
+	background: transparent;
 }
 
 #xpNum h2{
-	color: #FFF;
-	font-size: 1.5em;
+	color: #D738E2;
+	font-size: 2em;
+	font-weight: bolder;
 	margin-bottom: 20px;
 }
 
 h3{
 	color: #D738E2;
-	font-size: 1.3em;
+	font-size: 1.5em;
 	font-weight: bold;
 	margin-top: 10px;
 	margin-bottom: 25px;
@@ -380,6 +390,10 @@ h3{
 	float: left;
 }
 
+.download-section{
+	padding-top: 0px;
+}
+
 .download-section p{
 	color: #FFF;
 	font-size: 1.2em;
@@ -387,9 +401,9 @@ h3{
 }
 
 #imgParallax{
-	padding: 50px auto;
+	padding-top: 0px;
+	padding-bottom: 0px;
 	background: none;
-	/*background-color: #000;*/
 }
 
 .service-item{
@@ -415,7 +429,13 @@ h3{
 	background-color: transparent;
 }*/
 
-
+.imgRoots2{
+	height: 180px;
+	background-color: transparent;
+	background-image: url('../img/imgBackgroundUnderEarth2.png');
+	background-repeat: repeat-x;
+	background-position: bottom;
+}
 
 /**********************************************************************/
 /**********************************************************************/
@@ -448,6 +468,48 @@ h3{
 /**********************************************************************/
 
 
+#portfolio{
+	font-weight: bold;
+	padding-top: 0;
+}
+
+#portfolioRow{
+	padding-bottom: 50px;
+	background-color: transparent;
+}
+
+#portfolio h2{
+	padding-top: 50px;
+	color: #D738E2;
+	font-size: 2em;
+	font-weight: bolder;
+	margin-bottom: 50px;
+}
+
+#portfolio h3 a{
+	color: #FFF;
+	margin-bottom: 15px;
+}
+
+.imgPortfolio1{
+	width: 450px;
+	height: 300px;
+	margin: 0 auto;
+	border: 1px solid #42DCA3;
+	background-image: url('../img/imgMoon4.jpg');
+	background-size: cover;
+	background-position: center;
+}
+
+.imgPortfolio2{
+	width: 450px;
+	height: 300px;
+	margin: 0 auto;
+	border: 1px solid #42DCA3;
+	background-image: url('../img/logomusicol.jpg');
+	background-size: cover;
+	background-position: center;
+}
 
 
 /**********************************************************************/
@@ -482,17 +544,14 @@ h3{
 
 #about{
 	padding: 0;
-	margin: 0 auto;
+	margin-bottom: 50px;
 	font-weight: bold;
 }
 
-/*#aboutRow{
-	padding: 30px 0px 30px 0px;
-}*/
-
 #aboutRow h2{
 	color: #D738E2;
-	font-size: 1.5em;
+	font-size: 2em;
+	font-weight: bolder;
 	padding-bottom: 50px;
 	padding-top: 50px;
 }
@@ -508,44 +567,33 @@ h3{
 	padding-bottom: 10px;
 }
 
-/*#blockAbout{
-	padding-bottom: 50px;
-}*/
-
-
-
-
-
-
-
-/*.parallax-window{
-    min-height: 800px;
-    background: transparent;
-}*/
-
-
-
-
-
-
-
-
-/*#blockPassions{
-	padding-top: 50px;
-}*/
-
-#blockPassions h3{
+#blockPassions h4{
 	color: #D738E2;
+	font-weight: bolder;
+	padding: 50px;
+}
+
+
+#blockPassions p{
+	color: #D738E2;
+	font-size: 1.1em;
+	font-weight: bolder;
 	padding-top: 50px;
 	padding-bottom: 20px;
 }
 
-
 .blockImage{
-	width: 130px;
-	height: 130px;
+	width: 136px;
+	height: 136px;
 	float: left;
 }
+
+.item{
+	width: 100px;
+	height: 100px;
+	margin: 0 auto;
+}
+
 
 #img1{
 	background-image: url('../img/imgFooting.png');
@@ -602,7 +650,7 @@ h3{
 }
 
 #img10{
-	background-image: url('../img/imgSushis.jpg');
+	background-image: url('../img/imgSushis.jpeg');
 	background-size: cover;
 	background-position: center;
 }
@@ -689,7 +737,6 @@ h3{
 	background-image: url('../img/imgPicasso.jpg');
 	background-size: cover;
 	background-position: center;
-
 }
 
 #img25{
@@ -737,9 +784,14 @@ h3{
 /**********************************************************************/
 /**********************************************************************/
 
+#contact{
+	padding-top: 0;
+}
+
 #contact h2{
 	color: #D738E2;
-	font-size: 1.5em;
+	font-size: 2em;
+	font-weight: bolder;
 }
 
 #contact p{
@@ -756,6 +808,10 @@ h3{
 
 .pictoContact{
 	color: #D738E2;
+}
+
+.btn-primary{
+	margin-bottom: 20px;
 }
 
 /**********************************************************************/
@@ -818,12 +874,46 @@ h3{
 /**********************************************************************/
 
 footer{
-	height: 100px;
+	height: 200px;
+	/*background-image: url('../img/imgBackgroundFooter2.jpg');
+	background-repeat: repeat-x;
+	background-position: center;*/
 }
 
-footer p{
-	line-height: 100px;
+
+#footerLinks ul{
+	margin-top: 30px;
 }
+
+#footerLinks li{
+	margin-bottom: 7px;
+	display: block;
+}
+
+#footerLinks a{
+	color: #D738E2;
+	font-size: 1.1em;
+	text-decoration: none;
+	transition: 0.7s;
+}
+
+#footerLinks a:hover{
+	color: #FFF;
+}
+
+#footerCopyright p{
+	font-size: 1.3em;
+	line-height: 200px;
+}
+
+#footerPictos{
+	line-height: 200px;
+}
+
+#footerPictos a{
+	margin-right: 15px;
+}
+
 
 /**********************************************************************/
 /**********************************************************************/
@@ -850,6 +940,15 @@ footer p{
 
 
 
+
+
+
+
+
+
+
+
+
 /*****************************************************************************************************************/
 /*****************************************************************************************************************/
 /******                                                                                                     ******/
@@ -858,21 +957,65 @@ footer p{
 /*****************************************************************************************************************/
 /*****************************************************************************************************************/
 
-@media (max-width: 480px){
+/* début style css responsive XS */
+
+@media (max-width: 393px){
+
+	/* début style css nav */
+
+	#linkConnexionAdmin:hover{
+	color: #D738E2;
+	}
+
+	li{
+		list-style-type: none;
+		display: inline;
+	}
+
+	#navCenter .active{
+		color: #D738E2;
+	}
+
+	#navCenter .active:hover{
+		color: #FFF;
+	}
+
+	#navCenter li a{
+		color: #FFF;
+		font-weight: bold;
+		transition: 0.7s;
+	}
+
+	#navCenter li a:hover{
+		color: #FFF;
+		background-color: #D738E2; 
+	}
+
+	/* fin style css nav */
+
+
+
+	
+	/* début style css "header" */
+
 	#title{
 		display: none;
 	}
 
 	#titleCenter h1{
-		font-size: 1.1em;
+		font-size: 1.3em;
+		font-weight: bolder;
+		color: #42DCA3;
 	}
 
 	#titleXs{
-		font-size: 1.6em;
+		display: block;
+		font-size: 2em;
 	}
 
 	.junior{
-		margin-bottom: 50px;
+		margin-top: 50px;
+		margin-bottom: 20px;
 	}
 
 	#blockDate{
@@ -880,6 +1023,143 @@ footer p{
 	}
 
 
+	/* fin style css "header" */
+
+
+
+
+
+
+
+
+	/* début style css section "numérique" */
+
+	#xpNum{
+	padding: 0;
+	/*background: none;*/
+	}
+
+	#imgRoots{
+		height: 180px;
+		background-image: url('../img/imgBackgroundUnderEarth.jpg');
+		background-repeat: repeat-x;
+	}
+
+	#xpNum h2{
+		color: #D738E2;
+		font-size: 1.7em;
+		font-weight: bolder;
+		margin-bottom: 20px;
+	}
+
+	h3{
+		color: #D738E2;
+		font-size: 1.5em;
+		font-weight: bold;
+		margin-top: 10px;
+		margin-bottom: 25px;
+	}
+
+	#titreFormation{
+		color: #42DCA3;
+	}
+
+	.col-md-3 .col-sm-6{
+		float: left;
+	}
+
+	.download-section p{
+		color: #FFF;
+		font-size: 1.2em;
+		margin: 15px auto;
+	}
+
+	#imgParallax{
+		padding: 0 auto;
+		background: none;
+	}
+
+	.service-item{
+		color: transparent;
+		background-color: transparent;
+	}
+
+	.formation{
+		float: left;
+	}
+
+	.pictoCv{
+		color: #FFF;
+		background-color: transparent;
+	}
+
+	#picotFramework{
+		margin-top: 100px;
+	}
+
+	.pictoStar{
+		color: #42DCA3;
+	}
+
+	/* fin style css section "numérique" */
+
+
+
+
+	/* début style css section "portfolio" */
+
+	#portfolio{
+		background-color: #FFF;
+		font-weight: bold;
+	}
+
+	#portfolio h2{
+		color: #D738E2;
+		font-size: 1.5em;
+		font-weight: bolder;
+		margin-bottom: 50px;
+	}
+
+	#portfolio h3{
+		color: #D738E2;
+		font-size: 1.1em;
+		font-weight: bolder;
+		margin-bottom: 50px;
+	}
+
+	#portfolio h5{
+		color: #000;
+		margin-bottom: 15px;
+	}
+
+	.imgPortfolio1{
+		width: 150px;
+		height: 100px;
+		margin-bottom: 15px;
+		background-image: url('../img/imgMoon4.jpg');
+		background-size: cover;
+	}
+
+	.imgPortfolio2{
+		width: 150px;
+		height: 100px;
+		margin-bottom: 15px;
+		background-image: url('../img/logomusicol.jpg');
+		background-size: cover;
+	}
+
+	#blockPassions p{
+		color: #D738E2;
+	}
+
+	/* fin style css section "portfolio" */
+
+
+
+
+
+
+	/* début style css section "à propos" */
 
 	#about{
 	padding: 0;
@@ -887,7 +1167,7 @@ footer p{
 	}
 
 	#aboutRow h2{
-		color: #42DCA3;
+		color: #D738E2;
 		font-size: 1.5em;
 		padding-bottom: 50px;
 		padding-top: 50px;
@@ -895,6 +1175,7 @@ footer p{
 
 	#aboutRow p{
 		color: #FFF;
+		font-size: 0.96em;
 		padding-bottom: 20px;
 	}
 
@@ -902,31 +1183,38 @@ footer p{
 		color: #42DCA3;
 		padding-bottom: 10px;
 	}
-
-	/*#blockAbout{
-		padding-bottom: 50px;
-	}*/
-
-
-
-
+	
 	.blockImage{
-	width: 108px;
-	height: 108px;
-	float: left;
+		width: 126px;
+		height: 126px;
+		float: left;
 	}
 
+	#img27{
+		display: none;
+	}
+
+	/* fin style css section "à propos" */
 
 
+
+	
+
+	/* début style css section "contact" */
+
+	#contact{
+		padding-top: 0;
+	}
 
 	#contact h2{
+		color: #D738E2;
 		padding-bottom: 30px;
 		font-size: 1.5em;
 	}
 
 	#contact p{
 		padding-bottom: 20px;
-		font-size: 1.2em;
+		font-size: 0.9em;
 	}
 
 	#contact label{
@@ -941,14 +1229,96 @@ footer p{
 		color: #D738E2;
 	}
 
+	/* fin style css section "contact" */
+
+
+
+
+	/* début style css section "footer" */
+
+	footer{
+	height: 150px;
+	}
+
+	#footerLinks ul{
+		margin-top: 20px;
+	}
+
+	#footerLinks li{
+		margin-bottom: 5px;
+		display: block;
+	}
+
+	#footerLinks a{
+		color: #FFF;
+		font-size: 0.9em;
+		text-decoration: none;
+		transition: 0.7s;
+	}
+
+	#footerLinks a:hover{
+		color: #D738E2;
+	}
+
+	#footerCopyright p{
+		line-height: 150px;
+		font-size: 0.8em;
+	}
+
+	#footerPictos{
+		line-height: 150px;
+	}
+
+	#footerPictos a{
+		margin-right: 15px;
+	}
+
+	/* fin style css section "footer" */
 
 }
 
 
-@media screen and (min-width: 481px){
+
+@media (min-width: 393px) and (max-width: 480px){
+	
+	.blockImage{
+		width: 130px;
+		height: 130px;
+		float: left;
+	}
+
+	#img27{
+		display: block;
+	}
+
+}
+
+/*******************************************/
+/*******************************************/
+/*      Fin style css responsive XS        */
+/*******************************************/
+/*******************************************/
+
+
+
+
+
+
+
+
+/*******************************************/
+/*******************************************/
+/*      début style css responsive sm      */
+/*******************************************/
+/*******************************************/
+
+@media screen and (min-width: 481px) and (max-width: 768px){
+
+
+	/* début style css section header */	
 	
 	#titleXs{
-		display: none;
+		display: block;
 	}
 
 	#contact{
@@ -959,9 +1329,59 @@ footer p{
 		padding: 0;
 	}
 
+    /* fin style css section header */
+
+
+
+
+
+
+
+    /* début style css section numérique */	
+
+	#contact{
+		padding: 0;
+	}
+
+	.content-section{
+		padding: 0;
+	}
+
+	.download-section{
+		padding-top: 0px;
+	}
+
+
+    /* fin style css section numérique */
+
+
+
+
+
+
+    /* début style css section portfolio */	
+	
+    .blockImage{
+		width: 130px;
+		height: 130px;
+		float: left;
+	}
+
+    /* fin style css section portfolio */
+
+
+
+
+	/* début style css section contact*/
+
+	#contact{
+		padding-top: 0;
+	}
+
+
 	#contact h2{
 		color: #D738E2;
-		font-size: 1.5em;
+		font-size: 1.7em;
 		padding-top: 0px;
 		padding-bottom: 30px;
 	}
@@ -970,8 +1390,326 @@ footer p{
 		margin: 20px auto;
 	}
 
+	/* fin style css section contact*/
+
+
+
+
+
+
+	/* début style css section footer*/
+
+	footer{
+	height: 200px;
+	}
+
+	#footerLinks ul{
+		margin-top: 30px;
+	}
+
+	#footerLinks li{
+		margin-bottom: 7px;
+		display: block;
+	}
+
+	#footerLinks a{
+		color: #FFF;
+		font-size: 1.3em;
+		text-decoration: none;
+		transition: 0.7s;
+	}
+
+	#footerLinks a:hover{
+		color: #42DCA3;
+	}
+
+	#footerCopyright p{
+		font-size: 1.3em;
+		line-height: 200px;
+	}
+
+	#footerPictos{
+		line-height: 200px;
+	}
+
+	#footerPictos a{
+		margin-right: 15px;
+	}
+
+	/* fin style css section footer*/
 
 }
+
+
+/*******************************************/
+/*******************************************/
+ /*      Fin style css responsive sm       */
+/*******************************************/
+/*******************************************/
+
+
+
+
+
+
+
+/*******************************************/
+/*******************************************/
+/*      début style css responsive md      */
+/*******************************************/
+/*******************************************/
+
+
+@media screen and (min-width: 769px) and (max-width: 992px){
+
+	/* début style css section header */	
+	
+	#titleXs{
+		display: block;
+	}
+
+	#contact{
+		padding-top: 0;
+	}
+
+    /* fin style css section header */
+
+
+
+
+
+
+    /* début style css section numérique */	
+
+	#contact{
+		padding: 0;
+	}
+
+	.content-section{
+		padding: 0;
+	}
+
+    /* fin style css section numérique */
+
+
+
+
+
+
+    /* début style css section portfolio */	
+	
+
+
+    /* fin style css section portfolio */
+
+
+
+
+	/* début style css section contact*/
+
+	#contact{
+		padding-top: 0;
+	}
+
+
+	#contact h2{
+		color: #D738E2;
+		font-size: 1.7em;
+		padding-top: 0px;
+		padding-bottom: 30px;
+	}
+
+	#contact p{
+		margin: 20px auto;
+	}
+
+	/* fin style css section contact*/
+
+
+
+
+
+
+	/* début style css section footer*/
+
+	footer{
+	height: 200px;
+	}
+
+	#footerLinks ul{
+		margin-top: 30px;
+	}
+
+	#footerLinks li{
+		margin-bottom: 7px;
+		display: block;
+	}
+
+	#footerLinks a{
+		color: #FFF;
+		font-size: 1.3em;
+		text-decoration: none;
+		transition: 0.7s;
+	}
+
+	#footerLinks a:hover{
+		color: #42DCA3;
+	}
+
+	#footerCopyright p{
+		font-size: 1.3em;
+		line-height: 200px;
+	}
+
+	#footerPictos{
+		line-height: 200px;
+	}
+
+	#footerPictos a{
+		margin-right: 15px;
+	}
+
+	/* fin style css section footer*/
+
+}
+
+/*******************************************/
+/*******************************************/
+/*       Fin style css responsive md       */
+/*******************************************/
+/*******************************************/
+
+
+
+
+
+
+/*******************************************/
+/*******************************************/
+/*      début style css responsive lg      */
+/*******************************************/
+/*******************************************/
+
+@media screen and (min-width: 993px){
+
+	/* début style css section header */	
+	
+
+	#titleXs{
+		display: none;
+	}
+
+    /* fin style css section header */
+
+
+
+
+
+
+    /* début style css section numérique */	
+
+	#contact{
+		padding: 0;
+	}
+
+	.content-section{
+		padding: 0;
+	}
+
+    /* fin style css section numérique */
+
+
+
+
+
+
+    /* début style css section portfolio */	
+	
+    #portfolio{
+    	background-color: transparent;
+    }
+
+    /* fin style css section portfolio */
+
+
+
+
+	/* début style css section contact*/
+
+	#contact{
+		padding-top: 0;
+	}
+
+
+	#contact h2{
+		color: #D738E2;
+		font-size: 2em;
+		padding-top: 0px;
+		padding-bottom: 30px;
+	}
+
+	#contact p{
+		margin: 20px auto;
+	}
+
+	/* fin style css section contact*/
+
+
+
+
+
+
+	/* début style css section footer*/
+
+	footer{
+	height: 200px;
+	}
+
+	#footerLinks ul{
+		margin-top: 30px;
+	}
+
+	#footerLinks li{
+		margin-bottom: 7px;
+		display: block;
+	}
+
+	#footerLinks a{
+		color: #D738E2;
+		font-size: 1.1em;
+		text-decoration: none;
+		transition: 0.7s;
+	}
+
+	#footerLinks a:hover{
+		color: #FFF;
+	}
+
+	#footerCopyright p{
+		font-size: 1.1em;
+		line-height: 200px;
+	}
+
+	#footerPictos{
+		line-height: 200px;
+	}
+
+	#footerPictos a{
+		margin-right: 15px;
+	}
+
+	/* fin style css section footer*/
+
+}
+
+/*******************************************/
+/*******************************************/
+/*       Fin style css responsive lg       */
+/*******************************************/
+/*******************************************/
+
+
+
 /*****************************************************************************************************************/
 /*****************************************************************************************************************/
 /******                                                                                                     ******/

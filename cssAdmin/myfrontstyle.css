@@ -85,9 +85,21 @@ body{
 /***************************************************************/
 /***************************************************************/
 
+section a{
+	color: #FFF;
+	text-decoration: none;
+	transition: 0.7s;
+}
+
+section a:hover{
+	padding: 10px 10px;
+	color: #D738E2;
+	background-color: #000;
+}
+
 
 h1{
-	margin: 0 auto;
+	margin: 50px auto;
 	color: #D738E2;
 	text-align: center;
 	
@@ -148,6 +160,7 @@ table{
 }
 
 thead{
+	font-size: 1.2em;
 	background-color: #D738E2;
 }
 

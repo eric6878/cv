@@ -106,10 +106,10 @@ if(isset($_GET['id_competence'])){
 			 		<th>Suppression</th>
 			 	</thead>
 			 	<tr>
-			 		<?php while($ligne = $sql -> fetch()){ ?>
-			 		<td><?php echo $ligne['competence']; ?></td>
-			 		<td><a href="modif_competence.php?id_competence=<?= $ligne['id_competence']; ?>"><i class="fa fa-pencil-square-o fa2"></i></a></td>
-		 			<td><a href="competence.php?id_competence=<?= $ligne['id_competence']; ?>"><i class="fa fa-trash-o fa2"></i></a></td>
+			 		<?php while($resultat = $sql -> fetch()){ ?>
+			 		<td><?php echo $resultat['competence']; ?></td>
+			 		<td><a href="modif_competence.php?id_competence=<?= $resultat['id_competence']; ?>"><i class="fa fa-pencil-square-o fa2"></i></a></td>
+		 			<td><a href="competence.php?id_competence=<?= $resultat['id_competence']; ?>"><i class="fa fa-trash-o fa2"></i></a></td>
 			 	</tr>
 			 		<?php } ?>
 			 </table>

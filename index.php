@@ -19,7 +19,7 @@
 
       ?>
 
-<html lang="en">
+<html lang="fr">
 
 <head>
 
@@ -29,7 +29,7 @@
     <meta name="description" content="Site web CV d'intégrateur développeur  éric coudert">
     <meta name="author" content="Curriculum Vitae éric coudert intégrateur développeur">
 
-    <title>Eric Coudert site CV</title>
+    <title>Site CV Éric coudert</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" type="text/css" href="cssfront/printstyle.css" media="print" />
@@ -54,13 +54,13 @@
 
 </head>
 
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top" class="dont-break">
 
 
     <!-- Intro Header -->
    
     <!-- Navigation -->
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-custom navbar-fixed-top hidden-print" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
@@ -70,7 +70,7 @@
                 <a href="#btnConnexionAdmin"><i class="fa fa-play-circle btnAdmin" data-toggle="collapse" href="#btnConnexionAdmin" aria-expanded="false" aria-controls="linkConnexionAdmin"></i></a> <span class="light">Admin</span>
                 <div class="collapse" id="btnConnexionAdmin">
                     <div class="card card-block">
-                      <a id="linkConnexionAdmin" href="admin/authentification.php">Connexion</a>  
+                      <a id="linkConnexionAdmin" href="admin/authentification.php" target="blank">Connexion</a>  
                     </div>
                 </div>
             </div>
@@ -83,7 +83,7 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll active" href="#">Home</a>
+                        <a id="linkHome" class="page-scroll active" href="#">Home</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="#xpNum">Numérique</a>
@@ -92,11 +92,11 @@
                         <a class="page-scroll" href="#portfolio">Portfolio</a>
                     </li>
                     <li>
+                        <a class="page-scroll" href="CvInDesign.pdf" target="_blank">CV à télécharger</a>
+                    </li>
+                    <li>
                         <a class="page-scroll" href="#about">À propos</a>
                     </li>
-                    <!-- <li>
-                        <a class="page-scroll" href="#">CV à télécharger</a>
-                    </li> -->
                     <li>
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
@@ -161,93 +161,81 @@
                                     </div>
                                 </div>
 
-                                <div id="titleXs">Intégrateur développeur web</div>
+                                <div id="titleXs" class="hidden-print">Intégrateur développeur web</div>
                                 
                                 <div class="junior">Junior</div>
-                                <a href="#xpNum" id="pictoCircle" class="btn btn-circle page-scroll">
-                                    <i id="btnFleche" class="fa fa-angle-double-down animated"></i>
-                                </a>
+                                    <a href="#xpNum" id="pictoCircle" class="btn btn-circle page-scroll hidden-print">
+                                        <i id="btnFleche" class="fa fa-angle-double-down animated"></i>
+                                    </a>
                                 </div>       
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div id="blockIcone" class="row">
-                    <div class="col-lg-2 col-lg-offset-5">
-                        <a href="#"><img src="img/pictoGitHub.ico" alt="Icone GitHub" /></a>     
+                <?php date_default_timezone_set('Europe/Paris');?>
+				
+				<?php if(date_default_timezone_get()):?>
+			
+                <div id="blockIcone" class="row hidden-print">
+                    <div class="col-lg-1">
+                        <a href="http://lepoles.org/ma6tvacoder-lecole-du-web-des-quartiers-populaires/">Ma6TvaCoder</a>
+                    </div>  
+
+                    <div class="col-lg-2 col-lg-offset-4 col-sm-3 col-sm-offset-4 col-md-3 col-md-offset-4 col-xs-12">
+                        <a href="#"><img src="img/pictoGitHub.png" alt="Icone GitHub" /></a>     
 
                         <a href="#"><img src="img/pictoFacebook.png" alt="Icone Facebook" /></a>
        
                         <a href="#"><img src="img/pictoInstagram.png" alt="Icone Instagram" /></a>
                     </div>
-                </div>
-                <div id="blockDate" class="row">
-                    <div class="col-lg-1 col-lg-offset-11 col-xs-12">
-                        <?php 
-                        $date = date("d-m-Y"); 
-                        echo 'le ' . $date; 
-                        ?>
-                    </div>
-                </div>
 
-                <div id="blockHeure" class="row">
-                    <div class="col-lg-1 col-lg-offset-11 col-xs-12">
-                        <?php  
+                    <div id="blockDateTime" class="col-lg-1 col-lg-offset-4 col-sm-2 col-sm-offset-3 col-md-2 col-md-offset-3 col-xs-12 hidden-print">
+                        <?php 
+                        $date = date('d-m-Y');
                         $heure = date("H:i A");
+                        date_default_timezone_set('Europe/Paris');
+                        echo 'Le ' .  $date . '<br />'; 
                         echo $heure; 
                         ?>
                     </div>
                 </div>
+           		<?php endif; ?>
             </div>
         </div>
     </header>
-
+    
+     
     <!-- Compétences numériques Section -->
-    <section id="xpNum" class="content-section text-center">
-        <div id="imgParallax" class="download-section container parallax-window" data-parallax="scroll" data-image-src="img/imgParallax7.jpg">
-
+    <section id="xpNum" class="content-section text-center hidden-print">
+        <div id="imgParallax" class="download-section container parallax-window" data-parallax="scroll" data-image-src="img/imgBackgroundRocks11.jpg">        
+            
+            <div class="imgRoots" class="col-lg-12">
+                <!-- imgBackgroundRootsUnderEarth --> <!-- <img src="img/imgBackgroundUnderEarth.jpg" alt="#" /> -->  
+            </div>
+            
             <div class="row">
-            <h2>Numérique</h2>
+                <h2>Numérique</h2>
                 <div class="col-lg-12">
-                    <div id="blockFormation" class="container">   
-                        <div class="row">          
-                            <div class="col-lg-4 col-lg-offset-4 formation">
-                                <div class="service-item">
-                                    <span class="fa-stack fa-4x">
-                                        <i class="fa fa-circle-thin fa-stack-2x"></i>
-                                        <i class="fa fa-info-circle fa-stack-1x text-primary pictoCv"></i>
-                                    </span>
-                                    
-                                    <h3>Formation</h3>
-                                    
-                                    <p>2016- 2017<p>
-                                    
-                                    <p>
-                                        <span id="titreFormation">
-                                            <?php 
-                                                $i = 0;
-                                                while($i < count($formation)){
-                                                    if($i > 0){
-                                                        echo ' / ';
-                                                    }
-                                                    echo $formation[$i]['titre_formation'];
-                                                    $i++;
-                                                }
-                                            ?>
-                                        </span>
-                                    </p>
-                                    
-                                    <p>Le PoleS, Grande École du Numérique</p>
-                                    <p>Formation de 10 mois</p>
-                                    <p>Villeneuve-la-Garenne</p>
-                                </div>
-                            </div>                                                
-                        </div> 
+                    <div class="service-item">
+                        <span class="fa-stack fa-4x">
+                            <i class="fa fa-circle-thin fa-stack-2x"></i>
+                            <i class="fa fa-info-circle fa-stack-1x text-primary pictoCv"></i>
+                        </span>
+                        
+                        <h3>Formation</h3>                       
+                        <p>2016- 2017<p>                        
+                        <p>
+                            <span id="titreFormation">
+                                Certification d'intégrateur développeur web
+                            </span>
+                        </p>                   
+                        <p>Le PoleS, Grande École du Numérique</p>
+                        <p>Formation de 10 mois</p>
+                        <p>Villeneuve-la-Garenne</p>
                     </div>
                 </div>
             </div>
-
+    
             <div class="row">
                 <div class="col-lg-10 col-lg-offset-1">
                     <div class="row">
@@ -264,47 +252,48 @@
                                          <i class="fa fa-star fa2 pictoStar"></i>
                                          <i class="fa fa-star fa2 pictoStar"></i>
                                          <i class="fa fa-star-half-empty fa2 pictoStar"></i>
-                                         <i class="fa fa-star-o fa2 pictostar"></i>
+                                         <i class="fa fa-star-o fa2 pictoStar"></i>
                                 </p>
                                 
                                 <p>CSS3 <i class="fa fa-star fa2 pictoStar"></i>
                                         <i class="fa fa-star fa2 pictoStar"></i>
                                         <i class="fa fa-star-half-empty fa2 pictoStar"></i>
-                                        <i class="fa fa-star-o fa2"></i>
-                                        <i class="fa fa-star-o fa2"></i>
+                                        <i class="fa fa-star-o fa2 pictoStar"></i>
+                                        <i class="fa fa-star-o fa2 pictoStar"></i>
                                 </p>
 
-                                <p>JavaScript <i class="fa fa-star fa2 pictoStar"></i>
-                                              <i class="fa fa-star-o fa2 "></i>
-                                              <i class="fa fa-star-o fa2"></i>
-                                              <i class="fa fa-star-o fa2"></i>
-                                              <i class="fa fa-star-o fa2"></i>
+                                <p>JavaScript <i class="fa fa-star-half-empty fa2 pictoStar"></i>
+                                              <i class="fa fa-star-o fa2 pictoStar"></i>
+                                              <i class="fa fa-star-o fa2 pictoStar"></i>
+                                              <i class="fa fa-star-o fa2 pictoStar"></i>
+                                              <i class="fa fa-star-o fa2 pictoStar"></i>
                                 </p>
 
                                 <p>MySQL <i class="fa fa-star fa2 pictoStar"></i>
                                          <i class="fa fa-star fa2 pictoStar"></i>
-                                         <i class="fa fa-star-half-empty fa2 pictoStar"></i>
-                                         <i class="fa fa-star-o fa2"></i>
-                                         <i class="fa fa-star-o fa2"></i>
+                                         <i class="fa fa-star-o fa2 pictoStar"></i>
+                                         <i class="fa fa-star-o fa2 pictoStar"></i>
+                                         <i class="fa fa-star-o fa2 pictoStar"></i>
+                                 </p>
                             
 
                                 <p>PHP5 <i class="fa fa-star fa2 pictoStar"></i>
                                         <i class="fa fa-star fa2 pictoStar"></i>
-                                        <i class="fa fa-star-half-empty fa2 pictoStar"></i>
-                                        <i class="fa fa-star-o fa2"></i>
-                                        <i class="fa fa-star-o fa2"></i>
+                                        <i class="fa fa-star-o fa2 pictoStar"></i>
+                                        <i class="fa fa-star-o fa2 pictoStar"></i>
+                                        <i class="fa fa-star-o fa2 pictoStar"></i>
                                 </p>
                                 
                                 <p>Git / Linux <i class="fa fa-star fa2 pictoStar"></i>
-                                                        <i class="fa fa-star-o fa2"></i>
-                                                        <i class="fa fa-star-o fa2"></i>
-                                                        <i class="fa fa-star-o fa2"></i>
-                                                        <i class="fa fa-star-o fa2"></i>
+                                                        <i class="fa fa-star-o fa2 pictoStar"></i>
+                                                        <i class="fa fa-star-o fa2 pictoStar"></i>
+                                                        <i class="fa fa-star-o fa2 pictoStar"></i>
+                                                        <i class="fa fa-star-o fa2 pictoStar"></i>
                                 </p>
                             </div>
                         </div>
 
-                        <div class="col-md-3 col-sm-6">
+                        <div id="pictoFramework" class="col-md-3 col-sm-6">
                             <div class="service-item">
                                 <span class="fa-stack fa-4x">
                                     <i class="fa fa-circle-thin fa-stack-2x"></i>
@@ -316,22 +305,22 @@
                                 <p>Bootstrap 3 <i class="fa fa-star fa2 pictoStar"></i>
                                                <i class="fa fa-star fa2 pictoStar"></i>
                                                <i class="fa fa-star-half-empty fa2 pictoStar"></i>
-                                               <i class="fa fa-star-o fa2"></i>
-                                               <i class="fa fa-star-o fa2"></i>
+                                               <i class="fa fa-star-o fa2 pictoStar"></i>
+                                               <i class="fa fa-star-o fa2 pictoStar"></i>
                                 </p>
                                 
                                 <p>Wordpress <i class="fa fa-star fa2 pictoStar"></i>
                                         <i class="fa fa-star-half-empty fa2 pictoStar"></i>
-                                        <i class="fa fa-star-o fa2"></i>
-                                        <i class="fa fa-star-o fa2"></i>
-                                        <i class="fa fa-star-o fa2"></i>
+                                        <i class="fa fa-star-o fa2 pictoStar"></i>
+                                        <i class="fa fa-star-o fa2 pictoStar"></i>
+                                        <i class="fa fa-star-o fa2 pictoStar"></i>
                                 </p>
                                 
                                 <p>Framework W <i class="fa fa-star fa2 pictoStar"></i>
-                                        <i class="fa fa-star-o fa2"></i>
-                                        <i class="fa fa-star-o fa2"></i>
-                                        <i class="fa fa-star-o fa2"></i>
-                                        <i class="fa fa-star-o fa2"></i>
+                                        <i class="fa fa-star-o fa2 pictoStar"></i>
+                                        <i class="fa fa-star-o fa2 pictoStar"></i>
+                                        <i class="fa fa-star-o fa2 pictoStar"></i>
+                                        <i class="fa fa-star-o fa2 pictoStar"></i>
                                 </p>
                             </div>
                         </div>
@@ -347,31 +336,31 @@
                                 
                                 <p>InDesign <i class="fa fa-star fa2 pictoStar"></i>
                                             <i class="fa fa-star fa2 pictoStar"></i>
-                                            <i class="fa fa-star-o fa2"></i>
-                                            <i class="fa fa-star-o fa2"></i>
-                                            <i class="fa fa-star-o fa2"></i>
+                                            <i class="fa fa-star-o fa2 pictoStar"></i>
+                                            <i class="fa fa-star-o fa2 pictoStar"></i>
+                                            <i class="fa fa-star-o fa2 pictoStar"></i>
                                 </p>
                                 
                                 <p>Photoshop CC <i class="fa fa-star fa2 pictoStar"></i>
                                                 <i class="fa fa-star-half-empty fa2 pictoStar"></i>
-                                                <i class="fa fa-star-o fa2"></i>
-                                                <i class="fa fa-star-o fa2"></i>
-                                                <i class="fa fa-star-o fa2"></i>
+                                                <i class="fa fa-star-o fa2 pictoStar"></i>
+                                                <i class="fa fa-star-o fa2 pictoStar"></i>
+                                                <i class="fa fa-star-o fa2 pictoStar"></i>
                                 </p>
 
                                 
                                 <p>Gimp <i class="fa fa-star fa2 pictoStar"></i>
                                         <i class="fa fa-star fa2 pictoStar"></i>
-                                        <i class="fa fa-star-o fa2"></i>
-                                        <i class="fa fa-star-o fa2"></i>
-                                        <i class="fa fa-star-o fa2"></i>
+                                        <i class="fa fa-star-o fa2 pictoStar"></i>
+                                        <i class="fa fa-star-o fa2 pictoStar"></i>
+                                        <i class="fa fa-star-o fa2 pictoStar"></i>
                                 </p>
 
                                 <p>Krita <i class="fa fa-star fa2 pictoStar"></i>
                                          <i class="fa fa-star fa2 pictoStar"></i>
-                                         <i class="fa fa-star-o fa2"></i>
-                                         <i class="fa fa-star-o fa2"></i>
-                                         <i class="fa fa-star-o fa2"></i>
+                                         <i class="fa fa-star-o fa2 pictoStar"></i>
+                                         <i class="fa fa-star-o fa2 pictoStar"></i>
+                                         <i class="fa fa-star-o fa2 pictoStar"></i>
                                 </p>
                             </div>
                         </div>
@@ -390,87 +379,290 @@
                                 <p>PHP7</p>
                             </div>
                         </div>
-                    </div>         
-                </div>
-            </div> 
+                    </div>        
+                </div> 
+            </div>
+
+            <div class="imgRoots2 hidden-print" class="col-lg-12">
+                <!-- imgBackgroundRootsUnderEarth --> <!-- <img src="img/imgBackgroundUnderEarth.jpg" alt="#" /> -->  
+            </div>
+        </div>
     </section>
+
+
+    <section id="xxx" class="content-section text-center numerique">
+        
+        <!-- DEBUT visible-print-block formation -->
+        <div class="row visible-print-block">
+            <h2>Numérique</h2>
+            <div class="col-xs-12">
+                <div class="service-item">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle-thin fa-stack-2x"></i>
+                        <i class="fa fa-info-circle fa-stack-1x text-primary pictoCv"></i>
+                    </span>
+                    
+                    <h3>Formation</h3>
+                    
+                    <p>2016 - 2017<p>
+                    
+                    <p>
+                        <span id="titreFormation">
+                            Certification d'intégrateur développeur web
+                        </span>
+                    </p>
+                    
+                    <p>Le PoleS, Grande École du Numérique</p>
+                    <p>Formation de 10 mois</p>
+                    <p>Villeneuve-la-Garenne</p>
+                </div>
+            </div>
+        </div>
+        <!-- FIN visible-print-block formation num -->
+
+
+        <!-- DEBUT visible-print-block compétences num -->
+
+        <div id="xxx" class="row visible-print-block">    
+            <div class="col-xs-3">
+                <div class="service-item">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle-thin fa-stack-2x"></i>
+                        <i class="fa fa-connectdevelop fa-stack-1x text-primary pictoCv"></i>
+                    </span>
+                    
+                    <h3>Intégration &amp; développement</h3>
+                    
+                    <p>HTML5 <i class="fa fa-star fa2 pictoStar"></i>
+                             <i class="fa fa-star fa2 pictoStar"></i>
+                             <i class="fa fa-star fa2 pictoStar"></i>
+                             <i class="fa fa-star-half-empty fa2 pictoStar"></i>
+                             <i class="fa fa-star-o fa2 pictostar"></i>
+                    </p>
+                    
+                    <p>CSS3 <i class="fa fa-star fa2 pictoStar"></i>
+                            <i class="fa fa-star fa2 pictoStar"></i>
+                            <i class="fa fa-star-half-empty fa2 pictoStar"></i>
+                            <i class="fa fa-star-o fa2"></i>
+                            <i class="fa fa-star-o fa2"></i>
+                    </p>
+
+                    <p>JavaScript <i class="fa fa-star fa2 pictoStar"></i>
+                                  <i class="fa fa-star-o fa2 "></i>
+                                  <i class="fa fa-star-o fa2"></i>
+                                  <i class="fa fa-star-o fa2"></i>
+                                  <i class="fa fa-star-o fa2"></i>
+                    </p>
+
+                    <p>MySQL <i class="fa fa-star fa2 pictoStar"></i>
+                             <i class="fa fa-star fa2 pictoStar"></i>
+                             <i class="fa fa-star-half-empty fa2 pictoStar"></i>
+                             <i class="fa fa-star-o fa2"></i>
+                             <i class="fa fa-star-o fa2"></i>
+                     </p>
+                
+
+                    <p>PHP5 <i class="fa fa-star fa2 pictoStar"></i>
+                            <i class="fa fa-star fa2 pictoStar"></i>
+                            <i class="fa fa-star-half-empty fa2 pictoStar"></i>
+                            <i class="fa fa-star-o fa2"></i>
+                            <i class="fa fa-star-o fa2"></i>
+                    </p>
+                    
+                    <p>Git / Linux <i class="fa fa-star fa2 pictoStar"></i>
+                                            <i class="fa fa-star-o fa2"></i>
+                                            <i class="fa fa-star-o fa2"></i>
+                                            <i class="fa fa-star-o fa2"></i>
+                                            <i class="fa fa-star-o fa2"></i>
+                    </p>
+                </div>
+            </div>
+
+            <div id="pictoFramework" class="col-xs-3">
+                <div class="service-item">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle-thin fa-stack-2x"></i>
+                        <i class="fa fa-laptop fa-stack-1x text-primary pictoCv"></i>
+                    </span>
+                    
+                    <h3>Frameworks &amp; <acronym title="Système de gestion de contenu">CMS</acronym></h3>
+                    
+                    <p>Bootstrap 3 <i class="fa fa-star fa2 pictoStar"></i>
+                                   <i class="fa fa-star fa2 pictoStar"></i>
+                                   <i class="fa fa-star-half-empty fa2 pictoStar"></i>
+                                   <i class="fa fa-star-o fa2"></i>
+                                   <i class="fa fa-star-o fa2"></i>
+                    </p>
+                    
+                    <p>Wordpress <i class="fa fa-star fa2 pictoStar"></i>
+                            <i class="fa fa-star-half-empty fa2 pictoStar"></i>
+                            <i class="fa fa-star-o fa2"></i>
+                            <i class="fa fa-star-o fa2"></i>
+                            <i class="fa fa-star-o fa2"></i>
+                    </p>
+                    
+                    <p>Framework W <i class="fa fa-star fa2 pictoStar"></i>
+                            <i class="fa fa-star-o fa2"></i>
+                            <i class="fa fa-star-o fa2"></i>
+                            <i class="fa fa-star-o fa2"></i>
+                            <i class="fa fa-star-o fa2"></i>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-xs-3">
+                <div class="service-item">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle-thin fa-stack-2x"></i>
+                        <i class="fa fa-envira fa-stack-1x text-primary pictoCv"></i>
+                    </span>
+                    
+                    <h3>Web Design</h3>
+                    
+                    <p>InDesign <i class="fa fa-star fa2 pictoStar"></i>
+                                <i class="fa fa-star fa2 pictoStar"></i>
+                                <i class="fa fa-star-o fa2"></i>
+                                <i class="fa fa-star-o fa2"></i>
+                                <i class="fa fa-star-o fa2"></i>
+                    </p>
+                    
+                    <p>Photoshop CC <i class="fa fa-star fa2 pictoStar"></i>
+                                    <i class="fa fa-star-half-empty fa2 pictoStar"></i>
+                                    <i class="fa fa-star-o fa2"></i>
+                                    <i class="fa fa-star-o fa2"></i>
+                                    <i class="fa fa-star-o fa2"></i>
+                    </p>
+
+                    
+                    <p>Gimp <i class="fa fa-star fa2 pictoStar"></i>
+                            <i class="fa fa-star fa2 pictoStar"></i>
+                            <i class="fa fa-star-o fa2"></i>
+                            <i class="fa fa-star-o fa2"></i>
+                            <i class="fa fa-star-o fa2"></i>
+                    </p>
+
+                    <p>Krita <i class="fa fa-star fa2 pictoStar"></i>
+                             <i class="fa fa-star fa2 pictoStar"></i>
+                             <i class="fa fa-star-o fa2"></i>
+                             <i class="fa fa-star-o fa2"></i>
+                             <i class="fa fa-star-o fa2"></i>
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-xs-3">
+                <div class="service-item">
+                    <span class="fa-stack fa-4x">
+                        <i class="fa fa-circle-thin fa-stack-2x"></i>
+                        <i class="fa fa-eye fa-stack-1x text-primary pictoCv"></i>
+                    </span>
+                   
+                    <h3>Veille technologique</h3>
+                    
+                    <p>Symfony</p>
+                    <p>Bootstrap 4</p>
+                    <p>PHP7</p>
+                </div>
+            </div>
+        </div>        
+    <!-- FIN visible-print-block -->
+    </section>
+    
 
     <!-- Portfolio Section -->
-    <section id="portfolio">
+    <section id="portfolio" class="content-section text-center parallax-window" data-parallax="scroll" data-image-src="img/rockBackground.jpg">
+        <div class="imgRoots" class="col-lg-12">
+            <!-- imgBackgroundRootsUnderEarth --> <!-- <img src="img/imgBackgroundUnderEarth.jpg" alt="#" /> -->  
+        </div>
+        
+        <div id="portfolioRow" class="row hidden-print">
 
-        <!-- <div class="col-lg-6 formation">
-            <div class="service-item">
-                <span class="fa-stack fa-4x">
-                    <i class="fa fa-circle-thin fa-stack-2x"></i>
-                    <i class="fa fa-briefcase fa-stack-1x text-primary pictoCv"></i>
-                </span>
+            <h2>Portfolio</h2>
             
-                <h3>Projets</h3>
-                
-                <p>Intrégration d'un site CV dynamique</p>
-                <p><a href="#">exemple site 1</a></p>
-                <p>Intrégration d'un site Worpress</p>
-                <p><a href="#">exemple site 2</a></p>
+            <div class="col-lg-6 col-sm-6 col-xs-12 portfolio">
+                <h3><a href="#">Site CV web</a></h3>
+                <div class="imgPortfolio1 hidden-print"></div>
             </div>
-        </div> -->
-
-
-        <!-- carousel -->
-
-        <!-- <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner" role="listbox">
-                <div class="carousel-item active">
-                    <img class="d-block img-fluid" src="img/imgPetronasTowers.jpg" alt="First slide">
-                </div>
-               
-                <div class="carousel-item">
-                    <img class="d-block img-fluid" src="..." alt="Second slide">
-                </div>
-                
-                <div class="carousel-item">
-                    <img class="d-block img-fluid" src="..." alt="Third slide">
-                </div>    
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div> -->
-
-    </section>
-
-     <!-- About Section -->
-    <section id="about" class="container content-section text-center">
-        <div id="blockAbout" class="row">
-            <div id="aboutRow" class="col-lg-12">
-                
-                <h2>À propos de moi...</h2>
             
-                <p>Agé de 38 ans, autonome, polyvalent et curieux, j’ai démarré cette activité comme un hobby en 2016,</p>
-                <p>puis ai décidé d'en faire mon métier par passion.</p>
-
-                <p>Actuellement en formation au métier d'intégrateur développeur, j'apprends à concevoir des sites de type "frameworks / <acronym title="Système de Gestion des Contenus">CMS</acronym>",</p>
-                <p>et fais en sorte que mon code soit optimisé le plus souvent possible.</p>
-
-                <p>Passionné du web,</p>
-                <P>je mets à disposition mon sens créatif et artistique au service de vos futurs projets numériques,</p>
-                <p>convaincu que <a href="#">"l'avenir s'écrit en lignes de code..."</a></p>
-           
+            <div class="col-lg-6 col-sm-6 col-xs-12 portfolio">
+                <h3><a href="#">Site web Musi'Col</a></h3>
+                <div class="imgPortfolio2 hidden-print"></div> 
             </div>
         </div>
 
+        <!-- DEBUT visible-print-block portfolio -->
+        <div id="portfolioRow" class="row visible-print-block">
+
+            <h2>Portfolio</h2>
+            
+            <div class="col-xs-6 portfolio">
+                <h3><a href="#">Site CV web</a></h3>
+                <div class="imgPortfolio1 hidden-print"></div>
+            </div>
+            
+            <div class="col-xs-6 portfolio">
+                <h3><a href="#">Site web Musi'Col</a></h3>
+                <div class="imgPortfolio2 hidden-print"></div> 
+            </div>
+        </div>
+
+        <div class="imgRoots2 hidden-print" class="col-lg-12">
+            <!-- imgBackgroundRootsUnderEarth --> <!-- <img src="img/imgBackgroundUnderEarth.jpg" alt="#" /> -->  
+        </div>
+
+        <!-- FIN visible-print-block portfolio-->
+    
+    </section>
+
+     <!-- About Section -->
+    <section id="about" class="container-fluid content-section text-center parallax-window" data-parallax="scroll" data-image-src="img/imgBackgroundRocks11.jpg">
+        
+        <div class="imgRoots" class="col-lg-12">
+            <!-- imgBackgroundRootsUnderEarth --> <!-- <img src="img/imgBackgroundUnderEarth.jpg" alt="#" /> -->  
+        </div>
+
+        <div id="slideshowspace">
+           <div id="slideshow">
+               <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                 <ol class="carousel-indicators">
+                   <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                   <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                   <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                 </ol>
+
+                 <div class="carousel-inner" role="listbox">
+                   <div class="item active">
+                     <img class="slideimg" src="img/1pudong.JPG" alt="img/1pudong.JPG">
+                     <div class="carousel-caption">
+                     </div>
+                   </div>
+                   <div class="item">
+                     <img class="slideimg" src="img/1skull.JPG" alt="img/1skull.JPG">
+                     <div class="carousel-caption">
+                     </div>
+                   </div>
+                   <div class="item">
+                     <img class="slideimg" src="img/1portrait.JPG" alt="img/1portrait.JPG">
+                     <div class="carousel-caption">
+                     </div>
+                   </div>
+                 </div>
+
+                 <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                   <span class="glyphicon glyphicon-chevron-left fa fa-arrow-circle-o-left" aria-hidden="true"></span>
+                   <span class="sr-only">Previous</span>
+                 </a>
+                 <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                   <span class="glyphicon glyphicon-chevron-right fa fa-arrow-circle-o-right" aria-hidden="true"></span>
+                   <span class="sr-only">Next</span>
+                 </a>
+               </div>
+           </div>
+       </div>
+        
         <div id="blockPassions" class="row">
-            <h3>Passions &amp; inspirations</h3>
-            <div class="col-lg-12">
+            <h4>Passions &amp; inspirations</h4>
+            <div id="blockImgs" class="col-lg-8 col-lg-offset-2 col-sm-8 col-sm-offset-2 hidden-print">
                 <div id="img1" class="blockImage"></div>
                 <div id="img2" class="blockImage"></div>
                 <div id="img3" class="blockImage"></div>
@@ -497,28 +689,90 @@
                 <div id="img24" class="blockImage"></div>
                 <div id="img25" class="blockImage"></div>
                 <div id="img26" class="blockImage"></div>
-                <div id="img27" class="blockImage"></div>
-                <div id="img28" class="blockImage"></div>
-                <div id="img29" class="blockImage"></div>
-                <div id="img30" class="blockImage"></div>
-                <div id="img31" class="blockImage"></div>
-                <div id="img32" class="blockImage"></div>      
+                <div id="img27" class="blockImage"></div>   
+            </div>
+            
+            <!-- DEBUT visible-print-block passions et inspirations-->
+            <div class="row rowPrint2">
+                
+                <div class="col-xs-3 visible-print-block">
+                <h6>Sports</h6>
+                    <ul>
+                        <li>Ski,</li>
+                        <li>Running,</li>
+                        <li>Basket,</li>
+                        <li>Tennis</li>
+                    </ul>        
+                </div>
+                
+                <div class="col-xs-3 visible-print-block">
+                <h6>Arts &amp; culture</h6>
+                    <ul>
+                        <li>Musée,</li>
+                        <li>Street Art</li>
+                        <li></li>
+                        <li></li>
+                    </ul>      
+                </div>
+
+                <div class="col-xs-3 visible-print-block">
+                <h6>Voyages</h6>
+                    <ul>
+                        <li>Asie du sud-est,</li>
+                        <li>Europe du nord</li>
+                    </ul>      
+                </div>
+
+                <div class="col-xs-3 visible-print-block">
+                <h6>Divertissements</h6>
+                    <ul>
+                        <li>Échecs,</li>
+                        <li>Rubik's cube,</li>
+                        <li>Puzzle</li>
+                    </ul>      
+                </div>
+
+            </div>
+            <!-- FIN visible-print-block passions et inspirations-->
+
+        </div>
+
+        <div id="blockAbout" class="row hidden-print">
+            <div id="aboutRow" class="col-lg-12 col-xs-12">
+                
+                <h2>À propos de moi...</h2>
+            
+                <p>Agé de 38 ans, autonome, polyvalent et curieux, j’ai démarré cette activité comme un hobby en 2016,</p>
+                <p>puis ai décidé d'en faire mon métier par passion.</p>
+
+                <p>Actuellement en formation au métier d'intégrateur développeur, j'apprends à concevoir des sites de type "frameworks / <acronym title="Système de Gestion des Contenus">CMS</acronym>",</p>
+                <p>et fais en sorte que mon code soit optimisé le plus souvent possible.</p>
+
+                <p>Passionné du web,</p>
+                <P>je mets à disposition mon sens créatif et artistique au service de vos futurs projets numériques,</p>
+                <p>convaincu que <a href="#">"l'avenir s'écrit en lignes de code..."</a></p>
+           
             </div>
         </div>
+        <div class="imgRoots2 hidden-print" class="col-lg-12">
+                <!-- imgBackgroundRootsUnderEarth --> <!-- <img src="img/imgBackgroundUnderEarth.jpg" alt="#" /> -->  
+            </div>
     </section>
 
+    <br />
+
     <!-- Contact Section -->
-    <section id="contact" class="container content-section text-center">
+    <section id="contact" class="container content-section text-center dont-break">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
+            <div class="col-lg-8 col-lg-offset-2 col-xs-12">
                 <h2>Contact</h2>
-                <p><?php echo $resultat['prenom'] . ' ' . $resultat['nom']; ?></a></p>
+                <p><?php echo $resultat['prenom'] . ' ' . $resultat['nom']; ?></p>
                 <p><i class="fa fa-map-marker fa2 pictoContact"></i> <?php echo $resultat['adresse']; ?></p>
                 <p><?php echo $resultat['ville'] . ' ' . $resultat['code_postal']; ?></p>
                 <p><i class="fa fa-globe fa2 pictoContact"></i> FRANCE</p>
                 <p><i class="fa fa-envelope-o fa2 pictoContact"></i> <a href="mailto:feedback@startbootstrap.com"><?php echo $resultat['email'] ?></a></p>
                 <p><i class="fa fa-phone fa2 pictoContact"></i> <?php echo $resultat['telephone'] ?></a></p>
-                <form  method="POST">
+                <form  method="POST" class="hidden-print">
                     <label>Votre email</label>
                     <input class="form form-control" type="email" />
                     <label>Votre message</label>
@@ -526,9 +780,8 @@
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
                 <br />
-                <br />
-                <br />
-                <ul class="list-inline banner-social-buttons">
+
+                <ul class="list-inline banner-social-buttons hidden-print">
                     <li>
                         <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
                     </li>
@@ -543,13 +796,36 @@
         </div>
     </section>
 
+   
     <!-- Map Section -->
-    <div id="map"></div>
+    <div id="map" class="hidden-print"></div>
 
+   
     <!-- Footer -->
-    <footer>
-        <div class="container text-center">           
-            <p>Copyright&copy;2017 Site CV éric coudert</p>           
+    <footer class="hidden-print">
+        <div class="container-fluid text-center">           
+            <div class="row">
+                <div id="footerLinks" class="col-lg-4 col-xs-12">
+                    <ul>
+                        <li><a href="#linkConnexionAdmin">Home</a></li>
+                        <li><a href="#xpNum">Numérique</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#">CV à télécharger</a></li>
+                        <li><a href="#about">À propos</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                    <div id="footerCopyright" class="col-lg-4 col-xs-12">
+                        <p>Copyright&copy;2017 Site CV éric coudert</p>
+                    </div>
+                <div id="footerPictos" class="col-lg-4 col-xs-12">
+                    <a href="#"><img src="img/pictoGitHub.png" alt="Icone GitHub" /></a>     
+
+                    <a href="#"><img src="img/pictoFacebook.png" alt="Icone Facebook" /></a>
+       
+                    <a href="#"><img src="img/pictoInstagram.png" alt="Icone Instagram" /></a>
+                </div>          
+            </div>           
         </div>
     </footer>
 
@@ -558,11 +834,11 @@
     <script src="parallax/parallax.js"></script>
 
   
+    
 
+	<script src="vendor/jquery/jquery.js"></script>
 
-<script src="vendor/jquery/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
+	<!-- Bootstrap Core JavaScript -->
     <script src="cssfrontbootstrap/vendor/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -578,60 +854,4 @@
 </body>
 
 </html>
-    <!-- <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div id="xxx" class="row container-fluid">
-            <div class="col-lg-1 col-xs-2">
-                <a id="btnAdmin" class="btn btn-primary" data-toggle="collapse" href="#linkConnexionAdmin" aria-expanded="false" aria-controls="collapseExample">
-                Admin
-                </a>
-                <div class="collapse" id="linkConnexionAdmin">
-                    <a href="admin/authentification.php">Connexion</a>
-                </div>
-            </div>
 
-            <div class="col-lg-offset-5 col-lg-6 col-xs-offset-10 col-xs-1"> -->
-               
-                <!-- Collect the nav links, forms, and other content for toggling -->
-               
-                <!-- <div id="navCenter" class="collapse navbar-collapse navbar-main-collapse">
-                    <ul class="nav navbar-nav"> -->
-                        
-                        <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
-                        
-                        <!-- <li class="hidden">
-                            <a href="#page-top"></a>
-                        </li>
-                        <li>
-                            <a id="linkHome" class="page-scroll" href="#">Home</a>
-                        </li>
-                        <li>
-                            <a id="linkXpNum" class="page-scroll linkNav" href="#xpNum">XP numérique</a>
-                        </li>
-                        <li>
-                            <a id="linkPortfolio" class="page-scroll linkNav" href="#">Portfolio</a>
-                        </li>
-                        <li>
-                            <a id="linkDownloadCv" class="page-scroll linkNav" href="#downloadCv">CV à télécharger</a>
-                        </li>
-                        <li>
-                            <a id="linkAbout" class="page-scroll linkNav" href="#about">À propos</a>
-                        </li>
-                        <li>
-                            <a id="linkContact" class="page-scroll linkNav" href="#contact">Contact</a>
-                        </li>
-                    </ul> 
-                </div>
-            </div> --> <!-- /.navbar-collapse -->
-
-            <!-- <div class="input-group col-lg-2">
-              <input type="text" class="form-control" placeholder="Search for...">
-              <span class="input-group-btn">
-                <button class="btn btn-secondary" type="button">Go!</button>
-              </span>
-            </div> -->
-        
-        <!-- </div> -->
-
-        <!-- /.container -->
-
-   <!--  </nav> -->

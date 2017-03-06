@@ -2,73 +2,142 @@
 
 body {
   width: auto!important;
-  margin: auto!important;
+  margin-left: 0!important;
   background-color: #fff!important;
   color: #000!important;
-	font: 10pt "Times New Roman", Times, serif;
+  font: 10pt "Times New Roman", Times, serif;
 }
-p, h1, h2, h3, h4, h5, h6, blockquote, ul, ol {
+
+p, h1, h2, h3, h4, h5, h6{
   color: #000!important;
-  margin: auto!important;
+  margin: 0 auto!important;
 }
-.print {
-  display: block; /* affichage des Ã©lÃ©ments de classe print */
-}
+
+
+/* pas de ligne seule en bas */
+/* pas de ligne seule en haut */
 p, blockquote {
-  orphans: 3; /* pas de ligne seule en bas */
-  widows: 3; /* pas de ligne seule en haut */
+  orphans: 3; 
+  widows: 3; 
 }
+
+
+/* pas de coupure dans ces Ã©lements */
 blockquote, ul, ol {
-  page-break-inside: avoid; /* pas de coupure dans ces Ã©lements */
+  page-break-inside: avoid; 
 }
-h1 {
-  page-break-before: always; /* chaque titre commence sur une nouvelle page */
-}
+
+
+/* pas de saut aprÃ¨s ces Ã©lÃ©ments */
 h1, h2, h3, caption {
-  page-break-after: avoid; /* pas de saut aprÃ¨s ces Ã©lÃ©ments */
+	text-align: center;
+  	/*page-break-after: avoid;*/ 
 }
+
 a {
   color: #000!important;
   text-decoration: underline!important;
 }
+
 a[href]:after {
   content: " (" attr(href) ")"; /* affichage des URL des liens */
 }
 
 
-#header, #header h1, #sidebar1, #menu, #menu ul, #formCherche, h1, a {
-	display: none;
+
+/*****************************************************************/
+/****************         Mon style Print       ******************/
+/*****************************************************************/
+
+
+img{
+  display: none;
 }
 
-#container, #mainContent {
-	
-width: auto;
-border: 0;
-margin: 0 5%;
-padding: 0;
-float: none !important;
+#headerBackground{
+  height: 2cm;
+  padding: 0px;
+  margin-top: 25px;
 }
 
-#tableau_imprim {
-	-webkit-border-radius: none;
-	border-radius: none;
-	width: auto;
-	border-style: none;
-}
-td {
-	padding-bottom: 0.2cm;
-	padding-top: 0.5cm;
-}
-td, th {
-	border-right: none;
-	border-left:none;
-	border-bottom: 1px solid #333;
-}
-h2 {
-	border: none;
+#titleCenter h1{
+  font-size: 1.7em;
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
-img {
-	width: 100%;
-	height: 100%;
+#title{
+  height: 100px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
+
+#titleContainer{
+  padding-bottom: 0px;
+}
+
+#titleBlock{
+  padding-bottom: 0px;
+}
+
+.junior{
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+
+
+/*************************************************/
+
+#xpNum{
+  height: 0cm;
+}
+
+
+#xxx{
+  height: 2cm;
+  padding: 0cm;
+  margin-top: 0cm;
+}
+
+
+/*************************************************/
+
+#portfolio{
+  height: 2cm;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+}
+
+
+/*************************************************/
+
+
+#about{
+  height: 5cm;
+}
+
+.row .rowPrint{
+  height: 2cm;
+}
+
+
+/*************************************************/
+
+
+#contact{
+  height: 3cm;
+}
+
+
+
+
+
+
+
+
+
+
+
+

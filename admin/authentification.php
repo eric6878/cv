@@ -52,7 +52,7 @@ if(isset($_POST['connexion'])){
     				
     				<tr>
     					<td>
-    						<label for="email">Email :</label>
+    						<label for="email">Email</label>
     					</td>
 
     					<td>
@@ -62,14 +62,14 @@ if(isset($_POST['connexion'])){
 
     				<tr>
     					<td>
-    						<label for="mdp">Mot de passe :</label>
+    						<label for="mdp">Mot de passe</label>
     					</td>
 
     					<td>
 							<input type="password" name="mdp" required />
     					</td>
                     <tr>
-                        <td colspan="2"><input name="connexion" type="submit" value="connexion" /></tr>			
+                        <td colspan="2"><input name="connexion" type="submit" value="Connexion" /></tr>			
     				</tr>
 				</table>
         	</form>

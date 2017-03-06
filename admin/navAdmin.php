@@ -3,6 +3,7 @@
 <nav>
 	<ul>
 		<li><a href="index.php">Accueil</a></li>
+		<li><a href="contact.php">Contacts</a></li>
 		<li><a href="utilisateur.php">Utilisateur</a></li>
 		<li><a href="competence.php">Compétences</a></li>
 		<li><a href="experience.php">Expériences</a></li>
